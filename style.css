@@ -1,0 +1,24 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker3.css");
+.A,
+.C {
+    height: 600px;
+}
+
+.A {
+    background-image: repeating-linear-gradient(red, yellow);
+}
+
+.B {
+    background-image: linear-gradient(to right, orange, white, white);
+    height: auto;
+    padding-bottom: 50px;
+}
+
+.img {
+    background-image: url('img/sampleBG.jpeg');
+    background-repeat: no-repeat;
+}
+
+.for {
+    background-image: linear-gradient(to right, white, orange);
+}
