@@ -1,4 +1,6 @@
 function A() {
+  document.getElementById('B').style.display="block";
+  document.getElementById('B').scrollIntoView();
   var form = document.form;
   var dob = form.DOB.value.split("-");
   var coun = form.country.value;
@@ -7,7 +9,6 @@ function A() {
     return false;
   }
   document.getElementById("BOD").innerHTML = dob[2] + "-" + dob[1] + "-" + dob[0];
-  // document.getElementById("BT").innerHTML=hrs;
   document.getElementById("country").innerHTML = coun;
   console.log(dob, coun);
   var value;
