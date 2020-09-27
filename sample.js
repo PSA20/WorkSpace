@@ -85,233 +85,248 @@ function A() {
     value = "No way!";
   }
 
-var month=dob[1];
-var date=dob[2];
-var pn="";
-    if (month == 3) {
-      if (date >= 21) {
-        if (date % 2 == 0) {
-          pn="Raw Mookaite Necklace";
-        } else {
-          pn="Raw Tiger Eye Necklace";
-        }
-      } else if (date >= 10) {
-        if (date % 2 == 0) {
-          pn="Tabasco Geode Necklace";
-        } else {
-          pn="Rainbow Aura Crescent Moon Necklace";
-        }
-      }
-    } else if (month == 4) {
-      if (date <= 7) {
-        if (date % 2 == 0) {
-          pn="Shungite Raven Necklace";
-        } else {
-          pn="Amethyst Freeform Cluster Necklace";
-        }
-      } else if (date >= 8 && date <= 16) {
-        if (date % 2 == 0) {
-          pn="Black Kyanite Fan Necklace";
-        } else {
-          pn="Raw Arizona Turquoise Nugget Necklace";
-        }
-      } else if (date >= 17 && date <= 20) {
-        pn="Raw Emerald in Matrix Necklace";
-      } else if (date >= 21) {
-        if (date % 2 == 0) {
-          pn="Amethyst Elestial Wand Necklace";
-        } else {
-          pn="Quartz Stalactite Flower Necklace";
-        }
-      }
-    } else if (month == 5) {
-      if (date <= 8) {
-        if (date % 2 == 0) {
-          pn="Copper Coffin Nail Necklace";
-        } else {
-          pn="Amethyst Mountain Necklace";
-        }
-      } else if (date >= 9 && date <= 17) {
-        if (date % 2 == 0) {
-          pn="Blue Kyanite Blade Necklace";
-        } else {
-          pn="Black Tourmaline Necklace";
-        }
-      } else if (date >= 18 && date <= 20) {
-        pn="Pink Agate Slice Necklace";
-      } else if (date >= 21) {
-        if (date % 2 == 0) {
-          pn="Natural Agate Slice Necklace";
-        } else {
-          pn="Gunmetal Antique Coffin Nail Necklace";
-        }
-      }
-    } else if (month == 6) {
-      if (date <= 8) {
-        if (date % 2 == 0) {
-          pn="Guardian Scarab Beetle & Rainbow Moonstone Necklace";
-        } else {
-          pn="Jasper Arrowhead Necklace";
-        }
-      }
-      if (date >= 9 && date <= 17) {
-        if (date % 2 == 0) {
-          pn="Petite Amethyst Moon Necklace";
-        } else {
-          pn="Rosy Hue Solar Quartz Necklace";
-        }
-      } else if (date >= 18 && date <= 21) {
-        pn="Green Agate Slice Necklace";
-      } else if (date >= 22) {
-        if (date % 2 == 0) {
-          pn="Blue/Teal Agate Slice Necklace";
-        } else {
-          pn="Purple Agate Slice Necklace";
-        }
-      }
-    } else if (month == 7) {
-      if (date <= 10) {
-        if (date % 2 == 0) {
-          pn="Raw Ruby Necklace";
-        } else {
-          pn="Clear Quartz Crystal Necklace";
-        }
-      }
-      if (date >= 11 && date <= 19) {
-        if (date % 2 == 0) {
-          pn="Raw Sapphire Necklace";
-        } else {
-          pn="Raw Rose Quartz Necklace";
-        }
-      } else if (date >= 20 && date <= 23) {
-        pn="Red Hematoid Quartz Necklace";
-      } else if (date >= 24) {
-        if (date % 2 == 0) {
-          pn="Herkimer Diamond Earrings";
-        } else {
-          pn="Citrine Point & Bee Necklace";
-        }
-      }
-    } else if (month == 8) {
-      if (date <= 10) {
-        if (date % 2 == 0) {
-          pn="Shiva Eye Necklace";
-        } else {
-          pn="Rainbow Moonstone Teardrop Earrings";
-        }
-      }
-      if (date >= 11 && date <= 19) {
-        if (date % 2 == 0) {
-          pn="Pink Agate Seahorse Necklace";
-        } else {
-          pn="Purple Agate Seahorse Necklace";
-        }
-      } else if (date >= 20 && date <= 23) {
-        pn="Natural Agate Seahorse Necklace";
-      } else if (date >= 24) {
-        if (date % 2 == 0) {
-          pn="Opalite Heart Necklace";
-        } else {
-          pn="Lithium Phantom Quartz Point Necklace";
-        }
-      }
-    } else if (month == 9) {
-      if (date <= 10) {
-        if (date % 2 == 0) {
-          pn="Citrine Point Necklace";
-        } else {
-          pn="Opalite Crescent Moon Necklace";
-        }
-      }
-      if (date >= 11 && date <= 19) {
-        if (date % 2 == 0) {
-          pn="Fuchsite in Quartz Necklace";
-        } else {
-          pn="Petite Herkimer Diamond Necklace";
-        }
-      } else if (date >= 20 && date <= 23) {
-        pn="Naturally Shed Deer Antler Necklace";
-      } else if (date >= 24) {
-        if (date % 2 == 0) {
-          pn="Fuchsite in Quartz Drop Earrings";
-        } else {
-          pn="Chrysoprase Necklace";
-        }
-      }
-    } else if (month == 10) {
-      if (date <= 10) {
-        if (date % 2 == 0) {
-          pn="Rose Quartz Crescent Moon Necklace";
-        } else {
-          pn="Rose Quartz Heart Necklace";
-        }
-      }
-      if (date >= 11 && date <= 18) {
-        if (date % 2 == 0) {
-          pn="Petite Druzy Heart Necklace";
-        } else {
-          pn="Oco Agate Geode Necklace";
-        }
-      } else if (date >= 19 && date <= 22) {
-        pn="Petite Druzy Crescent Moon Necklace";
-      } else if (date >= 23) {
-        if (date % 2 == 0) {
-          pn="Sparkly Scarlet Chalcedony Heart Necklace";
-        } else {
-          pn="Amethyst Crystal Point & Bee Necklace";
-        }
-      }
-    } else if (month == 11) {
-      if (date <= 10) {
-        if (date % 2 == 0) {
-          pn="Petite Amethyst Cluster Crescent Moon Necklace";
-        } else {
-          pn="Citrine Cluster Necklace";
-        }
-      }
-      if (date >= 11 && date <= 18) {
-        if (date % 2 == 0) {
-          pn="Obsidian Heart NecklacE";
-        } else {
-          pn="Carved Labradorite Peacock Necklace";
-        }
-      } else if (date >= 19 && date <= 22) {
-        pn="Rainbow Agate Necklace";
-      } else if (date >= 23) {
-        if (date % 2 == 0) {
-          pn="Citrine Hexagonal Pyramid Necklace";
-        } else {
-          pn="Carved Labradorite Cicada Necklace";
-        }
-      }
-    } else if (month == 12) {
-      if (date <= 10) {
-        if (date % 2 == 0) {
-          pn="Rose Quartz Hexagonal Pyramid NecklacE";
-        } else {
-          pn="Labradorite Sugar Skull Necklace";
-        }
-      }
-      if (date >= 11 && date <= 18) {
-        if (date % 2 == 0) {
-          pn="Clear Quartz Crystal Lightning Bolt Necklace";
-        } else {
-          pn="Rainbow Moonstone Sugar Skull Necklace";
-        }
-      } else if (date >= 19 && date <= 22) {
-        pn="Blush Rose Quartz Lightning Bolt Necklace";
-      } else if (date >= 23) {
-        if (date % 2 == 0) {
-          pn="Rose Quartz Pencil Point Necklace";
-        } else {
-          pn="Ancient Ammonite Necklace";
-        }
+  var month = dob[1];
+  var date = dob[2];
+  var stone = "";
+  if (month == 1) {
+    if (date <= 20) {
+      stone = "Herkimer Diamond";
+
+    } else if (date >= 21) {
+      if (date % 2 == 0) {
+        stone = "Ammonite";
+
+      } else {
+        stone = "Amethyst";
+
       }
     }
+  } else if (month == 2) {
+    if (date <= 19) {
+      if (date % 2 == 0) {
+        stone = "Ammonite";
 
-    document.getElementById("BS").innerHTML = value;
-    console.log(value);
-    document.getElementById("PN").innerHTML = pn;
+      } else {
+        stone = "Amethyst";
 
-    return false;
+      }
+    } else if (date >= 20) {
+      if (date % 2 == 0) {
+        stone = "Druzy";
+
+      } else {
+        stone = "Quartz";
+
+      }
+    }
+  } else if (month == 3) {
+    if (date <= 20) {
+      if (date % 2 == 0) {
+        stone = "Druzy";
+
+      } else {
+        stone = "Quartz";
+
+      }
+    }
+    if (date >= 21) {
+      stone = "Jasper";
+
+    }
+  } else if (month == 4) {
+    if (date <= 10) {
+      stone = "Ruby";
+
+    } else if (date >= 11 && date <= 20) {
+      stone = "Sapphire";
+
+    } else if (date >= 21) {
+      stone = "Shungite";
+
+    }
+  } else if (month == 5) {
+    if (date <= 10) {
+      stone = "Kyanite";
+
+    } else if (date >= 11 && date <= 20) {
+      stone = "Opalite";
+
+    } else if (date >= 21) {
+      if (date % 2 == 0) {
+        stone = "Druzy";
+
+      } else {
+        stone = "Agate";
+
+      }
+    }
+  } else if (month == 6) {
+    if (date <= 21) {
+      if (date % 2 == 0) {
+        stone = "Druzy";
+
+      } else {
+        stone = "Agate";
+
+      }
+    }
+    if (date >= 22 && date <= 30) {
+      if (date % 2 == 0) {
+        stone = "Moonstone";
+
+      } else {
+        stone = "Citrine";
+
+      }
+    }
+  } else if (month == 7) {
+    if (date <= 23) {
+      if (date % 2 == 0) {
+        stone = "Moonstone";
+
+      } else {
+        stone = "Citrine";
+
+      }
+    } else if (date >= 24) {
+      if (date % 2 == 0) {
+        stone = "Shiva Eye";
+
+      } else {
+        stone = "Emerald";
+
+      }
+    }
+  } else if (month == 8) {
+    if (date <= 23) {
+      if (date % 2 == 0) {
+        stone = "Shiva Eye";
+
+      } else {
+        stone = "Emerald";
+
+      }
+    } else if (date >= 24) {
+      if (date % 2 == 0) {
+        stone = "Raw Mookaite";
+
+      } else {
+        stone = "Shiva Eye";
+
+      }
+    }
+  } else if (month == 9) {
+    if (date <= 23) {
+      if (date % 2 == 0) {
+        stone = "Mookaite";
+
+      } else {
+        stone = "Shiva Eye";
+
+      }
+    } else if (date >= 24) {
+      stone = "Tourmaline";
+
+    }
+  } else if (month == 10) {
+    if (date <= 11) {
+      stone = "Opalite";
+
+    }
+    if (date >= 12 && date <= 22) {
+      stone = "Chrysoprase";
+
+    } else if (date >= 23) {
+      if (date % 2 == 0) {
+        stone = "Obsidian";
+
+      } else {
+        stone = "Labradorite";
+
+      }
+    }
+  } else if (month == 11) {
+    if (date <= 22) {
+      if (date % 2 == 0) {
+        stone = "Labradorite";
+
+      } else {
+        stone = "Obsidian";
+
+      }
+    } else if (date >= 23) {
+      stone = "Tiger Eye";
+
+    }
+  } else if (month == 12) {
+    if (date <= 11) {
+      stone = "Turquoise";
+
+    }
+    if (date >= 12 && date <= 22) {
+      stone = "Chalcedony";
+
+    } else if (date >= 23) {
+      stone = "Herkimer Diamond";
+
+    }
   }
+  var des = '';
+  if (stone == "Tiger Eye") {
+    des = "Tiger Eye is said to hold the power of the noontime sun, the energy of the midsummer, and the peak of life-force throughout the year.";
+  } else if (stone == "Raw Mookaite") {
+    des = "Raw Mookaite is said to help calm your worries and assuage your fears by showing you there’s nothing in this world that you cannot handle.";
+  } else if (stone == "Amethyst") {
+    des = "Amethyst is a grounding stone that brings about tranquility and calmness";
+  } else if (stone == "Shungite") {
+    des = "Shungite is known for its incredible healing and protection properties, including boosting energy, the immune system, balancing mind and emotions, protecting from harmful EMFs, detoxification and purification of the body.";
+  } else if (stone == "Turquoise") {
+    des = "Turquoise promotes self-realization and assists creative problem solving";
+  } else if (stone == "Quartz") {
+    des = "It's said to amplify energy by absorbing, storing, releasing, and regulating it. It's also said to aid concentration and memory. Physically, clear crystals are claimed to help stimulate the immune system and balance out your entire body.";
+  } else if (stone == "Herkimer Diamond") {
+    des = "Herkimer Diamond is one of the strongest crystals for clearing electromagnetic pollution or radioactivity, blocking geopathic stress, and for the restoration of equilibrium. Smoky Herkimer Diamond has a strong grounding energy that is helpful for healing the earth chakra and the environment";
+  } else if (stone == "Chalcedony") {
+    des = "Chalcedony is said to be a nurturing stone that promotes brotherhood and good will. It also absorbs negative energy.";
+  } else if (stone == "Obsidian") {
+    des = "Obsidian is truth-enhancing. A strongly protective stone, it forms a shield against negativity. It blocks psychic attack and absorbs negative energies from the environment.";
+  } else if (stone == "Labradorite") {
+    des = "Labradorite is said to banish fears, insecurities and also the psychic debris from previous disappointments, including those experienced in past lives";
+  } else if (stone == "Chrysoprase") {
+    des = "Chrysoprase is one of the birthstones for May and has traditionally symbolized happiness, enterprise and prudence. It is a powerful stone that brings good fortune and prosperity";
+  } else if (stone == "Opalite") {
+    des = "Opalite is said to assist during transitions of all kinds. It engenders persistence and gives us strength in verbalizing our hidden feelings";
+  } else if (stone == "Emerald") {
+    des = "Emerald can encourage bonding, strengthen communication and understanding, and help each person to adequately express themselves without offending others";
+  } else if (stone == "Tourmaline") {
+    des = "Tourmaline is a protective stone which repels and blocks negative energies as well as psychic attacks";
+  } else if (stone == "Shiva Eye") {
+    des = "This stone is actually the protective door found at the opening of the turban snail’s shell, which towards the end of the snail’s natural life, detaches and sinks to the seabed.";
+  } else if (stone == "Citrine") {
+    des = "Citrine promotes motivation, activates creativity and encourages self-expression. Enhances concentration and revitalizes the mind. It releases negative traits, depression, fears and phobias. Emotionally balancing.";
+  } else if (stone == "Druzy") {
+    des = "Druzy is believed to be associated with peace, tranquillity, patience, intuition, and unconditional love.";
+  } else if (stone == "Agate") {
+    des = "Agates are known for fortune and luck.";
+} else if (stone == "Moonstone") {
+  des = "Moonstone is a stone of inner growth and strength. It soothes emotional instability and stress, and stabilises the emotions, providing calmness.";
+} else if (stone == "Kyanite") {
+  des = "Kyanite not only grounds spiritual energy, but it also energizes the body";
+} else if (stone == "Sapphire") {
+  des = "Sapphire is known as the Wisdom Stone, it is said to release mental tension, depression, and unwanted thoughts.";
+} else if (stone == "Ruby") {
+  des = "Ruby is believed to promote loving, nurturing, health, knowledge and wealth.";
+} else if (stone == "Jasper") {
+  des = "Jasper is a stone of grounding and stability, providing comfort and security, strength and healing.";
+} else if (stone == "Ammonite") {
+  des = "The Ammonite is a very powerful earth healing fossil. Ammonites have absorbed cosmic energy over eons of time and help to stimulate the life force (Chi) within. Ammonites are often used for activating Kundalini and life path energies.";
+}
+
+
+document.getElementById("BS").innerHTML = value;
+console.log(value);
+document.getElementById("PN").innerHTML = stone;
+document.getElementById("des").innerHTML = des;
+
+return false;
+}
