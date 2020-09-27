@@ -274,7 +274,7 @@ function A() {
   var des = '';
   if (stone == "Tiger Eye") {
     des = "Tiger Eye is said to hold the power of the noontime sun, the energy of the midsummer, and the peak of life-force throughout the year.";
-  } else if (stone == "Raw Mookaite") {
+  } else if (stone == "Raw Mookaite" ||stone == "Mookaite") {
     des = "Raw Mookaite is said to help calm your worries and assuage your fears by showing you there’s nothing in this world that you cannot handle.";
   } else if (stone == "Amethyst") {
     des = "Amethyst is a grounding stone that brings about tranquility and calmness";
