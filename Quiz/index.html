@@ -84,21 +84,27 @@ button:hover{
 .quiz-container{
   position: relative;
   height: 200px;
-  margin-top: 40px;
+  margin-top: 300px;
 }
 #previous,#next,#submit{
     margin-top: 100px;
+}
+#cont{
+  position: relative;
+  height: 200px;
+  margin-top: 300px;
 }
 
 </style>
 <body>
     <h1>Cual es su tipo de hormona</h1>
+    <div id="cont">
 <div class="quiz-container">
   <div id="quiz"></div>
 </div>
 <button id="previous">Previous Question</button>
 <button id="next">Next Question</button>
-<button id="submit">Submit Quiz</button>
+<button id="submit">Submit Quiz</button></div>
 <div id="results"></div> 
 </body>
 <script>
@@ -149,7 +155,8 @@ button:hover{
 
     // keep track of user's answers
     let numCorrect = 0;
-
+    let res = [];
+    let out = 0;
     // for each question...
     myQuestions.forEach( (currentQuestion, questionNumber) => {
 
@@ -157,24 +164,32 @@ button:hover{
       const answerContainer = answerContainers[questionNumber];
       const selector = `input[name=question${questionNumber}]:checked`;
       const userAnswer = (answerContainer.querySelector(selector) || {}).value;
-
       // if answer is correct
-      if(userAnswer === currentQuestion.correctAnswer){
         // add to the number of correct answers
-        numCorrect++;
-
+        res.push(userAnswer);
         // color the answers green
-        answerContainers[questionNumber].style.color = 'lightgreen';
-      }
-      // if answer is wrong or blank
-      else{
-        // color the answers red
-        answerContainers[questionNumber].style.color = 'red';
-      }
     });
-
+    if((res[1]=="a")&&(res[0]==("a"||"b"||"c"))){out = 1;}
+    else if((res[1]=="b")&&(res[0]==("a"||"b"||"c"))){out = 2;}
+    else if((res[1]=="c")&&(res[0]==("a"||"b"||"c"))){out = 3;}
+    else if((res[1]==("d"||"e"))&&(res[0]==("a"||"b"))){out = 4;}
+    else if((res[1]=="d")&&(res[0]==("c"))){out = 5;}
+    else if((res[1]==("e"||"d"))&&(res[0]==("d"||"c"))){out = 6;}
+    else if(res[0]=="e"){out=7;}
+    console.log(res);
+    console.log(out);
     // show number of correct answers out of total
-    resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+    if(out==1){ outs = "<h2>Eres el tipo de hormona n. ° 1 - Metabolismo de Señales Mixtas</h2>";}
+    else if(out==2){outs="<h2>Eres el tipo de hormona 2 - Sobrecarga de Hormonas</h2>";}
+    else if(out==3){outs="<h2>Eres el tipo de hormona n. ° 3 - Déficit Hormonal</h2>";}
+    else if(out==4){outs="<h2>Eres el tipo de hormona 4 - Agotamiento Ovárico</h2>";}
+    else if(out==5){outs="<h2>Eres el tipo de hormona n. ° 5 - Chisporroteo Metabólico</h2>";}
+    else if(out==6){outs="<h2>Eres el tipo de hormona n. ° 6 - Fatiga Ovárica</h2>";}
+    else if(out==7){outs="<h2>Eres el tipo de hormona 7 - Apagado Ovárico</h2>";}
+    else {outs="<h2>Try again</h2>"}
+
+    document.getElementById('cont').style.display = 'none' ;
+    resultsContainer.innerHTML = outs;
   }
 
   function showSlide(n) {
@@ -241,7 +256,7 @@ button:hover{
         d: "Tengo una combinación de problemas que cubren los dos problemas anteriores.",
         e: "Estoy pasando o he pasado por la menopausia"
       },
-      correctAnswer: "d"
+      correctAnswer: "d"||""
     }
   ];
 
