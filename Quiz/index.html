@@ -102,11 +102,12 @@ button:hover{
     <div id="cont">
 <div class="quiz-container">
   <div id="quiz"></div>
+  <div id="results"></div>
 </div>
+<div id="Btn">
 <button id="previous">Previous Question</button>
 <button id="next">Next Question</button>
-<button id="submit">Submit Quiz</button></div>
-<div id="results"></div> 
+<button id="submit">Submit Quiz</button></div> </div>
 </body>
 <script>
     (function(){
@@ -180,16 +181,17 @@ button:hover{
     console.log(res);
     console.log(out);
     // show number of correct answers out of total
-    if(out==1){ outs = "<h2>Eres el tipo de hormona n. ° 1 - Metabolismo de Señales Mixtas</h2>";}
-    else if(out==2){outs="<h2>Eres el tipo de hormona 2 - Sobrecarga de Hormonas</h2>";}
-    else if(out==3){outs="<h2>Eres el tipo de hormona n. ° 3 - Déficit Hormonal</h2>";}
-    else if(out==4){outs="<h2>Eres el tipo de hormona 4 - Agotamiento Ovárico</h2>";}
-    else if(out==5){outs="<h2>Eres el tipo de hormona n. ° 5 - Chisporroteo Metabólico</h2>";}
-    else if(out==6){outs="<h2>Eres el tipo de hormona n. ° 6 - Fatiga Ovárica</h2>";}
-    else if(out==7){outs="<h2>Eres el tipo de hormona 7 - Apagado Ovárico</h2>";}
+    if(out==1){ outs = "<h2>Eres el tipo de hormona n. ° 1 - Metabolismo de Señales Mixtas</h2><p>En El Camino a la Renovación Metabólica, se lo conoce como ciclo menstrual normal: equilibrio de estrógeno y progesterona.Consulte El Camino a la Renovación Metabólica para saber cómo personalizar su experiencia para obtener los mejores resultados posibles para su tipo.</p>";}
+    else if(out==2){outs="<h2>Eres el tipo de hormona 2 - Sobrecarga de Hormonas</h2><p>En El Camino a la Renovación Metabólica, se lo conoce como ciclo menstrual normal: estrógeno dominante.Consulte El Camino a la Renovación Metabólica para saber cómo personalizar su experiencia para obtener los mejores resultados posibles para su tipo.</p>";}
+    else if(out==3){outs="<h2>Eres el tipo de hormona n. ° 3 - Déficit Hormonal</h2><p> En El Camino a la Renovación Metabólica, se lo conoce como ciclo menstrual normal: deficiencia de progesterona.Consulte El Camino a la Renovación Metabólica para saber cómo personalizar su experiencia para obtener los mejores resultados posibles para su tipo.</p>";}
+    else if(out==4){outs="<h2>Eres el tipo de hormona 4 - Agotamiento Ovárico</h2><p>En El Camino a la Renovación Metabólica, se lo conoce como ciclo menstrual normal: deficiencia de estrógeno y progesterona.Consulte El Camino a la Renovación Metabólica para saber cómo personalizar su experiencia para obtener los mejores resultados posibles para su tipo.</p>";}
+    else if(out==5){outs="<h2>Eres el tipo de hormona n. ° 5 - Chisporroteo Metabólico</h2><p>En El Camino a la Renovación Metabólica, se lo conoce como Perimenopausia: estrógeno alto o fluctuante y deficiente en progesterona.Consulte El Camino a la Renovación Metabólica para saber cómo personalizar su experiencia para obtener los mejores resultados posibles para su tipo.</p>";}
+    else if(out==6){outs="<h2>Eres el tipo de hormona n. ° 6 - Fatiga Ovárica</h2><p>En El Camino a la Renovación Metabólica, se la conoce como menopausia: deficiencia de estrógenos y de progesterona.Consulte El Camino a la Renovación Metabólica para saber cómo personalizar su experiencia para obtener los mejores resultados posibles para su tipo.</p>";}
+    else if(out==7){outs="<h2>Eres el tipo de hormona 7 - Apagado Ovárico</h2><p>En El Camino a la Renovación Metabólica, se lo conoce como posmenopausia: deficiencia de estrógenos y de progesterona.Consulte El Camino a la Renovación Metabólica para saber cómo personalizar su experiencia para obtener los mejores resultados posibles para su tipo.</p>";}
     else {outs="<h2>Try again</h2>"}
 
-    document.getElementById('cont').style.display = 'none' ;
+    document.getElementById('quiz').style.display = 'none' ;
+    document.getElementById('Btn').style.display = 'none' ;
     resultsContainer.innerHTML = outs;
   }
 
