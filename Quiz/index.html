@@ -1,288 +1,308 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz</title>
-    <!-- JQuery -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
-    <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
-    <!-- Bootstrap core CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Material Design Bootstrap -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz</title>
+  <!-- JQuery -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
 </head>
 <style>
-    @import url(https://fonts.googleapis.com/css?family=Work+Sans:300,600);
+  @import url(https://fonts.googleapis.com/css?family=Work+Sans:300,600);
 
-body{
-	font-size: 20px;
-	font-family: 'Work Sans', sans-serif;
-	color: #333;
-  font-weight: 300;
-  text-align: center;
-  background: linear-gradient(to right, #b92b27, #9b59b6);
-}
-h1{
-  font-weight: 300;
-  margin: 0px;
-  padding: 10px;
-  font-size: 20px;
-  background-color: #444;
-  color: #fff;
-}
-.question{
-  margin-top: 50px;
-  font-size: 30px;
-  margin-bottom: 10px;
-}
-.answers {
-  margin-bottom: 20px;
-  text-align: left;
-  display: inline-block;
-}
-.answers label{
-  display: block;
-  margin-bottom: 10px;
-}
-button{
-  font-family: 'Work Sans', sans-serif;
-	font-size: 22px;
-	background-color: #279;
-	color: #fff;
-	border: 0px;
-	border-radius: 3px;
-	padding: 20px;
-	cursor: pointer;
-	margin-bottom: 20px;
-}
-button:hover{
-	background-color: #38a;
-}
+  body {
+    font-size: 20px;
+    font-family: 'Work Sans', sans-serif;
+    color: #333;
+    font-weight: 300;
+    text-align: center;
+    background: linear-gradient(to right, #b92b27, #9b59b6);
+  }
+
+  h1 {
+    font-weight: 300;
+    margin: 0px;
+    padding: 10px;
+    font-size: 20px;
+    background-color: #444;
+    color: #fff;
+  }
+
+  .question {
+    margin-top: 50px;
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+
+  .answers {
+    margin-bottom: 20px;
+    margin-left: 20px;
+    text-align: left;
+    display: inline-block;
+  }
+
+  .answers label {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  button {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 22px;
+    background-color: #279;
+    color: #fff;
+    border: 0px;
+    border-radius: 3px;
+    padding: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+
+  button:hover {
+    background-color: #38a;
+  }
 
 
 
 
 
-.slide{
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  width: 100%;
-  z-index: 1;
-  opacity: 0;
-  transition: opacity 0.5s;
-}
-.active-slide{
-  opacity: 1;
-  z-index: 2;
-}
-.quiz-container{
-  position: relative;
-  height: 200px;
-  margin-top: 150px;
-}
-#previous,#next,#submit{
-    margin-top: 100px;
-}
-#cont{
-  position: relative;
-  height: 100%;
-  margin: 150px;
-  background-color: #fff;
-}
-#results{
-  padding: 50px 50px;
-}
+  .slide {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
 
+  .active-slide {
+    opacity: 1;
+    z-index: 2;
+  }
+
+  .quiz-container {
+    position: relative;
+    height: 200px;
+    margin-top: 150px;
+  }
+
+  #previous,
+  #next,
+  #submit {
+    margin-top: 150px;
+  }
+
+  #cont {
+    position: relative;
+    height: 500px;
+    margin: 150px;
+    background-color: #fff;
+  }
+
+  #results {
+    padding: 50px 50px;
+  }
 </style>
+
 <body>
-    <div id="cont">
-<div class="quiz-container">
-  <div id="quiz"></div>
-  <div id="results"></div>
-</div>
-<div class="mt-5" id="Btn">
-<button id="previous">Previous Question</button>
-<button id="next">Next Question</button>
-<button id="submit">Submit Quiz</button></div> </div>
+  <div id="cont">
+    <div class="quiz-container">
+      <div id="quiz"></div>
+      <div id="results"></div>
+    </div>
+    <div class="mt-5" id="Btn">
+      <button id="previous" class="float-left ml-5">Previous Question</button>
+      <button id="next" class="float-right mr-5">Next Question</button>
+      <button id="submit" class="float-right mr-5">Submit Quiz</button>
+    </div>
+  </div>
 </body>
 <script>
-    (function(){
-  // Functions
-  function buildQuiz(){
-    // variable to store the HTML output
-    const output = [];
+  (function () {
+    // Functions
+    function buildQuiz() {
+      // variable to store the HTML output
+      const output = [];
 
-    // for each question...
-    myQuestions.forEach(
-      (currentQuestion, questionNumber) => {
+      // for each question...
+      myQuestions.forEach(
+        (currentQuestion, questionNumber) => {
 
-        // variable to store the list of possible answers
-        const answers = [];
+          // variable to store the list of possible answers
+          const answers = [];
 
-        // and for each available answer...
-        for(letter in currentQuestion.answers){
+          // and for each available answer...
+          for (letter in currentQuestion.answers) {
 
-          // ...add an HTML radio button
-          answers.push(
-            `<label>
+            // ...add an HTML radio button
+            answers.push(
+              `<label>
               <input type="radio" name="question${questionNumber}" value="${letter}">
               ${letter} :
               ${currentQuestion.answers[letter]}
             </label>`
-          );
-        }
+            );
+          }
 
-        // add this question and its answers to the output
-        output.push(
-          `<div class="slide">
+          // add this question and its answers to the output
+          output.push(
+            `<div class="slide">
             <div class="question"> ${currentQuestion.question} </div>
             <div class="answers"> ${answers.join("")} </div>
           </div>`
-        );
-      }
-    );
+          );
+        }
+      );
 
-    // finally combine our output list into one string of HTML and put it on the page
-    quizContainer.innerHTML = output.join('');
-  }
+      // finally combine our output list into one string of HTML and put it on the page
+      quizContainer.innerHTML = output.join('');
+    }
 
-  function showResults(){
+    function showResults() {
 
-    // gather answer containers from our quiz
-    const answerContainers = quizContainer.querySelectorAll('.answers');
+      // gather answer containers from our quiz
+      const answerContainers = quizContainer.querySelectorAll('.answers');
 
-    // keep track of user's answers
-    let numCorrect = 0;
-    let res = [];
-    let out = 0;
-    // for each question...
-    myQuestions.forEach( (currentQuestion, questionNumber) => {
+      // keep track of user's answers
+      let numCorrect = 0;
+      let res = [];
+      let out = 0;
+      // for each question...
+      myQuestions.forEach((currentQuestion, questionNumber) => {
 
-      // find selected answer
-      const answerContainer = answerContainers[questionNumber];
-      const selector = `input[name=question${questionNumber}]:checked`;
-      const userAnswer = (answerContainer.querySelector(selector) || {}).value;
-      // if answer is correct
+        // find selected answer
+        const answerContainer = answerContainers[questionNumber];
+        const selector = `input[name=question${questionNumber}]:checked`;
+        const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+        // if answer is correct
         // add to the number of correct answers
         res.push(userAnswer);
         // color the answers green
-    });
-    if((res[1]=="a")&&(res[0]==("a"||"b"||"c"))){out = 1;}
-    else if((res[1]=="b")&&(res[0]==("a"||"b"||"c"))){out = 2;}
-    else if((res[1]=="c")&&(res[0]==("a"||"b"||"c"))){out = 3;}
-    else if((res[1]==("d"||"e"))&&(res[0]==("a"||"b"))){out = 4;}
-    else if((res[1]=="d")&&(res[0]==("c"))){out = 5;}
-    else if((res[1]==("e"||"d"))&&(res[0]==("d"||"c"))){out = 6;}
-    else if(res[0]=="e"){out=7;}
-    console.log(res);
-    console.log(out);
-    // show number of correct answers out of total
-    if(out==1){ outs = "<h2>Eres el tipo de hormona n. ° 1 - Metabolismo de Señales Mixtas</h2><p>En El Camino a la Renovación Metabólica, se lo conoce como ciclo menstrual normal: equilibrio de estrógeno y progesterona.Consulte El Camino a la Renovación Metabólica para saber cómo personalizar su experiencia para obtener los mejores resultados posibles para su tipo.</p>";}
-    else if(out==2){outs="<h2>Eres el tipo de hormona 2 - Sobrecarga de Hormonas</h2><p>En El Camino a la Renovación Metabólica, se lo conoce como ciclo menstrual normal: estrógeno dominante.Consulte El Camino a la Renovación Metabólica para saber cómo personalizar su experiencia para obtener los mejores resultados posibles para su tipo.</p>";}
-    else if(out==3){outs="<h2>Eres el tipo de hormona n. ° 3 - Déficit Hormonal</h2><p> En El Camino a la Renovación Metabólica, se lo conoce como ciclo menstrual normal: deficiencia de progesterona.Consulte El Camino a la Renovación Metabólica para saber cómo personalizar su experiencia para obtener los mejores resultados posibles para su tipo.</p>";}
-    else if(out==4){outs="<h2>Eres el tipo de hormona 4 - Agotamiento Ovárico</h2><p>En El Camino a la Renovación Metabólica, se lo conoce como ciclo menstrual normal: deficiencia de estrógeno y progesterona.Consulte El Camino a la Renovación Metabólica para saber cómo personalizar su experiencia para obtener los mejores resultados posibles para su tipo.</p>";}
-    else if(out==5){outs="<h2>Eres el tipo de hormona n. ° 5 - Chisporroteo Metabólico</h2><p>En El Camino a la Renovación Metabólica, se lo conoce como Perimenopausia: estrógeno alto o fluctuante y deficiente en progesterona.Consulte El Camino a la Renovación Metabólica para saber cómo personalizar su experiencia para obtener los mejores resultados posibles para su tipo.</p>";}
-    else if(out==6){outs="<h2>Eres el tipo de hormona n. ° 6 - Fatiga Ovárica</h2><p>En El Camino a la Renovación Metabólica, se la conoce como menopausia: deficiencia de estrógenos y de progesterona.Consulte El Camino a la Renovación Metabólica para saber cómo personalizar su experiencia para obtener los mejores resultados posibles para su tipo.</p>";}
-    else if(out==7){outs="<h2>Eres el tipo de hormona 7 - Apagado Ovárico</h2><p>En El Camino a la Renovación Metabólica, se lo conoce como posmenopausia: deficiencia de estrógenos y de progesterona.Consulte El Camino a la Renovación Metabólica para saber cómo personalizar su experiencia para obtener los mejores resultados posibles para su tipo.</p>";}
-    else {outs="<h2>Eres el tipo de hormona 4 - Agotamiento Ovárico</h2><p>En El Camino a la Renovación Metabólica, se lo conoce como ciclo menstrual normal: deficiencia de estrógeno y progesterona.Consulte El Camino a la Renovación Metabólica para saber cómo personalizar su experiencia para obtener los mejores resultados posibles para su tipo.</p>"}
+      });
+      if ((res[1] == "a") && (res[0] == ("a" || "b" || "c"))) { out = 1; }
+      else if ((res[1] == "b") && (res[0] == ("a" || "b" || "c"))) { out = 2; }
+      else if ((res[1] == "c") && (res[0] == ("a" || "b" || "c"))) { out = 3; }
+      else if ((res[1] == ("d" || "e")) && (res[0] == ("a" || "b"))) { out = 4; }
+      else if ((res[1] == "d") && (res[0] == ("c"))) { out = 5; }
+      else if ((res[1] == ("e" || "d")) && (res[0] == ("d" || "c"))) { out = 6; }
+      else if (res[0] == "e") { out = 7; }
+      console.log(res);
+      console.log(out);
+      // show number of correct answers out of total
+      if (out == 1) { outs = "<h2>Eres el tipo de hormona n. ° 1 - Metabolismo de Señales Mixtas</h2><p>En El Camino a la Renovación Metabólica, se lo conoce como ciclo menstrual normal: equilibrio de estrógeno y progesterona.Consulte El Camino a la Renovación Metabólica para saber cómo personalizar su experiencia para obtener los mejores resultados posibles para su tipo.</p>"; }
+      else if (out == 2) { outs = "<h2>Eres el tipo de hormona 2 - Sobrecarga de Hormonas</h2><p>En El Camino a la Renovación Metabólica, se lo conoce como ciclo menstrual normal: estrógeno dominante.Consulte El Camino a la Renovación Metabólica para saber cómo personalizar su experiencia para obtener los mejores resultados posibles para su tipo.</p>"; }
+      else if (out == 3) { outs = "<h2>Eres el tipo de hormona n. ° 3 - Déficit Hormonal</h2><p> En El Camino a la Renovación Metabólica, se lo conoce como ciclo menstrual normal: deficiencia de progesterona.Consulte El Camino a la Renovación Metabólica para saber cómo personalizar su experiencia para obtener los mejores resultados posibles para su tipo.</p>"; }
+      else if (out == 4) { outs = "<h2>Eres el tipo de hormona 4 - Agotamiento Ovárico</h2><p>En El Camino a la Renovación Metabólica, se lo conoce como ciclo menstrual normal: deficiencia de estrógeno y progesterona.Consulte El Camino a la Renovación Metabólica para saber cómo personalizar su experiencia para obtener los mejores resultados posibles para su tipo.</p>"; }
+      else if (out == 5) { outs = "<h2>Eres el tipo de hormona n. ° 5 - Chisporroteo Metabólico</h2><p>En El Camino a la Renovación Metabólica, se lo conoce como Perimenopausia: estrógeno alto o fluctuante y deficiente en progesterona.Consulte El Camino a la Renovación Metabólica para saber cómo personalizar su experiencia para obtener los mejores resultados posibles para su tipo.</p>"; }
+      else if (out == 6) { outs = "<h2>Eres el tipo de hormona n. ° 6 - Fatiga Ovárica</h2><p>En El Camino a la Renovación Metabólica, se la conoce como menopausia: deficiencia de estrógenos y de progesterona.Consulte El Camino a la Renovación Metabólica para saber cómo personalizar su experiencia para obtener los mejores resultados posibles para su tipo.</p>"; }
+      else if (out == 7) { outs = "<h2>Eres el tipo de hormona 7 - Apagado Ovárico</h2><p>En El Camino a la Renovación Metabólica, se lo conoce como posmenopausia: deficiencia de estrógenos y de progesterona.Consulte El Camino a la Renovación Metabólica para saber cómo personalizar su experiencia para obtener los mejores resultados posibles para su tipo.</p>"; }
+      else { outs = "<h2>Eres el tipo de hormona 4 - Agotamiento Ovárico</h2><p>En El Camino a la Renovación Metabólica, se lo conoce como ciclo menstrual normal: deficiencia de estrógeno y progesterona.Consulte El Camino a la Renovación Metabólica para saber cómo personalizar su experiencia para obtener los mejores resultados posibles para su tipo.</p>" }
 
-    document.getElementById('quiz').style.display = 'none' ;
-    document.getElementById('Btn').style.display = 'none' ;
-    resultsContainer.innerHTML = outs;
-  }
-
-  function showSlide(n) {
-    slides[currentSlide].classList.remove('active-slide');
-    slides[n].classList.add('active-slide');
-    currentSlide = n;
-    if(currentSlide === 0){
-      previousButton.style.display = 'none';
+      document.getElementById('quiz').style.display = 'none';
+      document.getElementById('Btn').style.display = 'none';
+      resultsContainer.innerHTML = outs;
     }
-    else{
-      previousButton.style.display = 'inline-block';
-    }
-    if(currentSlide === slides.length-1){
-      nextButton.style.display = 'none';
-      submitButton.style.display = 'inline-block';
-    }
-    else{
-      nextButton.style.display = 'inline-block';
-      submitButton.style.display = 'none';
-    }
-  }
 
-  function showNextSlide() {
-    showSlide(currentSlide + 1);
-  }
+    function showSlide(n) {
+      slides[currentSlide].classList.remove('active-slide');
+      slides[n].classList.add('active-slide');
+      currentSlide = n;
+      if (currentSlide === 0) {
+        previousButton.style.display = 'none';
+      }
+      else {
+        previousButton.style.display = 'inline-block';
+      }
+      if (currentSlide === slides.length - 1) {
+        nextButton.style.display = 'none';
+        submitButton.style.display = 'inline-block';
+      }
+      else {
+        nextButton.style.display = 'inline-block';
+        submitButton.style.display = 'none';
+      }
+    }
 
-  function showPreviousSlide() {
-    showSlide(currentSlide - 1);
-  }
+    function showNextSlide() {
+      showSlide(currentSlide + 1);
+    }
 
-  // Variables
-  const quizContainer = document.getElementById('quiz');
-  const resultsContainer = document.getElementById('results');
-  const submitButton = document.getElementById('submit');
-  const myQuestions = [
-    {
-      question: "¿En qué rango de edad estás?",
-      answers: {
-        a: "18-30",
-        b: "31-44",
-        c: "45-54",
-        d: "55-64",
-        e: "65+"
+    function showPreviousSlide() {
+      showSlide(currentSlide - 1);
+    }
+
+    // Variables
+    const quizContainer = document.getElementById('quiz');
+    const resultsContainer = document.getElementById('results');
+    const submitButton = document.getElementById('submit');
+    const myQuestions = [
+      {
+        question: "¿En qué rango de edad estás?",
+        answers: {
+          a: "18-30",
+          b: "31-44",
+          c: "45-54",
+          d: "55-64",
+          e: "65+"
+        },
+        correctAnswer: "c"
       },
-      correctAnswer: "c"
-    },
-    {
-      question: "¿Qué describe mejor su período?",
-      answers: {
-        a: "Tengo un ciclo regular, normal y fácil todos los meses.",
-        b: "Tengo un ciclo regular con flujo abundante y / o calambres",
-        c: "Tengo un ciclo regular con síntomas premenstruales que se alivian cuando comienza mi flujo.",
-        d: "He menstruado de manera irregular durante 3 meses o más (a veces me viene el período; la mayoría de las veces no)",
-        e: "No he menstruado en más de un año"
+      {
+        question: "¿Qué describe mejor su período?",
+        answers: {
+          a: "Tengo un ciclo regular, normal y fácil todos los meses.",
+          b: "Tengo un ciclo regular con flujo abundante y / o calambres",
+          c: "Tengo un ciclo regular con síntomas premenstruales que se alivian cuando comienza mi flujo.",
+          d: "He menstruado de manera irregular durante 3 meses o más (a veces me viene el período; la mayoría de las veces no)",
+          e: "No he menstruado en más de un año"
+        },
+        correctAnswer: "c"
       },
-      correctAnswer: "c"
-    },
-    {
-      question: "¿Qué describe mejor tu historia?",
-      answers: {
-        a: "Aparte de los síntomas leves ocasionales alrededor de mi período, no he tenido ningún problema",
-        b: "Tengo o he tenido (en los últimos 2 años) calambres severos, flujo abundante y / o un diagnóstico de fibromas / pólipos uterinos o endometriosis",
-        c: "Tengo o he tenido síndrome premenstrual grave, síndrome de ovario poliquístico, o he tenido alivio de mis síntomas con la terapia con progesterona",
-        d: "Tengo una combinación de problemas que cubren los dos problemas anteriores.",
-        e: "Estoy pasando o he pasado por la menopausia"
-      },
-      correctAnswer: "d"||""
-    }
-  ];
+      {
+        question: "¿Qué describe mejor tu historia?",
+        answers: {
+          a: "Aparte de los síntomas leves ocasionales alrededor de mi período, no he tenido ningún problema",
+          b: "Tengo o he tenido (en los últimos 2 años) calambres severos, flujo abundante y / o un diagnóstico de fibromas / pólipos uterinos o endometriosis",
+          c: "Tengo o he tenido síndrome premenstrual grave, síndrome de ovario poliquístico, o he tenido alivio de mis síntomas con la terapia con progesterona",
+          d: "Tengo una combinación de problemas que cubren los dos problemas anteriores.",
+          e: "Estoy pasando o he pasado por la menopausia"
+        },
+        correctAnswer: "d" || ""
+      }
+    ];
 
-  // Kick things off
-  buildQuiz();
+    // Kick things off
+    buildQuiz();
 
-  // Pagination
-  const previousButton = document.getElementById("previous");
-  const nextButton = document.getElementById("next");
-  const slides = document.querySelectorAll(".slide");
-  let currentSlide = 0;
+    // Pagination
+    const previousButton = document.getElementById("previous");
+    const nextButton = document.getElementById("next");
+    const slides = document.querySelectorAll(".slide");
+    let currentSlide = 0;
 
-  // Show the first slide
-  showSlide(currentSlide);
+    // Show the first slide
+    showSlide(currentSlide);
 
-  // Event listeners
-  submitButton.addEventListener('click', showResults);
-  previousButton.addEventListener("click", showPreviousSlide);
-  nextButton.addEventListener("click", showNextSlide);
-})();
+    // Event listeners
+    submitButton.addEventListener('click', showResults);
+    previousButton.addEventListener("click", showPreviousSlide);
+    nextButton.addEventListener("click", showNextSlide);
+  })();
 
 </script>
+
 </html>
