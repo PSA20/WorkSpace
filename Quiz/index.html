@@ -37,6 +37,7 @@ h1{
   color: #fff;
 }
 .question{
+  margin-top: 50px;
   font-size: 30px;
   margin-bottom: 10px;
 }
@@ -95,16 +96,18 @@ button:hover{
   margin: 150px;
   background-color: #fff;
 }
+#results{
+  padding: 50px 50px;
+}
 
 </style>
 <body>
-    <h1>Cual es su tipo de hormona</h1>
     <div id="cont">
 <div class="quiz-container">
   <div id="quiz"></div>
   <div id="results"></div>
 </div>
-<div id="Btn">
+<div class="mt-5" id="Btn">
 <button id="previous">Previous Question</button>
 <button id="next">Next Question</button>
 <button id="submit">Submit Quiz</button></div> </div>
@@ -188,7 +191,7 @@ button:hover{
     else if(out==5){outs="<h2>Eres el tipo de hormona n. ° 5 - Chisporroteo Metabólico</h2><p>En El Camino a la Renovación Metabólica, se lo conoce como Perimenopausia: estrógeno alto o fluctuante y deficiente en progesterona.Consulte El Camino a la Renovación Metabólica para saber cómo personalizar su experiencia para obtener los mejores resultados posibles para su tipo.</p>";}
     else if(out==6){outs="<h2>Eres el tipo de hormona n. ° 6 - Fatiga Ovárica</h2><p>En El Camino a la Renovación Metabólica, se la conoce como menopausia: deficiencia de estrógenos y de progesterona.Consulte El Camino a la Renovación Metabólica para saber cómo personalizar su experiencia para obtener los mejores resultados posibles para su tipo.</p>";}
     else if(out==7){outs="<h2>Eres el tipo de hormona 7 - Apagado Ovárico</h2><p>En El Camino a la Renovación Metabólica, se lo conoce como posmenopausia: deficiencia de estrógenos y de progesterona.Consulte El Camino a la Renovación Metabólica para saber cómo personalizar su experiencia para obtener los mejores resultados posibles para su tipo.</p>";}
-    else {outs="<h2>Try again</h2>"}
+    else {outs="<h2>Eres el tipo de hormona 4 - Agotamiento Ovárico</h2><p>En El Camino a la Renovación Metabólica, se lo conoce como ciclo menstrual normal: deficiencia de estrógeno y progesterona.Consulte El Camino a la Renovación Metabólica para saber cómo personalizar su experiencia para obtener los mejores resultados posibles para su tipo.</p>"}
 
     document.getElementById('quiz').style.display = 'none' ;
     document.getElementById('Btn').style.display = 'none' ;
