@@ -2,121 +2,121 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quiz</title>
   <!-- JQuery -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <!-- Bootstrap tooltips -->
-  <script type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
   <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
   <!-- Bootstrap core CSS -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
   <!-- Material Design Bootstrap -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-size: 20px;
+      font-family: 'Work Sans', sans-serif;
+      color: #333;
+      font-weight: 300;
+      text-align: center;
+      background: linear-gradient(to right, #b92b27, #9b59b6);
+    }
+
+    h1 {
+      font-weight: 300;
+      margin: 0px;
+      padding: 10px;
+      font-size: 20px;
+      background-color: #444;
+      color: #fff;
+    }
+
+    .question {
+      margin-top: 0px;
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .answers {
+      margin-bottom: 20px;
+      margin-left: 20px;
+      text-align: left;
+      display: inline-block;
+    }
+
+    .answers label {
+      display: block;
+      margin-bottom: 5px;
+      line-height: normal;
+    }
+
+    button {
+      font-family: 'Work Sans', sans-serif;
+      font-size: 18px;
+      background-color: #279;
+      color: #fff;
+      border: 0px;
+      border-radius: 3px;
+      padding-left: 10px;
+      padding-right: 10px;
+      cursor: pointer;
+      margin-bottom: 20px;
+      z-index: 1;
+    }
+
+    button:hover {
+      background-color: #38a;
+    }
+
+
+
+
+
+    .slide {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 100%;
+      z-index: 1;
+      opacity: 0;
+      transition: opacity 0.5s;
+    }
+
+    .active-slide {
+      opacity: 1;
+      z-index: 2;
+    }
+
+    .quiz-container {
+      position: relative;
+      height: 200px;
+    }
+
+    #previous,
+    #next,
+    #submit {
+      margin-top: 450px;
+      z-index: 3;
+    }
+
+    #cont {
+      position: relative;
+      height: 750px;
+      margin-top: 0;
+      background-color: #fff;
+    }
+
+    #results {
+      padding: 25px 25px;
+      height: 100%;
+    }
+  </style>
 </head>
-<style>
-  @import url(https://fonts.googleapis.com/css?family=Work+Sans:300,600);
-
-  body {
-    font-size: 20px;
-    font-family: 'Work Sans', sans-serif;
-    color: #333;
-    font-weight: 300;
-    text-align: center;
-    background: linear-gradient(to right, #b92b27, #9b59b6);
-  }
-
-  h1 {
-    font-weight: 300;
-    margin: 0px;
-    padding: 10px;
-    font-size: 20px;
-    background-color: #444;
-    color: #fff;
-  }
-
-  .question {
-    margin-top: 50px;
-    font-size: 30px;
-    margin-bottom: 10px;
-  }
-
-  .answers {
-    margin-bottom: 20px;
-    margin-left: 20px;
-    text-align: left;
-    display: inline-block;
-  }
-
-  .answers label {
-    display: block;
-    margin-bottom: 10px;
-  }
-
-  button {
-    font-family: 'Work Sans', sans-serif;
-    font-size: 22px;
-    background-color: #279;
-    color: #fff;
-    border: 0px;
-    border-radius: 3px;
-    padding: 20px;
-    cursor: pointer;
-    margin-bottom: 20px;
-  }
-
-  button:hover {
-    background-color: #38a;
-  }
-
-
-
-
-
-  .slide {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    z-index: 1;
-    opacity: 0;
-    transition: opacity 0.5s;
-  }
-
-  .active-slide {
-    opacity: 1;
-    z-index: 2;
-  }
-
-  .quiz-container {
-    position: relative;
-    height: 200px;
-    margin-top: 150px;
-  }
-
-  #previous,
-  #next,
-  #submit {
-    margin-top: 150px;
-  }
-
-  #cont {
-    position: relative;
-    height: 500px;
-    margin: 150px;
-    background-color: #fff;
-  }
-
-  #results {
-    padding: 50px 50px;
-  }
-</style>
 
 <body>
   <div id="cont">
@@ -124,185 +124,850 @@
       <div id="quiz"></div>
       <div id="results"></div>
     </div>
-    <div class="mt-5" id="Btn">
-      <button id="previous" class="float-left ml-5">Previous Question</button>
-      <button id="next" class="float-right mr-5">Next Question</button>
-      <button id="submit" class="float-right mr-5">Submit Quiz</button>
+    <div class="mt-5" id="Btn"> <button id="previous">Previous Question</button>
+      <button id="next">Next Question</button> <button id="submit">Submit
+        Quiz</button>
     </div>
   </div>
-</body>
-<script>
-  (function () {
-    // Functions
-    function buildQuiz() {
-      // variable to store the HTML output
-      const output = [];
+  <script>
+    (function() {
+      // Functions
+      function buildQuiz() {
+        // variable to store the HTML output
+        const output = [];
 
-      // for each question...
-      myQuestions.forEach(
-        (currentQuestion, questionNumber) => {
+        // for each question...
+        myQuestions.forEach(
+          (currentQuestion, questionNumber) => {
 
-          // variable to store the list of possible answers
-          const answers = [];
+            // variable to store the list of possible answers
+            const answers = [];
 
-          // and for each available answer...
-          for (letter in currentQuestion.answers) {
+            // and for each available answer...
+            for (letter in currentQuestion.answers) {
 
-            // ...add an HTML radio button
-            answers.push(
-              `<label>
+              // ...add an HTML radio button
+              answers.push(
+                `<label style="height: 100%; margin-bottom:30px;">
               <input type="radio" name="question${questionNumber}" value="${letter}">
               ${letter} :
               ${currentQuestion.answers[letter]}
             </label>`
-            );
-          }
+              );
+            }
 
-          // add this question and its answers to the output
-          output.push(
-            `<div class="slide">
+            // add this question and its answers to the output
+            output.push(
+              `<div class="slide">
             <div class="question"> ${currentQuestion.question} </div>
             <div class="answers"> ${answers.join("")} </div>
           </div>`
-          );
+            );
+          }
+        );
+
+        // finally combine our output list into one string of HTML and put it on the page
+        quizContainer.innerHTML = output.join('');
+      }
+
+      function showResults() {
+
+        // gather answer containers from our quiz
+        const answerContainers = quizContainer.querySelectorAll('.answers');
+
+        // keep track of user's answers
+        let numCorrect = 0;
+        let res = [];
+        let col = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+
+
+        // for each question...
+        myQuestions.forEach((currentQuestion, questionNumber) => {
+
+          // find selected answer
+          const answerContainer = answerContainers[questionNumber];
+          const selector = `input[name=question${questionNumber}]:checked`;
+          const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+          col[currentQuestion.Col] = col[currentQuestion.Col] + parseInt(userAnswer);
+        });
+
+        res.push(col[1]+col[9]);
+        res.push(col[2]+col[10]);
+        res.push(col[3]+col[11]);
+        res.push(col[4]+col[12]);
+        res.push(col[5]+col[13]);
+        res.push(col[6]+col[14]);
+        res.push(col[7]+col[15]);
+        res.push(col[8]+col[16]);
+
+        let ans =['Nurturer', 'Maverick', 'Alchemist', 'Celebrity', 'Connector', 'Accumulator', 'Romantic', 'Ruler'];
+        let order=[];
+        for(let i in res) {
+          order.push(ans[res.indexOf(Math.max.apply(null,res))]);
+          res[res.indexOf(Math.max.apply(null,res))] = 0;
         }
-      );
-
-      // finally combine our output list into one string of HTML and put it on the page
-      quizContainer.innerHTML = output.join('');
-    }
-
-    function showResults() {
-
-      // gather answer containers from our quiz
-      const answerContainers = quizContainer.querySelectorAll('.answers');
-
-      // keep track of user's answers
-      let numCorrect = 0;
-      let res = [];
-      let out = 0;
-      // for each question...
-      myQuestions.forEach((currentQuestion, questionNumber) => {
-
-        // find selected answer
-        const answerContainer = answerContainers[questionNumber];
-        const selector = `input[name=question${questionNumber}]:checked`;
-        const userAnswer = (answerContainer.querySelector(selector) || {}).value;
-        // if answer is correct
-        // add to the number of correct answers
-        res.push(userAnswer);
-        // color the answers green
-      });
-      if ((res[1] == "a") && (res[0] == ("a" || "b" || "c"))) { out = 1; }
-      else if ((res[1] == "b") && (res[0] == ("a" || "b" || "c"))) { out = 2; }
-      else if ((res[1] == "c") && (res[0] == ("a" || "b" || "c"))) { out = 3; }
-      else if ((res[1] == ("d" || "e")) && (res[0] == ("a" || "b"))) { out = 4; }
-      else if ((res[1] == "d") && (res[0] == ("c"))) { out = 5; }
-      else if ((res[1] == ("e" || "d")) && (res[0] == ("d" || "c"))) { out = 6; }
-      else if (res[0] == "e") { out = 7; }
-      console.log(res);
-      console.log(out);
-      // show number of correct answers out of total
-      if (out == 1) { outs = "<h2>Eres el tipo de hormona n. ° 1 - Metabolismo de Señales Mixtas</h2><p>En El Camino a la Renovación Metabólica, se lo conoce como ciclo menstrual normal: equilibrio de estrógeno y progesterona.Consulte El Camino a la Renovación Metabólica para saber cómo personalizar su experiencia para obtener los mejores resultados posibles para su tipo.</p>"; }
-      else if (out == 2) { outs = "<h2>Eres el tipo de hormona 2 - Sobrecarga de Hormonas</h2><p>En El Camino a la Renovación Metabólica, se lo conoce como ciclo menstrual normal: estrógeno dominante.Consulte El Camino a la Renovación Metabólica para saber cómo personalizar su experiencia para obtener los mejores resultados posibles para su tipo.</p>"; }
-      else if (out == 3) { outs = "<h2>Eres el tipo de hormona n. ° 3 - Déficit Hormonal</h2><p> En El Camino a la Renovación Metabólica, se lo conoce como ciclo menstrual normal: deficiencia de progesterona.Consulte El Camino a la Renovación Metabólica para saber cómo personalizar su experiencia para obtener los mejores resultados posibles para su tipo.</p>"; }
-      else if (out == 4) { outs = "<h2>Eres el tipo de hormona 4 - Agotamiento Ovárico</h2><p>En El Camino a la Renovación Metabólica, se lo conoce como ciclo menstrual normal: deficiencia de estrógeno y progesterona.Consulte El Camino a la Renovación Metabólica para saber cómo personalizar su experiencia para obtener los mejores resultados posibles para su tipo.</p>"; }
-      else if (out == 5) { outs = "<h2>Eres el tipo de hormona n. ° 5 - Chisporroteo Metabólico</h2><p>En El Camino a la Renovación Metabólica, se lo conoce como Perimenopausia: estrógeno alto o fluctuante y deficiente en progesterona.Consulte El Camino a la Renovación Metabólica para saber cómo personalizar su experiencia para obtener los mejores resultados posibles para su tipo.</p>"; }
-      else if (out == 6) { outs = "<h2>Eres el tipo de hormona n. ° 6 - Fatiga Ovárica</h2><p>En El Camino a la Renovación Metabólica, se la conoce como menopausia: deficiencia de estrógenos y de progesterona.Consulte El Camino a la Renovación Metabólica para saber cómo personalizar su experiencia para obtener los mejores resultados posibles para su tipo.</p>"; }
-      else if (out == 7) { outs = "<h2>Eres el tipo de hormona 7 - Apagado Ovárico</h2><p>En El Camino a la Renovación Metabólica, se lo conoce como posmenopausia: deficiencia de estrógenos y de progesterona.Consulte El Camino a la Renovación Metabólica para saber cómo personalizar su experiencia para obtener los mejores resultados posibles para su tipo.</p>"; }
-      else { outs = "<h2>Eres el tipo de hormona 4 - Agotamiento Ovárico</h2><p>En El Camino a la Renovación Metabólica, se lo conoce como ciclo menstrual normal: deficiencia de estrógeno y progesterona.Consulte El Camino a la Renovación Metabólica para saber cómo personalizar su experiencia para obtener los mejores resultados posibles para su tipo.</p>" }
-
-      document.getElementById('quiz').style.display = 'none';
-      document.getElementById('Btn').style.display = 'none';
-      resultsContainer.innerHTML = outs;
-    }
-
-    function showSlide(n) {
-      slides[currentSlide].classList.remove('active-slide');
-      slides[n].classList.add('active-slide');
-      currentSlide = n;
-      if (currentSlide === 0) {
-        previousButton.style.display = 'none';
+        console.log(order);
+        document.getElementById('quiz').style.display = 'none';
+        document.getElementById('Btn').style.display = 'none';
+        resultsContainer.innerHTML = order;
       }
-      else {
-        previousButton.style.display = 'inline-block';
-      }
-      if (currentSlide === slides.length - 1) {
-        nextButton.style.display = 'none';
-        submitButton.style.display = 'inline-block';
-      }
-      else {
-        nextButton.style.display = 'inline-block';
-        submitButton.style.display = 'none';
-      }
-    }
 
-    function showNextSlide() {
-      showSlide(currentSlide + 1);
-    }
+      function showSlide(n) {
+        slides[currentSlide].classList.remove('active-slide');
+        slides[n].classList.add('active-slide');
+        currentSlide = n;
+        if (currentSlide === 0) {
+          previousButton.style.display = 'none';
+        } else {
+          previousButton.style.display = 'inline-block';
+        }
+        if (currentSlide === slides.length - 1) {
+          nextButton.style.display = 'none';
+          submitButton.style.display = 'inline-block';
+        } else {
+          nextButton.style.display = 'inline-block';
+          submitButton.style.display = 'none';
+        }
+      }
 
-    function showPreviousSlide() {
-      showSlide(currentSlide - 1);
-    }
+      function showNextSlide() {
+        showSlide(currentSlide + 1);
+      }
 
-    // Variables
-    const quizContainer = document.getElementById('quiz');
-    const resultsContainer = document.getElementById('results');
-    const submitButton = document.getElementById('submit');
-    const myQuestions = [
+      function showPreviousSlide() {
+        showSlide(currentSlide - 1);
+      }
+
+      // Variables
+      const quizContainer = document.getElementById('quiz');
+      const resultsContainer = document.getElementById('results');
+      const submitButton = document.getElementById('submit');
+      const myQuestions = [
       {
-        question: "¿En qué rango de edad estás?",
-        answers: {
-          a: "18-30",
-          b: "31-44",
-          c: "45-54",
-          d: "55-64",
-          e: "65+"
+          question: "I am a generous person, often giving or loaning money to others",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 1
         },
-        correctAnswer: "c"
-      },
-      {
-        question: "¿Qué describe mejor su período?",
-        answers: {
-          a: "Tengo un ciclo regular, normal y fácil todos los meses.",
-          b: "Tengo un ciclo regular con flujo abundante y / o calambres",
-          c: "Tengo un ciclo regular con síntomas premenstruales que se alivian cuando comienza mi flujo.",
-          d: "He menstruado de manera irregular durante 3 meses o más (a veces me viene el período; la mayoría de las veces no)",
-          e: "No he menstruado en más de un año"
+        {
+          question: "I often find myself coming to the aide of others, financially and otherwise",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 1
         },
-        correctAnswer: "c"
-      },
-      {
-        question: "¿Qué describe mejor tu historia?",
-        answers: {
-          a: "Aparte de los síntomas leves ocasionales alrededor de mi período, no he tenido ningún problema",
-          b: "Tengo o he tenido (en los últimos 2 años) calambres severos, flujo abundante y / o un diagnóstico de fibromas / pólipos uterinos o endometriosis",
-          c: "Tengo o he tenido síndrome premenstrual grave, síndrome de ovario poliquístico, o he tenido alivio de mis síntomas con la terapia con progesterona",
-          d: "Tengo una combinación de problemas que cubren los dos problemas anteriores.",
-          e: "Estoy pasando o he pasado por la menopausia"
+        {
+          question: "Despite my best efforts, something often happens to complicate my life financially",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 1
         },
-        correctAnswer: "d" || ""
-      }
-    ];
+        {
+          question: "I find myself waiting to be paid because of someone else's needs or reasons",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 1
+        },
+        {
+          question: "I like calculating the pros and cons of taking a financial risk",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 2
+        },
+        {
+          question: "I am willing to risk money for a potentially large financial gain",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 2
+        },
+        {
+          question: "I secretly feel clever or even superior to others about money",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 2
+        },
+        {
+          question: "I like gaining the upper hand with money",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 2
+        },
+        {
+          question: "I love attracting money in magical or unconventional ways",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 3
+        },
+        {
+          question: "Making money isn't as important to me as creating a movement, making an impact or being involved in social change",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 3
+        },
+        {
+          question: "I feel a love/hate relationship with money",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 3
+        },
+        {
+          question: "I believe it's greedy or not spiritual to focus too much on money",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 3
+        },
+        {
+          question: "I love spending money on things that enhance my image or give me a lot of visibility",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 4
+        },
+        {
+          question: "Always getting the best or being first — VIP seating, flying first class, getting the latest gadgets — is important to me",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 4
+        },
+        {
+          question: "I project an image of wealth and success that often doesn't match my bank account balance",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 4
+        },
+        {
+          question: "It's easier for me to spend money on things like jewelry, restaurants, vacations, etc. than it is for me to save money",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 4
+        },
+        {
+          question: "I find it easy not to think about money",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 5
+        },
+        {
+          question: "I often find myself being financially supported by others",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 5
+        },
+        {
+          question: "I often avoid facing money situations,hoping they will improve on their own",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 5
+        },
+        {
+          question: "I like it best when someone else takes care of money details for me",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 5
+        },
+        {
+          question: "I love saving money",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 6
+        },
+        {
+          question: "I find it difficult, even painful to spend money",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 6
+        },
+        {
+          question: "I make sure to always live below my means",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 6
+        },
+        {
+          question: "I find it difficult to trust others when investing my money",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 6
+        },
+        {
+          question: "I love frequently spending money on things because I feel I deserve them",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 7
+        },
+        {
+          question: "I don't see the point in saving money, as life is to be enjoyed now",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 7
+        },
+        {
+          question: "Money itself doesn't feel that serious to me",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 7
+        },
+        {
+          question: "I love having luxurious experiences or an abundance of items",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 7
+        },
+        {
+          question: "I never feel there's enough money and continue to create ways of making more",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 8
+        },
+        {
+          question: "I am reluctant to diversify or complicate my investments",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 8
+        },
+        {
+          question: "I forgo spending money on things now, in order to invest in my future",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 8
+        },
+        {
+          question: "I am highly ambitious and see money as a measurement of my success",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 8
+        },
+        {
+          question: "Being of service is more motivating than having more money",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 9
+        },
+        {
+          question: "I can feel resentful that I don’t make more for all that I do",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 9
+        },
+        {
+          question: "If someone needs my time I'll often give it, even if I'm not being paid",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 9
+        },
+        {
+          question: "At my most extreme I give to the point of enabling or creating debt or putting myself at financial risk",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 9
+        },
+        {
+          question: "At my most extreme the financial risks I take can put me in financial jeopardy",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 10
+        },
+        {
+          question: "I am comfortable with complex financial transactions",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 10
+        },
+        {
+          question: "Making money is a game I play to win",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 10
+        },
+        {
+          question: "Others can view my financial decisions as risky",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 10
+        },
+        {
+          question: "I believe people with money have unfair advantages in the world",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 11
+        },
+        {
+          question: "I am distrustful of people who focus too much on money",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 11
+        },
+        {
+          question: "Any investing I do needs to be with people or companies whose ideals match my own",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 11
+        },
+        {
+          question: "At my most extreme I am financially supported by someone (or something else, like a business, a spouse, a parent or a credit card) yet feel resentment or that the situation is unfair",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 11
+        },
+        {
+          question: "At my most extreme I create debt and spend lavishly in order to get attention and recognition",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 12
+        },
+        {
+          question: "I am confident with day to day money management even though I may have debt or find it difficult to save or invest money",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 12
+        },
+        {
+          question: "I love to stand out in the crowd and will use my purchases to help make that happen",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 12
+        },
+        {
+          question: "Being recognized for giving big to charities or social causes is important to me",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 12
+        },
+        {
+          question: "I wish I didn't have to think about making or managing money",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 13
+        },
+        {
+          question: "I have faith that somehow, things will always work out financially",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 13
+        },
+        {
+          question: "I don’t feel a strong connection to money",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 13
+        },
+        {
+          question: "At my most extreme I feel overwhelmed or even helpless about money and wish the need for money would just disappear",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 13
+        },
+        {
+          question: "At my most extreme I limit my opportunities because of my fear of spending or investing money",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 14
+        },
+        {
+          question: "I love buying things on sale, closeouts or used items so I know I'm getting the best deal",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 14
+        },
+        {
+          question: "Saving a lot of money makes me feel safe and protected",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 14
+        },
+        {
+          question: "I feel a strong emotional connection to money",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 14
+        },
+        {
+          question: "I believe in living the good life, no matter what it costs",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 15
+        },
+        {
+          question: "I figure since you can't take it with you, money is to be spent now",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 15
+        },
+        {
+          question: "My purchases make me feel better about myself",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 15
+        },
+        {
+          question: "At my most extreme, I spend money impulsively",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 15
+        },
+        {
+          question: "At my most extreme I am never satisfied with how much money I have and drive myself relentlessly to create more",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 16
+        },
+        {
+          question: "I am typically decisive regarding money and its management",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 16
+        },
+        {
+          question: "I believe I'll be happy when I have more money (even though what I have now is more than I've had before)",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 16
+        },
+        {
+          question: "I fear losing control of or power over my money",
+          answers: {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+          },
+          Col: 16
+        },
+      ];
 
-    // Kick things off
-    buildQuiz();
+      // Kick things off
+      buildQuiz();
 
-    // Pagination
-    const previousButton = document.getElementById("previous");
-    const nextButton = document.getElementById("next");
-    const slides = document.querySelectorAll(".slide");
-    let currentSlide = 0;
+      // Pagination
+      const previousButton = document.getElementById("previous");
+      const nextButton = document.getElementById("next");
+      const slides = document.querySelectorAll(".slide");
+      let currentSlide = 0;
 
-    // Show the first slide
-    showSlide(currentSlide);
+      // Show the first slide
+      showSlide(currentSlide);
 
-    // Event listeners
-    submitButton.addEventListener('click', showResults);
-    previousButton.addEventListener("click", showPreviousSlide);
-    nextButton.addEventListener("click", showNextSlide);
-  })();
-
-</script>
+      // Event listeners
+      submitButton.addEventListener('click', showResults);
+      previousButton.addEventListener("click", showPreviousSlide);
+      nextButton.addEventListener("click", showNextSlide);
+    })();
+  </script>
+</body>
 
 </html>
