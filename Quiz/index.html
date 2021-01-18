@@ -8,9 +8,11 @@
   <!-- JQuery -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
   <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
   <!-- Bootstrap core CSS -->
@@ -57,10 +59,11 @@
     button {
       font-family: 'Work Sans', sans-serif;
       font-size: 18px;
-      background-color: #279;
+      background-color: rgb(202, 39, 39);
+      ;
       color: #fff;
       border: 0px;
-      border-radius: 3px;
+      border-radius: 15px;
       padding-left: 10px;
       padding-right: 10px;
       cursor: pointer;
@@ -69,7 +72,7 @@
     }
 
     button:hover {
-      background-color: #38a;
+      background-color: rgb(202, 39, 39);
     }
 
 
@@ -117,13 +120,14 @@
     }
 
     @media only screen and (max-width: 600px) {
+
       #previous,
-    #next,
-    #submit {
-      margin-top: 400px;
-      z-index: 3;
+      #next,
+      #submit {
+        margin-top: 400px;
+        z-index: 3;
+      }
     }
-}
   </style>
 </head>
 
@@ -136,12 +140,12 @@
       </div>
     </div>
     <div id="Btn"> <button id="previous">Previous Question</button>
-      <button id="next">Next Question</button> <button id="submit">Submit
+      <button id="next" type="submit">Next Question</button> <button id="submit">Submit
         Quiz</button>
     </div>
   </div>
   <script>
-    (function() {
+    (function () {
       // Functions
       function buildQuiz() {
         // variable to store the HTML output
@@ -160,7 +164,7 @@
 
               // ...add an HTML radio button
               answers.push(
-                `<label style="height: 100%; margin-top:20px;">
+                `<label style="height: 100%; margin-top:20px;" onclick ="showSlide(currentSlide + 1)">
               <input type="radio" name="question${questionNumber}" value="${letter}">
               ${letter} :
               ${currentQuestion.answers[letter]}
@@ -204,27 +208,27 @@
           col[currentQuestion.Col] = col[currentQuestion.Col] + parseInt(userAnswer);
         });
 
-        res.push(col[1]+col[9]);
-        res.push(col[2]+col[10]);
-        res.push(col[3]+col[11]);
-        res.push(col[4]+col[12]);
-        res.push(col[5]+col[13]);
-        res.push(col[6]+col[14]);
-        res.push(col[7]+col[15]);
-        res.push(col[8]+col[16]);
+        res.push(col[1] + col[9]);
+        res.push(col[2] + col[10]);
+        res.push(col[3] + col[11]);
+        res.push(col[4] + col[12]);
+        res.push(col[5] + col[13]);
+        res.push(col[6] + col[14]);
+        res.push(col[7] + col[15]);
+        res.push(col[8] + col[16]);
 
-        let ans =['Accumulator', 'Alchemist', 'Celebrity', 'Connector', 'Maverick', 'Nurturer', 'Romantic', 'Ruler'];
-        let order=[];
-        for(let i in res) {
-          order.push(ans[res.indexOf(Math.max.apply(null,res))]);
-          res[res.indexOf(Math.max.apply(null,res))] = 0;
+        let ans = ['Accumulator', 'Alchemist', 'Celebrity', 'Connector', 'Maverick', 'Nurturer', 'Romantic', 'Ruler'];
+        let order = [];
+        for (let i in res) {
+          order.push(ans[res.indexOf(Math.max.apply(null, res))]);
+          res[res.indexOf(Math.max.apply(null, res))] = 0;
         }
         console.log(order);
         document.getElementById('quiz').style.display = 'none';
         document.getElementById('Btn').style.display = 'none';
         resultsContainer.style.display = 'block';
         document.getElementById('cont').height = 0;
-            document.getElementById('results').innerHTML ="Congratulations on taking the Money Archetype quiz.I’ve got your money archetype results right here and I can’t wait for you to understand your money personality better, recognize your sabotages and create a new healthy relationship with money. Be prepared for some life-changing insights, because you’re going to understand the unique way YOU relate to money like never before. Your primary Archetype is the "+ order[0] +" and here are your full results:<br>----------------------------------------------------<br>Accumulator = "+ res[0] +"<br>Alchemist = "+ res[1] +"<br>Celebrity = "+ res[2] +"<br>Connector = "+ res[3] +"<br>Maverick = "+ res[4] +"<br>Nurturer = "+ res[5] +"<br>Romantic = "+ res[6] +"<br>Ruler = "+ res[7] +"<br>----------------------------------------------------<br>The "+ order[0] +" is your Inner Rebel With A Cause. Our MAVERICK has always felt a bit different, like you’re marching to the beat of your own drummer. You can’t imagine how anyone could work in the same job for even a few years, let alone their whole life! And while you may not always be the most consistent with money, you DO know how to attract it, make it, and use it to push ahead of the crowd, even when there’s risk involved.  As with all the Archetypes, though, there’s more to this than meets the eye……";
+        document.getElementById('results').innerHTML = "Congratulations on taking the Money Archetype quiz.I’ve got your money archetype results right here and I can’t wait for you to understand your money personality better, recognize your sabotages and create a new healthy relationship with money. Be prepared for some life-changing insights, because you’re going to understand the unique way YOU relate to money like never before. Your primary Archetype is the " + order[0] + " and here are your full results:<br>----------------------------------------------------<br>Accumulator = " + res[0] + "<br>Alchemist = " + res[1] + "<br>Celebrity = " + res[2] + "<br>Connector = " + res[3] + "<br>Maverick = " + res[4] + "<br>Nurturer = " + res[5] + "<br>Romantic = " + res[6] + "<br>Ruler = " + res[7] + "<br>----------------------------------------------------<br>The " + order[0] + " is your Inner Rebel With A Cause. Our MAVERICK has always felt a bit different, like you’re marching to the beat of your own drummer. You can’t imagine how anyone could work in the same job for even a few years, let alone their whole life! And while you may not always be the most consistent with money, you DO know how to attract it, make it, and use it to push ahead of the crowd, even when there’s risk involved.  As with all the Archetypes, though, there’s more to this than meets the eye……";
 
 
 
@@ -264,7 +268,7 @@
       const resultsContainer = document.getElementById('results');
       const submitButton = document.getElementById('submit');
       const myQuestions = [
-      {
+        {
           question: "I am a generous person, often giving or loaning money to others",
           answers: {
             1: "Strongly Disagree",
