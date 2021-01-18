@@ -81,6 +81,7 @@
       left: 0px;
       top: 0px;
       width: 100%;
+      height: 100%;
       z-index: 1;
       opacity: 0;
       transition: opacity 0.5s;
@@ -114,6 +115,15 @@
       padding: 25px 25px;
       height: 100%;
     }
+
+    @media only screen and (max-width: 600px) {
+      #previous,
+    #next,
+    #submit {
+      margin-top: 400px;
+      z-index: 3;
+    }
+}
   </style>
 </head>
 
@@ -122,26 +132,9 @@
     <div class="quiz-container">
       <div id="quiz"></div>
       <div id="results">
-        <img id="1" class="mb-3" width="900" height="1000" src="" alt="">
-        <img id="2" class="mb-3" width="900" height="1000" src="" alt="">
-        <img id="3" class="mb-3" width="900" height="1000" src="" alt="">
-        <img id="4" class="mb-3" width="900" height="1000" src="" alt="">
-        <img id="5" class="mb-3" width="900" height="1000" src="" alt="">
-        <img id="6" class="mb-3" width="900" height="1000" src="" alt="">
-        <img id="7" class="mb-3" width="900" height="1000" src="" alt="">
-        <img id="8" class="mb-3" width="900" height="1000" src="" alt="">
-        <img id="9" class="mb-3" width="900" height="1000" src="" alt="">
-        <img id="10" class="mb-3" width="900" height="1000" src="" alt="">
-        <img id="11" class="mb-3" width="900" height="1000" src="" alt="">
-        <img id="12" class="mb-3" width="900" height="1000" src="" alt="">
-        <img id="13" class="mb-3" width="900" height="1000" src="" alt="">
-        <img id="14" class="mb-3" width="900" height="1000" src="" alt="">
-        <img id="15" class="mb-3" width="900" height="1000" src="" alt="">
-        <img id="16" class="mb-3" width="900" height="1000" src="" alt="">
-
       </div>
     </div>
-    <div class="mt-5" id="Btn"> <button id="previous">Previous Question</button>
+    <div id="Btn"> <button id="previous">Previous Question</button>
       <button id="next">Next Question</button> <button id="submit">Submit
         Quiz</button>
     </div>
@@ -166,7 +159,7 @@
 
               // ...add an HTML radio button
               answers.push(
-                `<label style="height: 100%; margin-bottom:30px;">
+                `<label style="height: 100%; margin-top:20px;">
               <input type="radio" name="question${questionNumber}" value="${letter}">
               ${letter} :
               ${currentQuestion.answers[letter]}
