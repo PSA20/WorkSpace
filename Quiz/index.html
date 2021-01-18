@@ -132,6 +132,7 @@
     <div class="quiz-container">
       <div id="quiz"></div>
       <div id="results">
+        
       </div>
     </div>
     <div id="Btn"> <button id="previous">Previous Question</button>
@@ -212,7 +213,7 @@
         res.push(col[7]+col[15]);
         res.push(col[8]+col[16]);
 
-        let ans =[['https://pensive-mestorf-df6990.netlify.app/1.jpg','https://pensive-mestorf-df6990.netlify.app/1.1.jpg'], ['https://pensive-mestorf-df6990.netlify.app/2.jpg','https://pensive-mestorf-df6990.netlify.app/2-1.jpg'], ['https://pensive-mestorf-df6990.netlify.app/3.jpg','https://pensive-mestorf-df6990.netlify.app/3-1.jpg'], ['https://pensive-mestorf-df6990.netlify.app/4.jpg','https://pensive-mestorf-df6990.netlify.app/4-1.jpg'], ['https://pensive-mestorf-df6990.netlify.app/5.jpg','https://pensive-mestorf-df6990.netlify.app/5-1.jpg'], ['https://pensive-mestorf-df6990.netlify.app/6.jpg','https://pensive-mestorf-df6990.netlify.app/6-1.jpg'], ['https://pensive-mestorf-df6990.netlify.app/7.jpg','https://pensive-mestorf-df6990.netlify.app/7-1.jpg'], ['https://pensive-mestorf-df6990.netlify.app/8.jpg','https://pensive-mestorf-df6990.netlify.app/8-1.jpg']];
+        let ans =['Accumulator', 'Alchemist', 'Celebrity', 'Connector', 'Maverick', 'Nurturer', 'Romantic', 'Ruler'];
         let order=[];
         for(let i in res) {
           order.push(ans[res.indexOf(Math.max.apply(null,res))]);
@@ -223,23 +224,7 @@
         document.getElementById('Btn').style.display = 'none';
         resultsContainer.style.display = 'block';
         document.getElementById('cont').height = 0;
-        console.log(ans[0].length);
-        document.getElementById(1).src = order[0][0];
-        document.getElementById(2).src = order[0][1];
-        document.getElementById(3).src = order[1][0];
-        document.getElementById(4).src = order[1][1];
-        document.getElementById(5).src = order[2][0];
-        document.getElementById(6).src = order[2][1];
-        document.getElementById(7).src = order[3][0];
-        document.getElementById(8).src = order[3][1];
-        document.getElementById(9).src = order[4][0];
-        document.getElementById(10).src = order[4][1];
-        document.getElementById(11).src = order[5][0];
-        document.getElementById(12).src = order[5][1];
-        document.getElementById(13).src = order[6][0];
-        document.getElementById(14).src = order[6][1];
-        document.getElementById(15).src = order[7][0];
-        document.getElementById(16).src = order[7][1];
+        document.getElementById('results').innerHTML= order;
 
 
 
