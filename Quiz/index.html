@@ -219,9 +219,10 @@
 
         let ans = ['Accumulator', 'Alchemist', 'Celebrity', 'Connector', 'Maverick', 'Nurturer', 'Romantic', 'Ruler'];
         let order = [];
-        for (let i in res) {
-          order.push(ans[res.indexOf(Math.max.apply(null, res))]);
-          res[res.indexOf(Math.max.apply(null, res))] = 0;
+        let ress = res;
+        for (let i in ress) {
+          order.push(ans[res.indexOf(Math.max.apply(null, ress))]);
+          ress[ress.indexOf(Math.max.apply(null, ress))] = 0;
         }
         console.log(order);
         document.getElementById('quiz').style.display = 'none';
