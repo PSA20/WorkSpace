@@ -26,6 +26,11 @@
             text-align: center;
         }
         
+        input.largerCheckbox {
+            width: 15px;
+            height: 15px;
+        }
+        
         h1 {
             font-weight: 300;
             margin: 0px;
@@ -354,7 +359,7 @@
                                 // ...add an HTML radio button
                                 answers.push(
                                     `<label style=" margin-top:20px;">
-                                <input class="option form-check-input" type="checkbox" name="question${questionNumber}" value="${letter}">
+                                <input class="option form-check-input largerCheckbox" type="checkbox" name="question${questionNumber}" value="${letter}">
                                 ${currentQuestion.answers[letter]}
                                 </label>`
                                 );
