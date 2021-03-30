@@ -320,6 +320,7 @@
     <div id="cont">
         <div class="quiz-container">
             <header>hello world</header>
+            <div id="5op" style="display: none; color: red;">please select 5 options.</div>
             <div id="quiz"></div>
             <div id="results">
                 <footer>we are here</footer>
@@ -434,7 +435,22 @@
             }
 
             function showNextSlide() {
-                showSlide(currentSlide + 1);
+                if (myQuestions[currentSlide].type == 'multi') {
+                    const answerContainers = quizContainer.querySelectorAll('.answers');
+                    const answerContainer = answerContainers[currentSlide];
+                    const selector = `input[name=question${currentSlide}]:checked`;
+                    const userAnswers = answerContainer.querySelectorAll(selector);
+                    if (userAnswers.length == 5) {
+                        showSlide(currentSlide + 1);
+                    } else {
+                        document.getElementById('5op').style.display = 'block';
+                        setTimeout(function() {
+                            document.getElementById('5op').style.display = 'none';
+                        }, 3000);
+                    }
+                } else {
+                    showSlide(currentSlide + 1);
+                }
             }
 
             function showPreviousSlide() {
