@@ -392,7 +392,7 @@
 
                                 // ...add an HTML radio button
                                 answers.push(
-                                    `<label style="height: 100%; margin-top:20px;" onclick ="showSlide(currentSlide + 1)">
+                                    `<label style="height: 100%; margin-top:20px;">
               <input type="radio" name="question${questionNumber}" value="${letter}">
               ${letter} :
               ${currentQuestion.answers[letter]}
@@ -443,7 +443,23 @@
                 resultsContainer.style.display = 'block';
                 document.getElementById('cont').height = 0;
                 document.getElementById("results").innerHTML = col;
-                console.log(col);
+                var res = {
+                    1: 0,
+                    2: 0,
+                    3: 0
+                }
+                for (var i in col) {
+                    res[col[i]]++;
+                }
+                var max = res[1];
+                var ans = 1;
+                for (var i in res) {
+                    if (max < res[i]) {
+                        max = res[i];
+                        ans = i;
+                    }
+                }
+                console.log(max);
             }
 
             function showSlide(n) {
