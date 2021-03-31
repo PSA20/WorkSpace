@@ -29,25 +29,13 @@ def submit():
             ],
             "Subject": "Greetings from Connections",
             "TextPart": "Your Result",
-            "HTMLPart": `
-
-
-
-
-
-
-
-
-
-
-
-            `,
+            "HTMLPart": ``,
             "CustomID": "AppGettingStartedTest"
         }
         ]
     }
     result = mailjet.send.create(data=data)
-    return 'Thank you for taking quiz...'+  +' Please check your mail'
+    return 'Thank you for taking quiz... Please check your mail'
 
 if __name__ == '__main__':
     app.run()

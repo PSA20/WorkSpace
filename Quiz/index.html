@@ -354,6 +354,24 @@
             <div id="results">
                 <footer>we are here</footer>
             </div>
+            <div id="email" style="display: none;">
+                <form action="http://127.0.0.1:5000/submit" method="post">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail2">Email address</label>
+                        <input name="name" type="text" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" placeholder="Enter your name">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-group" style="display: none;">
+                        <input name="answer" type="text" id="answer">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
         </div>
         <div id="Btn">
             <button id="previous">Previous Question</button>
@@ -459,7 +477,13 @@
                         ans = i;
                     }
                 }
-                console.log(max);
+                var answer = {
+                    1: "vatta",
+                    2: "pitta",
+                    3: "kapha"
+                }
+                document.getElementById('answer').value = answer[ans];
+                document.getElementById('email').style.display = 'inline-block'
             }
 
             function showSlide(n) {
