@@ -94,7 +94,7 @@
             background-color: rgba(144, 24, 138, 1);
             color: #fff;
             border: 0px;
-            border-radius: 15px;
+            border-radius: 2px;
             padding-left: 10px;
             padding-right: 10px;
             cursor: pointer;
@@ -104,6 +104,7 @@
         
         button:hover {
             background-color: #b852ec;
+            border: 1px solid #b852ec;
         }
         
         header {
@@ -119,14 +120,13 @@
             left: 0px;
             width: 100%;
             height: 100%;
-            z-index: 1;
             opacity: 0;
             transition: opacity 0.5s;
         }
         
         .active-slide {
             opacity: 1;
-            z-index: 2;
+            z-index: 1;
         }
         
         .quiz-container {
@@ -137,13 +137,6 @@
             position: relative;
             height: 200px;
             width: 100%;
-        }
-        
-        #previous,
-        #next,
-        #submit {
-            margin-top: 250px;
-            z-index: 3;
         }
         
         label {
@@ -341,8 +334,10 @@
         }
         
         #Btn {
+            z-index: 2;
             width: 100%;
-            position: relative;
+            position: fixed;
+            margin-bottom: 20px;
             bottom: 0;
         }
     </style>
