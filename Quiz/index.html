@@ -18,11 +18,17 @@
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #333;
+        }
+        
         body {
             font-size: 20px;
             font-family: 'Work Sans', sans-serif;
             color: #333;
-            background-color: #ffe8d6;
             font-weight: 300;
             text-align: center;
         }
@@ -52,6 +58,10 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            display: block;
+            margin-bottom: 15px;
+            font-size: 14px;
+            cursor: pointer
         }
         
         .question {
@@ -120,8 +130,13 @@
         }
         
         .quiz-container {
+            background-color: #555;
+            color: #ddd;
+            border-radius: 10px;
+            padding: 20px;
             position: relative;
             height: 200px;
+            width: 100%;
         }
         
         #previous,
@@ -137,22 +152,21 @@
         }
         
         div {
-            background-color: #ffe8d6;
+            background-color: #333;
         }
         
         #cont {
             position: relative;
             height: 750px;
             margin-top: 0;
-            background-color: #fff;
+            background-color: #333;
         }
         
         #results {
             padding: 25px 25px;
             height: 100%;
         }
-        
-        @media only screen and (max-width: 600px) {
+        /* @media only screen and (max-width: 600px) {
             #previous,
             #next,
             #submit {
@@ -162,7 +176,7 @@
             #Btn {
                 margin-top: 50%;
             }
-        }
+        } */
         
         span.cls_002 {
             font-family: Arial, serif;
@@ -327,7 +341,9 @@
         }
         
         #Btn {
-            margin-top: 10%;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
         }
     </style>
 </head>
