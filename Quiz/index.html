@@ -48,13 +48,13 @@
         
         label {
             border: 1px solid #84c5fe;
-            width: 30%;
+            width: 40%;
+            margin: auto;
             border-radius: 5px;
-            padding: 8px 15px;
+            padding: 13px 15px;
             font-size: 17px;
             cursor: pointer;
             transition: all 0.3s ease;
-            display: flex;
             align-items: center;
             justify-content: space-between;
             display: block;
@@ -66,7 +66,7 @@
         .question {
             background-color: #555;
             font-weight: bold;
-            margin-left: 25%;
+            margin: auto;
             width: 50%;
             margin-top: 0px;
             font-size: 30px;
@@ -75,10 +75,9 @@
         
         .answers {
             background-color: #555;
-            padding-left: 25%;
             padding-bottom: 30px;
             width: 100%;
-            margin-bottom: 20px;
+            margin: auto;
             text-align: left;
             display: inline-block;
         }
@@ -492,57 +491,101 @@
             const resultsContainer = document.getElementById('results');
             const submitButton = document.getElementById('submit');
             const myQuestions = [{
-                question: "My purchases make me feel better about myself",
+                question: "Which Most accurately describe your body?",
                 answers: {
-                    1: "Disagree",
-                    2: "Disagree",
-                    3: "Disagree",
-                    4: "Disagree",
-                    5: "Disagree"
+                    1: "A-Curvy, bigger built",
+                    2: "B- Medium built, good muscular built",
+                    3: "Naturally thin, lanky, slender",
                 },
-                type: 'multi',
                 Col: 1
             }, {
-                question: "At my most extreme, I spend money impulsively",
+                question: "How easily do you gain weight?",
                 answers: {
-                    1: "Strongly",
-                    2: "Strongly",
-                    3: "NStrongly",
-                    4: "Strongly",
-                    5: "Strongly"
+                    1: "Too easily",
+                    2: "Moderately",
+                    3: "Next to impossible",
                 },
                 Col: 2
             }, {
-                question: "I am typically decisive regarding money and its management",
+                question: "What is your hair like",
                 answers: {
-                    1: "Neutral",
-                    2: "Neutral",
-                    3: "Neutral",
-                    4: "Neutral",
-                    5: "Neutral"
+                    1: "Thick, abundant, more on the oily side",
+                    2: "Fine, oily. Tendency towards thinning or greying",
+                    3: "Dry frizzy",
                 },
-                type: 'multi',
                 Col: 3
             }, {
-                question: "I believe I'll be happy when I have more money (even though what I have now is more than I've had before)",
+                question: "What is your digestion like",
                 answers: {
-                    1: "Agree",
-                    2: "Agree",
-                    3: "Agree",
-                    4: "Agree",
-                    5: "Agree"
+                    1: "Slow, weak",
+                    2: "Strong powerful",
+                    3: "Variable, sometimes good or my be even bad",
                 },
                 Col: 4
             }, {
-                question: "I fear losing control of or power over my money",
+                question: "What is your body detoxification like",
                 answers: {
-                    1: "Strongly Disagree",
-                    2: "Disagree",
-                    3: "Neutral",
-                    4: "Agree",
-                    5: "Strongly Agree"
+                    1: "Thick long Sluggish",
+                    2: "regular towards loose",
+                    3: "Tends towards constipation",
                 },
                 Col: 5
+            }, {
+                question: "How you feel normally",
+                answers: {
+                    1: "Heaviness after eating and water retention",
+                    2: "Heartburn, acidity",
+                    3: "Bloating, gases",
+                },
+                Col: 6
+            }, {
+                question: "What is body temperature?",
+                answers: {
+                    1: "Adaptable, don’t like cold, wet weather",
+                    2: "Usually warm, prefer cool",
+                    3: "Always cold prefer hot",
+                },
+                Col: 7
+            }, {
+                question: "What are your negative traits?",
+                answers: {
+                    1: "Lonely, depressed and jealous",
+                    2: "Competitive and impatient",
+                    3: "Anxious, fearful and nervous",
+                },
+                Col: 8
+            }, {
+                question: "What is your temperament like/",
+                answers: {
+                    1: "Easy going, giving, and creative",
+                    2: "Driven, passionate and ambitious",
+                    3: "Enthusiastic, creative",
+                },
+                Col: 9
+            }, {
+                question: "How you sleep",
+                answers: {
+                    1: "Deep Long",
+                    2: "Moderate sound",
+                    3: "Difficult falling asleep, wake up often",
+                },
+                Col: 10
+            }, {
+                question: "How are your money and material possessions are",
+                answers: {
+                    1: "Hoarder, have a hard time letting things go",
+                    2: "Calculative shopping, spend on luxurious that are worth buying",
+                    3: "Impulsive shopper, buy things and forgets",
+                },
+                Col: 11
+            }, {
+                question: "What subjects you are most drawn towards?",
+                answers: {
+                    1: "Counseling, teaching, human resource, care-giving, hand on stuff",
+                    2: "Business science, law, engineering, calculated stuff",
+                    3: "Arts, spirituality, philosophy, literature, big-picture stuff",
+                },
+                Col: 12
             }, ];
 
             // Kick things off
