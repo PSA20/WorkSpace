@@ -356,10 +356,9 @@
             </div>
         </div>
         <div id="Btn">
-            <button id="next">Next Question</button>
             <button id="previous">Previous Question</button>
-            <button id="submit">Submit
-        Quiz</button>
+            <button id="next">Next Question</button>
+            <button id="submit">Submit Quiz</button>
         </div>
     </div>
     <script>
@@ -458,27 +457,38 @@
                 }
                 if (currentSlide === slides.length - 1) {
                     submitButton.style.display = 'inline-block';
+                    nextButton.style.display = 'none';
                 } else {
                     submitButton.style.display = 'none';
+                    nextButton.style.display = 'inline-block';
                 }
             }
 
             function showNextSlide() {
+                const answerContainers = quizContainer.querySelectorAll('.answers');
+                const answerContainer = answerContainers[currentSlide];
+                const selector = `input[name=question${currentSlide}]:checked`;
+                const userAnswers = answerContainer.querySelectorAll(selector);
                 if (myQuestions[currentSlide].type == 'multi') {
-                    const answerContainers = quizContainer.querySelectorAll('.answers');
-                    const answerContainer = answerContainers[currentSlide];
-                    const selector = `input[name=question${currentSlide}]:checked`;
-                    const userAnswers = answerContainer.querySelectorAll(selector);
                     if (userAnswers.length == 5) {
                         showSlide(currentSlide + 1);
                     } else {
+                        document.getElementById('5op').innerHTML = "please select 5 options.";
                         document.getElementById('5op').style.display = 'block';
                         setTimeout(function() {
                             document.getElementById('5op').style.display = 'none';
                         }, 3000);
                     }
                 } else {
-                    showSlide(currentSlide + 1);
+                    if (userAnswers.length != 0) {
+                        showSlide(currentSlide + 1);
+                    } else {
+                        document.getElementById('5op').innerHTML = "please select aleast one option.";
+                        document.getElementById('5op').style.display = 'block';
+                        setTimeout(function() {
+                            document.getElementById('5op').style.display = 'none';
+                        }, 3000);
+                    }
                 }
             }
 
