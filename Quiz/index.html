@@ -492,16 +492,24 @@
                 };
                 let multAns = '';
                 for (var i in mult) {
+                    let a = 0;
+                    let b = 0;
                     for (var j in mult[i]) {
                         if (multans[i][0] < mult[i][j]) {
-                            console.log(multans[i][2]);
+                            b++;
                         } else {
-                            console.log(multans[i][1]);
+                            a++;
                         }
                         console.log(mult[i][j]);
                     }
+                    if (a < b) {
+                        multAns = multAns + multans[i][2];
+                    } else {
+                        multAns = multAns + multans[i][1];
+                    }
                     console.log(mult[i], multans[i]);
                 }
+                console.log(multAns);
                 console.log(col);
                 console.log(res);
                 console.log(answer[ans]);
