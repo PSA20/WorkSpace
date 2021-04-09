@@ -466,7 +466,7 @@
                     2: 0,
                     3: 0
                 }
-                for (var i in col) {
+                for (var i in col.slice(0, 12)) {
                     res[col[i]]++;
                 }
                 var max = res[1];
@@ -482,6 +482,29 @@
                     2: "pitta",
                     3: "kapha"
                 }
+                const mult = col.slice(12);
+                console.log(mult);
+                const multans = {
+                    0: [6, 'E', 'I'],
+                    1: [7, 'S', 'I'],
+                    2: [6, 'T', 'F'],
+                    3: [6, 'J', 't']
+                };
+                let multAns = '';
+                for (var i in mult) {
+                    for (var j in mult[i]) {
+                        if (multans[i][0] < mult[i][j]) {
+                            console.log(multans[i][2]);
+                        } else {
+                            console.log(multans[i][1]);
+                        }
+                        console.log(mult[i][j]);
+                    }
+                    console.log(mult[i], multans[i]);
+                }
+                console.log(col);
+                console.log(res);
+                console.log(answer[ans]);
                 document.getElementById('answer').value = answer[ans];
                 document.getElementById('email').style.display = 'inline-block'
             }
