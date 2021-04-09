@@ -369,6 +369,9 @@
                     <div class="form-group" style="display: none;">
                         <input name="answer" type="text" id="answer">
                     </div>
+                    <div class="form-group" style="display: none;">
+                        <input name="multanswer" type="text" id="multanswer">
+                    </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
@@ -513,7 +516,8 @@
                 console.log(col);
                 console.log(res);
                 console.log([answer[ans], multAns]);
-                document.getElementById('answer').value = [answer[ans], multAns];
+                document.getElementById('answer').value = answer[ans];
+                document.getElementById('multanswer').value = multAns;
                 document.getElementById('email').style.display = 'inline-block'
             }
 
