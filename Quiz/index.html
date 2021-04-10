@@ -1,188 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz</title>
     <!-- JQuery -->
-    <script
-      type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-    ></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Bootstrap tooltips -->
-    <script
-      type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"
-    ></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
     <!-- Bootstrap core JavaScript -->
-    <script
-      type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"
-    ></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
-    <script
-      type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"
-    ></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
     <!-- Bootstrap core CSS -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" />
     <!-- Material Design Bootstrap -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet" />
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-size: 20px;
-        font-family: "Work Sans", sans-serif;
-        color: #333;
-        font-weight: 300;
-        text-align: center;
-      }
-
-      input.largerCheckbox {
-        width: 15px;
-        height: 15px;
-      }
-
-      h1 {
-        font-weight: 300;
-        margin: 0px;
-        padding: 10px;
-        font-size: 20px;
-        background-color: #444;
-        color: #fff;
-      }
-
-      label {
-        border: 1px solid #84c5fe;
-        width: 40%;
-        margin: auto;
-        border-radius: 5px;
-        padding: 13px 15px;
-        font-size: 17px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        align-items: center;
-        justify-content: space-between;
-        display: block;
-        margin-bottom: 15px;
-        font-size: 14px;
-        cursor: pointer;
-      }
-
-      .question {
-        background-color: #fff;
-        font-weight: bold;
-        margin: auto;
-        width: 50%;
-        color: #90178a;
-        margin-top: 0px;
-        font-size: 30px;
-        margin-bottom: 10px;
-        font-family: "Montserrat", sans-serif;
-      }
-
-      .answers {
-        background-color: #fff;
-        padding-bottom: 30px;
-        width: 100%;
-        margin: auto;
-        text-align: left;
-        display: inline-block;
-      }
-
-      .answers label {
-        background-color: #90178a;
-        display: block;
-        margin-bottom: 5px;
-        line-height: normal;
-      }
-
-      button {
-        font-family: "Montserrat", sans-serif;
-        font-size: 18px;
-        background-color: #90178a;
-        color: #fff;
-        border: 0px;
-        border-radius: 30px;
-        padding-left: 16px;
-        padding-right: 16px;
-        padding-top: 3px;
-        padding-bottom: 3px;
-        cursor: pointer;
-        margin-bottom: 20px;
-        z-index: 1;
-      }
-
-      button:hover {
-        background-color: rgb(124, 13, 117);
-        border: 1px solid rgb(124, 13, 117);
-      }
-
-      header {
-        width: 50%;
-        margin-left: 25%;
-        font-weight: bold;
-        background-color: #90188a;
-        color: #fff3e1;
-      }
-
-      .slide {
-        background-color: #fff;
-        position: absolute;
-        left: 0px;
-        width: 100%;
-        height: 100%;
-        opacity: 0;
-        transition: opacity 0.5s;
-      }
-
-      .active-slide {
-        opacity: 1;
-        z-index: 1;
-      }
-
-      .quiz-container {
-        background-color: #fff;
-        color: #ddd;
-        border-radius: 10px;
-        padding: 20px;
-        position: relative;
-        height: 200px;
-        width: 100%;
-      }
-
-      label {
-        background-color: #b852ec;
-        color: white;
-      }
-
-      div {
-        background-color: #fff;
-      }
-
-      #cont {
-        position: relative;
-        height: 750px;
-        margin-top: 0;
-        background-color: #fff;
-      }
-
-      #results {
-        padding: 25px 25px;
-        height: 100%;
-      }
-      /* @media only screen and (max-width: 600px) {
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-size: 20px;
+            font-family: "Work Sans", sans-serif;
+            color: #333;
+            font-weight: 300;
+            text-align: center;
+        }
+        
+        input.largerCheckbox {
+            width: 15px;
+            height: 15px;
+        }
+        
+        h1 {
+            font-weight: 300;
+            margin: 0px;
+            padding: 10px;
+            font-size: 20px;
+            background-color: #444;
+            color: #fff;
+        }
+        
+        label {
+            border: 1px solid #84c5fe;
+            width: 40%;
+            margin: auto;
+            border-radius: 5px;
+            padding: 13px 15px;
+            font-size: 17px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            align-items: center;
+            justify-content: space-between;
+            display: block;
+            margin-bottom: 15px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        
+        .question {
+            background-color: #fff;
+            font-weight: bold;
+            margin: auto;
+            width: 50%;
+            color: #90178a;
+            margin-top: 0px;
+            font-size: 30px;
+            margin-bottom: 10px;
+            font-family: "Montserrat", sans-serif;
+        }
+        
+        .answers {
+            background-color: #fff;
+            padding-bottom: 30px;
+            width: 100%;
+            margin: auto;
+            text-align: left;
+            display: inline-block;
+        }
+        
+        .answers label {
+            background-color: #90178a;
+            display: block;
+            margin-bottom: 5px;
+            line-height: normal;
+        }
+        
+        button {
+            font-family: "Montserrat", sans-serif;
+            font-size: 18px;
+            background-color: #90178a;
+            color: #fff;
+            border: 0px;
+            border-radius: 30px;
+            padding-left: 16px;
+            padding-right: 16px;
+            padding-top: 3px;
+            padding-bottom: 3px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            z-index: 1;
+        }
+        
+        button:hover {
+            background-color: rgb(124, 13, 117);
+            border: 1px solid rgb(124, 13, 117);
+        }
+        
+        header {
+            width: 50%;
+            margin-left: 25%;
+            font-weight: bold;
+            background-color: #90188a;
+            color: #fff3e1;
+        }
+        
+        .slide {
+            background-color: #fff;
+            position: absolute;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+        
+        .active-slide {
+            opacity: 1;
+            z-index: 1;
+        }
+        
+        .quiz-container {
+            background-color: #fff;
+            color: #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            position: relative;
+            height: 200px;
+            width: 100%;
+        }
+        
+        label {
+            background-color: #b852ec;
+            color: white;
+        }
+        
+        div {
+            background-color: #fff;
+        }
+        
+        #cont {
+            position: relative;
+            height: 750px;
+            margin-top: 0;
+            background-color: #fff;
+        }
+        
+        #results {
+            padding: 25px 25px;
+            height: 100%;
+        }
+        /* @media only screen and (max-width: 600px) {
             #previous,
             #next,
             #submit {
@@ -193,196 +176,197 @@
                 margin-top: 50%;
             }
         } */
-
-      span.cls_002 {
-        font-family: Arial, serif;
-        font-size: 10.1px;
-        color: rgb(0, 0, 0);
-        font-weight: bold;
-        font-style: normal;
-        text-decoration: none;
-      }
-
-      div.cls_002 {
-        font-family: Arial, serif;
-        font-size: 10.1px;
-        color: rgb(0, 0, 0);
-        font-weight: bold;
-        font-style: normal;
-        text-decoration: none;
-      }
-
-      span.cls_003 {
-        font-family: Arial, serif;
-        font-size: 10.1px;
-        color: rgb(0, 0, 0);
-        font-weight: normal;
-        font-style: normal;
-        text-decoration: none;
-      }
-
-      div.cls_003 {
-        font-family: Arial, serif;
-        font-size: 10.1px;
-        color: rgb(0, 0, 0);
-        font-weight: normal;
-        font-style: normal;
-        text-decoration: none;
-      }
-
-      span.cls_004 {
-        font-family: Arial, serif;
-        font-size: 11.1px;
-        color: rgb(0, 0, 0);
-        font-weight: normal;
-        font-style: normal;
-        text-decoration: none;
-      }
-
-      div.cls_004 {
-        font-family: Arial, serif;
-        font-size: 11.1px;
-        color: rgb(0, 0, 0);
-        font-weight: normal;
-        font-style: normal;
-        text-decoration: none;
-      }
-
-      span.cls_005 {
-        font-family: Arial, serif;
-        font-size: 9.1px;
-        color: rgb(0, 0, 0);
-        font-weight: normal;
-        font-style: normal;
-        text-decoration: none;
-      }
-
-      div.cls_005 {
-        font-family: Arial, serif;
-        font-size: 9.1px;
-        color: rgb(0, 0, 0);
-        font-weight: normal;
-        font-style: normal;
-        text-decoration: none;
-      }
-
-      span.cls_006 {
-        font-family: Arial, serif;
-        font-size: 9.1px;
-        color: rgb(64, 63, 64);
-        font-weight: normal;
-        font-style: normal;
-        text-decoration: none;
-      }
-
-      div.cls_006 {
-        font-family: Arial, serif;
-        font-size: 9.1px;
-        color: rgb(64, 63, 64);
-        font-weight: normal;
-        font-style: normal;
-        text-decoration: none;
-      }
-
-      span.cls_007 {
-        font-family: Arial, serif;
-        font-size: 9.1px;
-        color: rgb(157, 32, 106);
-        font-weight: normal;
-        font-style: normal;
-        text-decoration: none;
-      }
-
-      div.cls_007 {
-        font-family: Arial, serif;
-        font-size: 9.1px;
-        color: rgb(157, 32, 106);
-        font-weight: normal;
-        font-style: normal;
-        text-decoration: none;
-      }
-
-      span.cls_012 {
-        font-family: Arial, serif;
-        font-size: 9.1px;
-        color: rgb(28, 68, 133);
-        font-weight: normal;
-        font-style: normal;
-        text-decoration: none;
-      }
-
-      div.cls_012 {
-        font-family: Arial, serif;
-        font-size: 9.1px;
-        color: rgb(28, 68, 133);
-        font-weight: normal;
-        font-style: normal;
-        text-decoration: none;
-      }
-
-      span.cls_011 {
-        font-family: Arial, serif;
-        font-size: 13.6px;
-        color: rgb(64, 63, 64);
-        font-weight: normal;
-        font-style: normal;
-        text-decoration: none;
-      }
-
-      div.cls_011 {
-        font-family: Arial, serif;
-        font-size: 13.6px;
-        color: rgb(64, 63, 64);
-        font-weight: normal;
-        font-style: normal;
-        text-decoration: none;
-      }
-
-      span.cls_014 {
-        font-family: Arial, serif;
-        font-size: 9.1px;
-        color: rgb(51, 12, 78);
-        font-weight: normal;
-        font-style: normal;
-        text-decoration: none;
-      }
-
-      div.cls_014 {
-        font-family: Arial, serif;
-        font-size: 9.1px;
-        color: rgb(51, 12, 78);
-        font-weight: normal;
-        font-style: normal;
-        text-decoration: none;
-      }
-      #descri {
-        font-family: "Montserrat", sans-serif;
-        color: #90178a;
-        margin-right: 50px;
-        padding-right: 10px;
-        /*background-color: rgb(124, 13, 117);*/
-      }
-      #logo {
-        padding: 0px 1000px 0px 0px;
-      }
-
-      #Btn {
-        z-index: 2;
-        width: 100%;
-        position: fixed;
-        margin-bottom: 20px;
-        bottom: 0;
-      }
+        
+        span.cls_002 {
+            font-family: Arial, serif;
+            font-size: 10.1px;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            font-style: normal;
+            text-decoration: none;
+        }
+        
+        div.cls_002 {
+            font-family: Arial, serif;
+            font-size: 10.1px;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            font-style: normal;
+            text-decoration: none;
+        }
+        
+        span.cls_003 {
+            font-family: Arial, serif;
+            font-size: 10.1px;
+            color: rgb(0, 0, 0);
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+        }
+        
+        div.cls_003 {
+            font-family: Arial, serif;
+            font-size: 10.1px;
+            color: rgb(0, 0, 0);
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+        }
+        
+        span.cls_004 {
+            font-family: Arial, serif;
+            font-size: 11.1px;
+            color: rgb(0, 0, 0);
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+        }
+        
+        div.cls_004 {
+            font-family: Arial, serif;
+            font-size: 11.1px;
+            color: rgb(0, 0, 0);
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+        }
+        
+        span.cls_005 {
+            font-family: Arial, serif;
+            font-size: 9.1px;
+            color: rgb(0, 0, 0);
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+        }
+        
+        div.cls_005 {
+            font-family: Arial, serif;
+            font-size: 9.1px;
+            color: rgb(0, 0, 0);
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+        }
+        
+        span.cls_006 {
+            font-family: Arial, serif;
+            font-size: 9.1px;
+            color: rgb(64, 63, 64);
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+        }
+        
+        div.cls_006 {
+            font-family: Arial, serif;
+            font-size: 9.1px;
+            color: rgb(64, 63, 64);
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+        }
+        
+        span.cls_007 {
+            font-family: Arial, serif;
+            font-size: 9.1px;
+            color: rgb(157, 32, 106);
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+        }
+        
+        div.cls_007 {
+            font-family: Arial, serif;
+            font-size: 9.1px;
+            color: rgb(157, 32, 106);
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+        }
+        
+        span.cls_012 {
+            font-family: Arial, serif;
+            font-size: 9.1px;
+            color: rgb(28, 68, 133);
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+        }
+        
+        div.cls_012 {
+            font-family: Arial, serif;
+            font-size: 9.1px;
+            color: rgb(28, 68, 133);
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+        }
+        
+        span.cls_011 {
+            font-family: Arial, serif;
+            font-size: 13.6px;
+            color: rgb(64, 63, 64);
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+        }
+        
+        div.cls_011 {
+            font-family: Arial, serif;
+            font-size: 13.6px;
+            color: rgb(64, 63, 64);
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+        }
+        
+        span.cls_014 {
+            font-family: Arial, serif;
+            font-size: 9.1px;
+            color: rgb(51, 12, 78);
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+        }
+        
+        div.cls_014 {
+            font-family: Arial, serif;
+            font-size: 9.1px;
+            color: rgb(51, 12, 78);
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+        }
+        
+        #descri {
+            font-family: "Montserrat", sans-serif;
+            color: #90178a;
+            margin-right: 50px;
+            padding-right: 10px;
+            /*background-color: rgb(124, 13, 117);*/
+        }
+        
+        #logo {
+            padding: 0px 1000px 0px 0px;
+        }
+        
+        #Btn {
+            z-index: 2;
+            width: 100%;
+            position: fixed;
+            margin-bottom: 20px;
+            bottom: 0;
+        }
     </style>
-  </head>
+</head>
 
-  <body>
+<body>
     <div id="cont">
-      <div class="quiz-container">
-        <header></header>
-        <span id="logo"><img src="mainlogo.jpg" alt="paripurnalogo" /></span>
-        <span id="descri"
-          >Check each statement that describes how you feel</span
+        <div class="quiz-container">
+            <header></header>
+            <span id="logo"><img src="mainlogo.jpg" alt="paripurnalogo" /></span>
+            <span id="descri">Check each statement that describes how you feel</span
         >
         <div id="5op" style="display: none; color: red">
           please select 5 options.
@@ -449,7 +433,7 @@
           myQuestions.forEach((currentQuestion, questionNumber) => {
             // variable to store the list of possible answers
             const answers = [];
-            if (currentQuestion.type == "multi") {
+            if (currentQuestion.type == "multi" || currentQuestion.type == "multi40") {
               // and for each available answer...
               for (letter in currentQuestion.answers) {
                 // ...add an HTML radio button
@@ -533,7 +517,7 @@
             2: "pitta",
             3: "kapha",
           };
-          const mult = col.slice(12);
+          const mult = col.slice(12,16);
           console.log(mult);
           const multans = {
             0: [6, "E", "I"],
@@ -560,6 +544,31 @@
             }
             console.log(mult[i], multans[i]);
           }
+          let ans40=[0,0,0,0,0,0,0,0,0,0];
+          for (var j in col[16]) {
+            if(col[16][j]<6 && col[16][j]>0){
+              ans40[0]++;
+            }else if(col[16][j]<6 && col[16][j]>0) {
+              ans40[1]++;
+            }else if(col[16][j]<10 && col[16][j]>5) {
+              ans40[2]++;
+            }else if(col[16][j]<14 && col[16][j]>9) {
+              ans40[3]++;
+            }else if(col[16][j]<21 && col[16][j]>13) {
+              ans40[4]++;
+            }else if(col[16][j]<27 && col[16][j]>20) {
+              ans40[5]++;
+            }else if(col[16][j]<32 && col[16][j]>26) {
+              ans40[6]++;
+            }else if(col[16][j]<34 && col[16][j]>31) {
+              ans40[7]++;
+            }else if(col[16][j]<36 && col[16][j]>33) {
+              ans40[8]++;
+            }else if(col[16][j]<41 && col[16][j]>35) {
+              ans40[9]++;
+            }  
+          }
+          console.log(ans40.indexOf(Math.max(...ans40)));
           console.log(multAns);
           console.log(col);
           console.log(res);
@@ -604,15 +613,28 @@
               }, 3000);
             }
           } else {
-            if (userAnswers.length != 0) {
+            if(myQuestions[currentSlide].type == "multi40"){
+              if (userAnswers.length == 7) {
               showSlide(currentSlide + 1);
             } else {
               document.getElementById("5op").innerHTML =
-                "please select aleast one option.";
+                "please select 7 options.";
               document.getElementById("5op").style.display = "block";
               setTimeout(function () {
                 document.getElementById("5op").style.display = "none";
               }, 3000);
+            }
+            }else {
+              if (userAnswers.length != 0) {
+                showSlide(currentSlide + 1);
+              } else {
+                document.getElementById("5op").innerHTML =
+                  "please select aleast one option.";
+                document.getElementById("5op").style.display = "block";
+                setTimeout(function () {
+                  document.getElementById("5op").style.display = "none";
+                }, 3000);
+              }
             }
           }
         }
@@ -815,6 +837,54 @@
             type: "multi",
             Col: 16,
           },
+          {
+            question:
+              "SELECT ANY 7 options",
+            answers: {
+              1: "Do you have some unknown fears/ Imaginary fears?",
+                        2: "Are you over concerned for your loved ones?",
+                        3: "Do you have undergone any panic or traumatic situation in your lifetime?",
+                        4: "Do you feel you could be aggressive?",
+                        5: "Do you have known fears like animals, darkness, parking, life which you can identify?",
+                        6: "In any situation/people rather than good do you find bitterness first?",
+                        7: "Do you want to take everything on your head and command as per your wish/way?",
+                        8: "Do you find yourself jealous or hateful for some people or situations of others most of the time?",
+                        9: "Are you highly possessive of anything and everything?",
+                        10: "Do you find yourself intolerant nowadays?",
+                        11: "Do you often smile and hide your feelings under your smiling face?",
+                        12: "Do you often catch in the repeating thoughts/ constant thinking?",
+                        13: "In the end, you start blaming yourself, in public or in your mind?",
+                        14: "Do you find the old days are good and sometime homesickness?",
+                        15: "Even though you are tired or office timing is over doing you often land up doing overwork?",
+                        16: "Do you like to be at home most of the time and not to socialize even in small groups or big groups? Introvert kinds person?",
+                        17: "Do get impatient and irritated on small things/situations?",
+                        18: "You mostly don’t listen to others and compulsive for doing things in your own way for yourself and for others too?",
+                        19: "Are you highly disciplined which sometimes bothers other people?",
+                        20: "Do you feel that you lack in decision making?",
+                        21: "You are not able to judge people most of the time?",
+                        22: "Do you feel directionless in your life?",
+                        23: "are you often nervous nowadays?",
+                        24: "Do you have an inferiority complex? lack of confidence?",
+                        25: "Do you feel that happiness has gone from your life nowadays? ",
+                        26: "Do you find yourself hopeless, a situation or for your own?",
+                        27: "Do you find that now there is no way and you cannot do anything for this?",
+                        28: "Do you feel hopeless and de-stress always in worry/despair/anguish?",
+                        29: "Have you given up and stopped chasing for few things?",
+                        30: "Have you recently gone through some shock/trauma?",
+                        31: "Do you land up doing the same mistakes again and again?",
+                        32: "Do you daydream or absent-minded nowadays?",
+                        33: "Do you feel homesick?",
+                        34: "Do you feel a lack of energy/physical exhaustion?",
+                        35: "Do you have any prolong stress?",
+                        36: "Due to anger do you act highly possessively?",
+                        37: "Are you a self-obsessed?",
+                        38: "Do you please others at any cost? knowingly/ unknowingly?",
+                        39: "Do you often not able to accept things/situation/ new place/new role?",
+                        40: "Do you get repeating any skin related disorders? pimples/dryness/itching etc?",
+            },
+            type: "multi40",
+            Col: 17,
+          }
         ];
 
         // Kick things off
