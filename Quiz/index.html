@@ -8,13 +8,17 @@
     <!-- JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
     <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
     <!-- Bootstrap core CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
+        rel="stylesheet" />
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet" />
     <style>
@@ -23,7 +27,7 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-size: 20px;
             font-family: "Work Sans", sans-serif;
@@ -32,12 +36,12 @@
             text-align: center;
             height: 100vh;
         }
-        
+
         input.largerCheckbox {
             width: 15px;
             height: 15px;
         }
-        
+
         h1 {
             font-weight: 300;
             margin: 0px;
@@ -46,7 +50,7 @@
             background-color: #444;
             color: #fff;
         }
-        
+
         label {
             border: 1px solid #90178a;
             width: 40%;
@@ -63,7 +67,7 @@
             font-size: 14px;
             cursor: pointer;
         }
-        
+
         .question {
             background-color: #fff;
             font-weight: bold;
@@ -75,7 +79,7 @@
             margin-bottom: 10px;
             font-family: "Montserrat", sans-serif;
         }
-        
+
         .answers {
             background-color: #fff;
             padding-bottom: 30px;
@@ -84,14 +88,14 @@
             text-align: left;
             display: inline-block;
         }
-        
+
         .answers label {
             background-color: #90178a;
             display: block;
             margin-bottom: 5px;
             line-height: normal;
         }
-        
+
         button {
             font-family: "Montserrat", sans-serif;
             font-size: 18px;
@@ -107,12 +111,12 @@
             margin-bottom: 20px;
             z-index: 1;
         }
-        
+
         button:hover {
             background-color: rgb(124, 13, 117);
             border: 1px solid rgb(124, 13, 117);
         }
-        
+
         header {
             width: 50%;
             margin-left: 25%;
@@ -120,7 +124,7 @@
             background-color: #90188a;
             color: #fff3e1;
         }
-        
+
         .slide {
             background-color: #fff;
             position: absolute;
@@ -130,12 +134,12 @@
             opacity: 0;
             transition: opacity 0.5s;
         }
-        
+
         .active-slide {
             opacity: 1;
             z-index: 1;
         }
-        
+
         .quiz-container {
             background-color: #fff;
             color: #ddd;
@@ -145,27 +149,28 @@
             height: 200px;
             width: 100%;
         }
-        
+
         label {
             background-color: #b852ec;
             color: white;
         }
-        
+
         div {
             background-color: #fff;
         }
-        
+
         #cont {
             position: relative;
             height: 750px;
             margin-top: 0;
             background-color: #fff;
         }
-        
+
         #results {
             padding: 25px 25px;
             height: 100%;
         }
+
         /* @media only screen and (max-width: 600px) {
             #previous,
             #next,
@@ -177,7 +182,7 @@
                 margin-top: 50%;
             }
         } */
-        
+
         span.cls_002 {
             font-family: Arial, serif;
             font-size: 10.1px;
@@ -186,7 +191,7 @@
             font-style: normal;
             text-decoration: none;
         }
-        
+
         div.cls_002 {
             font-family: Arial, serif;
             font-size: 10.1px;
@@ -195,7 +200,7 @@
             font-style: normal;
             text-decoration: none;
         }
-        
+
         span.cls_003 {
             font-family: Arial, serif;
             font-size: 10.1px;
@@ -204,7 +209,7 @@
             font-style: normal;
             text-decoration: none;
         }
-        
+
         div.cls_003 {
             font-family: Arial, serif;
             font-size: 10.1px;
@@ -213,7 +218,7 @@
             font-style: normal;
             text-decoration: none;
         }
-        
+
         span.cls_004 {
             font-family: Arial, serif;
             font-size: 11.1px;
@@ -222,7 +227,7 @@
             font-style: normal;
             text-decoration: none;
         }
-        
+
         div.cls_004 {
             font-family: Arial, serif;
             font-size: 11.1px;
@@ -231,7 +236,7 @@
             font-style: normal;
             text-decoration: none;
         }
-        
+
         span.cls_005 {
             font-family: Arial, serif;
             font-size: 9.1px;
@@ -240,7 +245,7 @@
             font-style: normal;
             text-decoration: none;
         }
-        
+
         div.cls_005 {
             font-family: Arial, serif;
             font-size: 9.1px;
@@ -249,7 +254,7 @@
             font-style: normal;
             text-decoration: none;
         }
-        
+
         span.cls_006 {
             font-family: Arial, serif;
             font-size: 9.1px;
@@ -258,7 +263,7 @@
             font-style: normal;
             text-decoration: none;
         }
-        
+
         div.cls_006 {
             font-family: Arial, serif;
             font-size: 9.1px;
@@ -267,7 +272,7 @@
             font-style: normal;
             text-decoration: none;
         }
-        
+
         span.cls_007 {
             font-family: Arial, serif;
             font-size: 9.1px;
@@ -276,7 +281,7 @@
             font-style: normal;
             text-decoration: none;
         }
-        
+
         div.cls_007 {
             font-family: Arial, serif;
             font-size: 9.1px;
@@ -285,7 +290,7 @@
             font-style: normal;
             text-decoration: none;
         }
-        
+
         span.cls_012 {
             font-family: Arial, serif;
             font-size: 9.1px;
@@ -294,7 +299,7 @@
             font-style: normal;
             text-decoration: none;
         }
-        
+
         div.cls_012 {
             font-family: Arial, serif;
             font-size: 9.1px;
@@ -303,7 +308,7 @@
             font-style: normal;
             text-decoration: none;
         }
-        
+
         span.cls_011 {
             font-family: Arial, serif;
             font-size: 13.6px;
@@ -312,7 +317,7 @@
             font-style: normal;
             text-decoration: none;
         }
-        
+
         div.cls_011 {
             font-family: Arial, serif;
             font-size: 13.6px;
@@ -321,7 +326,7 @@
             font-style: normal;
             text-decoration: none;
         }
-        
+
         span.cls_014 {
             font-family: Arial, serif;
             font-size: 9.1px;
@@ -330,7 +335,7 @@
             font-style: normal;
             text-decoration: none;
         }
-        
+
         div.cls_014 {
             font-family: Arial, serif;
             font-size: 9.1px;
@@ -339,7 +344,7 @@
             font-style: normal;
             text-decoration: none;
         }
-        
+
         #descri {
             font-family: "Montserrat", sans-serif;
             color: #90178a;
@@ -348,11 +353,11 @@
             margin-bottom: 3%;
             /*background-color: rgb(124, 13, 117);*/
         }
-        
+
         #logo {
             padding: 0px 1000px 0px 0px;
         }
-        
+
         #Btn {
             z-index: 2;
             width: 100%;
@@ -360,7 +365,7 @@
             margin-bottom: 20px;
             bottom: 0;
         }
-        
+
         .footer {
             z-index: 9999;
             position: fixed;
@@ -379,7 +384,8 @@
     <div id="cont">
         <div class="quiz-container">
             <header></header>
-            <span id="logo"><a href="https://paripurnalife.com/"><img src="mainlogo.jpeg" alt="paripurnalogo" /></a></span>
+            <span id="logo"><a href="https://paripurnalife.com/"><img src="mainlogo.jpeg"
+                        alt="paripurnalogo" /></a></span>
             <div id="descri">Check each statement that describes how you feel</div>
             <div id="5op" style="display: none; color: red">
                 Please select 5 options.
@@ -392,13 +398,17 @@
                 <form action="http://127.0.0.1:5000/submit" method="post">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>
-                        <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        <input name="email" type="email" class="form-control" id="exampleInputEmail1"
+                            aria-describedby="emailHelp" placeholder="Enter email" />
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                            else.</small>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail2">Email address</label>
-                        <input name="name" type="text" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" placeholder="Enter your name" />
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        <input name="name" type="text" class="form-control" id="exampleInputEmail2"
+                            aria-describedby="emailHelp" placeholder="Enter your name" />
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                            else.</small>
                     </div>
                     <div class="form-group" style="display: none">
                         <input name="answer" type="text" id="answer" />
@@ -426,7 +436,7 @@
         © Paripurna Life | Crafted with Love by Mandar Kurlekar Design
     </div>
     <script>
-        (function() {
+        (function () {
             // Functions
             function buildQuiz() {
                 // variable to store the HTML output
@@ -517,9 +527,9 @@
                     }
                 }
                 var answer = {
-                    1: "THE INTUITIVE",
-                    2: "THE ACCOMPLISHER",
-                    3: "THE MODIFICATION EXPERT",
+                    1: "The Modification Expert ",
+                    2: "The Accomplisher ",
+                    3: "The Intuitive",
                 };
                 const mult = col.slice(12, 16);
                 console.log(mult);
@@ -596,15 +606,15 @@
                     }
                 }
                 var Lanswer = {
-                    1: "RESEARCHER",
-                    2: "ACTIVIST",
-                    3: "EDUCATOR / TEACHER",
-                    4: "IDEALISTIC / ACTIVIST",
-                    5: "ARTIST",
-                    6: "PERFORMER / ENTERTAINER",
-                    7: "WARRIOR",
-                    8: "NURTURER",
-                    9: "BUSINESSPERSON / ENTREPRENUER"
+                    1: "Researcher",
+                    2: "Activist",
+                    3: "Educator / Teacher",
+                    4: "Idealistic / Activist",
+                    5: "Artist",
+                    6: "Performer / Entertainer",
+                    7: "Warrior",
+                    8: "Nurturer",
+                    9: "Business Person / Entreprenuer"
                 };
                 console.log(ans40.indexOf(Math.max(...ans40)));
                 console.log(multAns);
@@ -648,7 +658,7 @@
                         document.getElementById("5op").innerHTML =
                             "please select 5 options.";
                         document.getElementById("5op").style.display = "block";
-                        setTimeout(function() {
+                        setTimeout(function () {
                             document.getElementById("5op").style.display = "none";
                         }, 3000);
                     }
@@ -660,7 +670,7 @@
                             document.getElementById("5op").innerHTML =
                                 "please select 7 options.";
                             document.getElementById("5op").style.display = "block";
-                            setTimeout(function() {
+                            setTimeout(function () {
                                 document.getElementById("5op").style.display = "none";
                             }, 3000);
                         }
@@ -671,7 +681,7 @@
                             document.getElementById("5op").innerHTML =
                                 "please select aleast one option.";
                             document.getElementById("5op").style.display = "block";
-                            setTimeout(function() {
+                            setTimeout(function () {
                                 document.getElementById("5op").style.display = "none";
                             }, 3000);
                         }
@@ -786,79 +796,79 @@
             }, {
                 question: "Which is your most natural energy orientation?",
                 answers: {
-                    1: "E - Act first, think/reflect later",
-                    2: "E - Talk more than they listen",
-                    3: "E - Seek being the center of attention",
-                    4: "E - Feel deprived when cut off from interaction with the outside world",
-                    5: "E - Enjoy wide variety and change in people and Relationships",
-                    6: "E - Tend to think out loud",
-                    7: "I - Think/reflect first, then Act",
-                    8: "I - listen more than they talk",
-                    9: "I - Avoid being the center of attention",
-                    10: "I - Regularly require an amount of 'private time' to recharge batteries",
-                    11: "I - Prefer one-to-one communication and relationships",
-                    12: "I - tend to think things through inside their head",
+                    1: "Act first, think/reflect later",
+                    2: "Talk more than they listen",
+                    3: "Seek being the center of attention",
+                    4: "Feel deprived when cut off from interaction with the outside world",
+                    5: "Enjoy wide variety and change in people and Relationships",
+                    6: "Tend to think out loud",
+                    7: "Think/reflect first, then Act",
+                    8: "listen more than they talk",
+                    9: "Avoid being the center of attention",
+                    10: "Regularly require an amount of 'private time' to recharge batteries",
+                    11: "Prefer one-to-one communication and relationships",
+                    12: "I tend to think things through inside their head",
                 },
                 type: "multi",
                 Col: 13,
             }, {
                 question: "Which way of perceiving or understanding is most 'automatic' or natural? ",
                 answers: {
-                    1: "S - Trust what is certain/concrete",
-                    2: "S - Like new ideas if they are practical",
-                    3: "S - Value common sense and realism",
-                    4: "S - Like to hone established skills",
-                    5: "S - Tend to be specific and literal and give detailed descriptions",
-                    6: "S - Present information in a step-by-step manner",
-                    7: "S - Are oriented to the present",
-                    8: "I - Trust inspiration",
-                    9: "I - Like new ideas for their own sake",
-                    10: "I - Value imagination and innovation",
-                    11: "I - Like to learn new skills and get bored after mastering skills",
-                    12: "I - tend to be general and figurative; use metaphors a lot",
-                    13: "I - Present information in a round-about manner",
-                    14: "I - Are oriented toward the future",
+                    1: "Trust what is certain/concrete",
+                    2: "Like new ideas if they are practical",
+                    3: "Value common sense and realism",
+                    4: "Like to hone established skills",
+                    5: "Tend to be specific and literal and give detailed descriptions",
+                    6: "Present information in a step-by-step manner",
+                    7: "Are oriented to the present",
+                    8: "Trust inspiration",
+                    9: "Like new ideas for their own sake",
+                    10: "Value imagination and innovation",
+                    11: "Like to learn new skills and get bored after mastering skills",
+                    12: "tend to be general and figurative; use metaphors a lot",
+                    13: "Present information in a round-about manner",
+                    14: "Are oriented toward the future",
                 },
                 type: "multi",
                 Col: 14,
             }, {
                 question: "Which way of forming judgments and making choices is most natural?",
                 answers: {
-                    1: "T - Instinctively search for facts and logic in a decision situation",
-                    2: "T - Naturally notices tasks and work to be accomplished",
-                    3: "T - Easily able to provide an objective and critical analysis",
-                    4: "T - Accept conflict as a natural, normal part of relationships with people",
-                    5: "T - Value logic, justice, and fairness: one standard for all",
-                    6: "T - Are motivated by accomplishment",
-                    7: "F - Instinctively employ personal feelings and impact on people in decision situations",
-                    8: "F - Naturally sensitive to people’s needs and reactions",
-                    9: "F - Naturally seek consensus and popular opinions.",
-                    10: "F - Unsettled by conflict; have almost a toxic reaction to disharmony",
-                    11: "F - Value empathy and harmony: see the exception to the rule",
-                    12: "F - Are motivated by appreciation",
+                    1: "Instinctively search for facts and logic in a decision situation",
+                    2: "Naturally notices tasks and work to be accomplished",
+                    3: "Easily able to provide an objective and critical analysis",
+                    4: "Accept conflict as a natural, normal part of relationships with people",
+                    5: "Value logic, justice, and fairness: one standard for all",
+                    6: "Are motivated by accomplishment",
+                    7: "Instinctively employ personal feelings and impact on people in decision situations",
+                    8: "Naturally sensitive to people’s needs and reactions",
+                    9: "Naturally seek consensus and popular opinions.",
+                    10: "Unsettled by conflict; have almost a toxic reaction to disharmony",
+                    11: "Value empathy and harmony: see the exception to the rule",
+                    12: "Are motivated by appreciation",
                 },
                 type: "multi",
                 Col: 15,
             }, {
                 question: "What is your 'action orientation' towards the outside world and how do you structure your life?",
                 answers: {
-                    1: "J - Like knowing what they are getting into",
-                    2: "J - Focus on task-related action; complete meaningful segments before moving on",
-                    3: "J - Work best and avoid stress when able to keep ahead of deadlines",
-                    4: "J - Naturally use targets, dates, and standard routines to manage life",
-                    5: "J - Are happiest after a decision has been made",
-                    6: "J - Are satisfied most from finishing a project",
-                    7: "P - Comfortable moving into action without a plan; plan on-the-go",
-                    8: "P - Like to multitask, have variety, mix work/play",
-                    9: "P - Naturally tolerant of time pressure; work best close to the deadlines",
-                    10: "P - Instinctively avoid commitments that interfere with flexibility, freedom, and variety",
-                    11: "P - Are happiest leaving options open",
-                    12: "P - Are satisfied most from starting a project",
+                    1: "Like knowing what they are getting into",
+                    2: "Focus on task-related action; complete meaningful segments before moving on",
+                    3: "Work best and avoid stress when able to keep ahead of deadlines",
+                    4: "Naturally use targets, dates, and standard routines to manage life",
+                    5: "Are happiest after a decision has been made",
+                    6: "Are satisfied most from finishing a project",
+                    7: "Comfortable moving into action without a plan; plan on-the-go",
+                    8: "Like to multitask, have variety, mix work/play",
+                    9: "Naturally tolerant of time pressure; work best close to the deadlines",
+                    10: "Instinctively avoid commitments that interfere with flexibility, freedom, and variety",
+                    11: "Are happiest leaving options open",
+                    12: "Are satisfied most from starting a project",
                 },
                 type: "multi",
                 Col: 16,
             }, {
-                question: "Select ANY 7 options",
+                question: "Select Any 7 options",
                 answers: {
                     1: "Do you have some unknown fears/ Imaginary fears?",
                     2: "Are you over concerned for your loved ones?",
@@ -987,7 +997,7 @@
                     9: "My ability to create a business around anything, my resourcefulness",
                 },
                 Col: 23,
-            }, ];
+            },];
 
             // Kick things off
             buildQuiz();
