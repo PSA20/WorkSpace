@@ -358,6 +358,17 @@
             margin-bottom: 20px;
             bottom: 0;
         }
+        
+        .footer {
+            z-index: 9999;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: red;
+            color: white;
+            text-align: center;
+        }
     </style>
 </head>
 
@@ -366,29 +377,20 @@
         <div class="quiz-container">
             <header></header>
             <span id="logo"><img src="mainlogo.jpg" alt="paripurnalogo" /></span>
-            <span id="descri">Check each statement that describes how you feel</span
-        >
-        <div id="5op" style="display: none; color: red">
-          please select 5 options.
-        </div>
-        <div id="quiz"></div>
-        <div id="results">
-          <footer>we are here</footer>
-        </div>
-        <div id="email" style="display: none">
-          <form action="http://127.0.0.1:5000/submit" method="post">
-            <div class="form-group">
-              <label for="exampleInputEmail1">Email address</label>
-              <input
-                name="email"
-                type="email"
-                class="form-control"
-                id="exampleInputEmail1"
-                aria-describedby="emailHelp"
-                placeholder="Enter email"
-              />
-              <small id="emailHelp" class="form-text text-muted"
-                >We'll never share your email with anyone else.</small
+            <div id="descri">Check each statement that describes how you feel</div>
+            <div id="5op" style="display: none; color: red">
+                please select 5 options.
+            </div>
+            <div id="quiz"></div>
+            <div id="results">
+
+            </div>
+            <div id="email" style="display: none">
+                <form action="http://127.0.0.1:5000/submit" method="post">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small
               >
             </div>
             <div class="form-group">
@@ -423,6 +425,9 @@
         <button id="next">Next Question</button>
         <button id="submit">Submit Quiz</button>
       </div>
+    </div>
+    <div class="footer" style="background-color: #90178a;">
+      © Paripurna Life | Crafted with Love by Mandar Kurlekar Design
     </div>
     <script>
       (function () {
