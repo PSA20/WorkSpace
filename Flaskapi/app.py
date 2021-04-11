@@ -15,6 +15,7 @@ def submit():
     xt=[str(x) for x in request.form.values()]
     print(xt)
     re40 = ''
+    re5 = ''
     if(xt[4] == '1'):
         re40 = 'Fear'
     if(xt[4] == '2'):
@@ -35,7 +36,26 @@ def submit():
         re40 = 'Extreme Love'
     if(xt[4] == '10'): 
         re40 = 'Self Guilt'
-
+    if(xt[5] == 'RESEARCHER'):
+        re5 = 'You are here to observe the world, the object of world’s study, to be analyzed through your lens.'
+    if(xt[5] == 'ACTIVIST'):
+        re5 = 'You are here to be a bridge for the new prototype.'
+    if(xt[5] == 'EDUCATOR / TEACHER'):
+        re5 = 'You are here to teach the experiences you undergo.'
+    if(xt[5] == '4'):
+        re5 = 'You are here to bring about social, environmental, or political change.'
+    if(xt[5] == 'IDEALISTIC / ACTIVIST '):
+        re5 = 'You are here to create beauty'
+    if(xt[5] == 'ARTIST'):
+        re5 = 'You are here to make others laugh, cry, smile, gasp, ponder, and every emotion in between.'
+    if(xt[5] == 'PERFORMER / ENTERTAINER'):
+        re5 = 'You are here to protect'
+    if(xt[5] == 'WARRIOR'):
+        re5 = 'Mental and Pysical Exhaustion'
+    if(xt[5] == 'NURTURER'):
+        re5 = 'You are here to care and connect. You found your sense of purpose in nurturing others.'
+    if(xt[5] == 'BUSINESSPERSON / ENTREPRENUER'): 
+        re5 = 'You are here to address the problems of society through business solutions.'
     data = {
         'Messages': [
         {
@@ -51,7 +71,7 @@ def submit():
             ],
             "Subject": "Greetings from Connections",
             "TextPart": "Your Result",
-            "HTMLPart": '<h1 style=text-align:center;> <span style="background:#ff00ff;"">Your unique 390-degree Persona with your current vibes and your ultimate life purpose!</span> </h1><p style=text-align:center;>Your Ultimate Purpose Persona Epitome is </p> <p style=text-align:center;><mark>'+xt[5]+'</mark> </p> <p style=text-align:center;> And your Current Vibes are</p><p style=text-align:center;><mark>'+ xt[2] +'</mark></p><p style=text-align:center;>Your Current Emotions and intellect quotient is</p><p style=text-align:center;><mark>'+ re40 +'</mark></p><br><p style=text-align:center;>YOU ARE HERE TO </p> <p style=text-align:center;><mark>'+ xt[3] +'</mark></p><h2 style=text-align:center;>You are one of the unique combination and has excellent persona, but you need some alignment work done for that.Learn more on how to achieve your ultimate life purpose in detail and create your Magical Persona.</h2><p style=text-align:center;>&#10070; What is your Epitome </p><p style=text-align:center;> &#10070; How to walk on your purpose Epitome </p><p style=text-align:center;>&#10070; How you can overcome the major emotional and intellectual obstacles those you are reflecting strongly</p><p style=text-align:center;>&#10070; The ultimate way to head towards Purpose </p><p style=text-align:center;>&#10070; How you can discover your Ultimate Purpose by 7 step-by-step formula</p><p style=text-align:center;>&#10070; How you can make work your chakra and Kosha for your Purpose</p><p style=text-align:center;>&#10070; How to overcome- over-whelming</p><p style=text-align:center;>&#10070; How you can select or fix your purpose </p><br><br><br><div style=text-align:center;>I am ready to discover my Ultimate Life Purpose with you</div><h1 style=text-align:center;><span style="background:#ff00ff;">Book your session now by sending email on fulfil@paripurnalife.com</span></h1><h2 style=text-align:center;>What session will Have</h2><p style=text-align:center;>1.Free your limitations technique </p><p style=text-align:center;> 2.Verbalization</p><p style=text-align:center;> 3.Visualization </p><p style=text-align:center;>4.Body Energizations </p><p style=text-align:center;> 5.Find your Purpose Epitome</p><p style=text-align:center;> 6.Blueprint of Your Ultimate Purpose </p><p style=text-align:center;> 7.Balance your Emotional and Intelligent quotient </p>',
+            "HTMLPart": '<h1 style=text-align:center;> <span style="background:#ff00ff;"">Your unique 390-degree Persona with your current vibes and your ultimate life purpose!</span> </h1><p style=text-align:center;>Your Ultimate Purpose Persona Epitome is </p> <p style=text-align:center;><mark>'+xt[5]+'</mark> </p> <p style=text-align:center;> And your Current Vibes are</p><p style=text-align:center;><mark>'+ xt[2] +'</mark></p><p style=text-align:center;>Your Current Emotions and intellect quotient is</p><p style=text-align:center;><mark>'+ re40 +'</mark></p><br><p style=text-align:center;>YOU ARE HERE TO </p> <p style=text-align:center;><mark>'+ re5 +'</mark></p><h2 style=text-align:center;>You are one of the unique combination and has excellent persona, but you need some alignment work done for that.Learn more on how to achieve your ultimate life purpose in detail and create your Magical Persona.</h2><p style=text-align:center;>&#10070; What is your Epitome </p><p style=text-align:center;> &#10070; How to walk on your purpose Epitome </p><p style=text-align:center;>&#10070; How you can overcome the major emotional and intellectual obstacles those you are reflecting strongly</p><p style=text-align:center;>&#10070; The ultimate way to head towards Purpose </p><p style=text-align:center;>&#10070; How you can discover your Ultimate Purpose by 7 step-by-step formula</p><p style=text-align:center;>&#10070; How you can make work your chakra and Kosha for your Purpose</p><p style=text-align:center;>&#10070; How to overcome- over-whelming</p><p style=text-align:center;>&#10070; How you can select or fix your purpose </p><br><br><br><div style=text-align:center;>I am ready to discover my Ultimate Life Purpose with you</div><h1 style=text-align:center;><span style="background:#ff00ff;">Book your session now by sending email on fulfil@paripurnalife.com</span></h1><h2 style=text-align:center;>What session will Have</h2><p style=text-align:center;>1.Free your limitations technique </p><p style=text-align:center;> 2.Verbalization</p><p style=text-align:center;> 3.Visualization </p><p style=text-align:center;>4.Body Energizations </p><p style=text-align:center;> 5.Find your Purpose Epitome</p><p style=text-align:center;> 6.Blueprint of Your Ultimate Purpose </p><p style=text-align:center;> 7.Balance your Emotional and Intelligent quotient </p>',
             "CustomID": "AppGettingStartedTest"
         }
         ]
