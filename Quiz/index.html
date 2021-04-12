@@ -5,6 +5,7 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz</title>
+    <link rel="shortcut icon" href="/quiz360/favicon.png" type="image/x-icon" />
     <!-- JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Bootstrap tooltips -->
@@ -343,17 +344,11 @@
         #descri {
             font-family: "Montserrat", sans-serif;
             color: #90178a;
-            margin-right: 50px;
-            padding-right: 10px;
             margin-bottom: 3%;
-            /*background-color: rgb(124, 13, 117);*/
-        }
-        
-        #logo {
-            padding: 0px 1000px 0px 0px;
         }
         
         #Btn {
+            margin-bottom: 2%;
             z-index: 2;
             width: 100%;
             position: fixed;
@@ -362,6 +357,7 @@
         }
         
         .footer {
+            font-size: 70%;
             z-index: 9999;
             position: fixed;
             left: 0;
@@ -379,26 +375,21 @@
     <div id="cont">
         <div class="quiz-container">
             <header></header>
-            <span id="logo"><a href="https://paripurnalife.com/"><img src="mainlogo.jpeg"
+            <span><a href="https://paripurnalife.com/"><img src="/quiz360/mainlogo.jpg"
                         alt="paripurnalogo" /></a></span>
             <div id="descri">Check each statement that describes how you feel</div>
             <div id="5op" style="display: none; color: red">
                 Please select 5 options.
             </div>
             <div id="quiz"></div>
-            <div id="results">
-
-            </div>
             <div id="email" style="display: none">
                 <form action="http://127.0.0.1:5000/submit" method="post">
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
                         <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
                         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
                             else.</small>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail2">Email address</label>
                         <input name="name" type="text" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" placeholder="Enter your name" />
                         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
                             else.</small>
@@ -415,7 +406,7 @@
                     <div class="form-group" style="display: none">
                         <input name="Lanswer" type="text" id="Lanswer" />
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary button">Submit</button>
                 </form>
             </div>
         </div>
@@ -433,7 +424,7 @@
             // Functions
             function buildQuiz() {
                 // variable to store the HTML output
-                resultsContainer.style.display = "none";
+
                 const output = [];
 
                 // for each question...
@@ -500,9 +491,9 @@
 
                 document.getElementById("quiz").style.display = "none";
                 document.getElementById("Btn").style.display = "none";
-                resultsContainer.style.display = "block";
+
                 document.getElementById("cont").height = 0;
-                document.getElementById("results").innerHTML = col;
+
                 var res = {
                     1: 0,
                     2: 0,
@@ -688,7 +679,6 @@
 
             // Variables
             const quizContainer = document.getElementById("quiz");
-            const resultsContainer = document.getElementById("results");
             const submitButton = document.getElementById("submit");
             const myQuestions = [{
                 question: "Which Most accurately describe your body?",
@@ -707,7 +697,7 @@
                 },
                 Col: 2,
             }, {
-                question: "What is your hair like",
+                question: "What is your hair like?",
                 answers: {
                     1: "Thick, abundant, more on the oily side",
                     2: "Fine, oily. Tendency towards thinning or greying",
@@ -715,7 +705,7 @@
                 },
                 Col: 3,
             }, {
-                question: "What is your digestion like",
+                question: "What is your digestion like?",
                 answers: {
                     1: "Slow, weak",
                     2: "Strong powerful",
@@ -723,7 +713,7 @@
                 },
                 Col: 4,
             }, {
-                question: "What is your body detoxification like",
+                question: "What is your body detoxification like?",
                 answers: {
                     1: "Thick long Sluggish",
                     2: "regular towards loose",
@@ -731,7 +721,7 @@
                 },
                 Col: 5,
             }, {
-                question: "How you feel normally",
+                question: "How you feel normally?",
                 answers: {
                     1: "Heaviness after eating and water retention",
                     2: "Heartburn, acidity",
@@ -755,7 +745,7 @@
                 },
                 Col: 8,
             }, {
-                question: "What is your temperament like/",
+                question: "What is your temperament like?",
                 answers: {
                     1: "Easy going, giving, and creative",
                     2: "Driven, passionate and ambitious",
@@ -763,7 +753,7 @@
                 },
                 Col: 9,
             }, {
-                question: "How you sleep",
+                question: "How you sleep?",
                 answers: {
                     1: "Deep Long",
                     2: "Moderate sound",
@@ -771,7 +761,7 @@
                 },
                 Col: 10,
             }, {
-                question: "How are your money and material possessions are",
+                question: "How are your money and material possessions are?",
                 answers: {
                     1: "Hoarder, have a hard time letting things go",
                     2: "Calculative shopping, spend on luxurious that are worth buying",
