@@ -37,25 +37,23 @@ def submit():
     if(xt[4] == '10'): 
         re40 = 'Self Guilt'
     if(xt[5] == 'RESEARCHER'):
-        re5 = 'You are here to observe the world, the object of world’s study, to be analyzed through your lens.'
+        re5 = 'OBSERVE THE WORLD, THE OBJECT OF WORLD’S STUDY, TO BE ANALYZED THROUGH YOUR LENS.'
     if(xt[5] == 'ACTIVIST'):
-        re5 = 'You are here to be a bridge for the new prototype.'
+        re5 = 'ACTIVIST  BE A BRIDGE FOR THE NEW PROTOTYPE.'
     if(xt[5] == 'EDUCATOR / TEACHER'):
-        re5 = 'You are here to teach the experiences you undergo.'
-    if(xt[5] == '4'):
-        re5 = 'You are here to bring about social, environmental, or political change.'
+        re5 = 'TEACH THE EXPERIENCES YOU UNDERGO.'
     if(xt[5] == 'IDEALISTIC / ACTIVIST '):
-        re5 = 'You are here to create beauty'
+        re5 = 'BRING ABOUT SOCIAL, ENVIRONMENTAL, OR POLITICAL CHANGE.'
     if(xt[5] == 'ARTIST'):
-        re5 = 'You are here to make others laugh, cry, smile, gasp, ponder, and every emotion in between.'
+        re5 = 'CREATE BEAUTY'
     if(xt[5] == 'PERFORMER / ENTERTAINER'):
-        re5 = 'You are here to protect'
+        re5 = 'MAKE OTHERS LAUGH, CRY, SMILE, GASP, PONDER, AND EVERY EMOTION IN BETWEEN.'
     if(xt[5] == 'WARRIOR'):
-        re5 = 'Mental and Pysical Exhaustion'
+        re5 = 'PROTECT'
     if(xt[5] == 'NURTURER'):
-        re5 = 'You are here to care and connect. You found your sense of purpose in nurturing others.'
+        re5 = 'CARE AND CONNECT. YOU FOUND YOUR SENSE OF PURPOSE IN NURTURING OTHERS.'
     if(xt[5] == 'BUSINESSPERSON / ENTREPRENUER'): 
-        re5 = 'You are here to address the problems of society through business solutions.'
+        re5 = 'BUSINESSPERSON / ENTREPRENUER - ADDRESS THE PROBLEMS OF SOCIETY THROUGH BUSINESS SOLUTIONS'
     data = {
         'Messages': [
         {
