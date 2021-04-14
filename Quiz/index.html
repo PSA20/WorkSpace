@@ -9,13 +9,17 @@
     <!-- JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
     <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
     <!-- Bootstrap core CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
+        rel="stylesheet" />
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet" />
     <style>
@@ -24,7 +28,7 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-size: 20px;
             font-family: "Work Sans", sans-serif;
@@ -33,12 +37,12 @@
             text-align: center;
             height: 100vh;
         }
-        
+
         input.largerCheckbox {
             width: 15px;
             height: 15px;
         }
-        
+
         h1 {
             font-weight: 300;
             margin: 0px;
@@ -47,7 +51,7 @@
             background-color: #444;
             color: #fff;
         }
-        
+
         label {
             /* border: 1px solid #90178a; */
             width: 60%;
@@ -64,7 +68,7 @@
             font-size: 14px;
             cursor: pointer;
         }
-        
+
         .question {
             background-color: #fff;
             font-weight: bold;
@@ -76,7 +80,7 @@
             margin-bottom: 10px;
             font-family: "Montserrat", sans-serif;
         }
-        
+
         .answers {
             background-color: #fff;
             padding-bottom: 30px;
@@ -85,15 +89,16 @@
             text-align: left;
             display: inline-block;
         }
-        
+
         .answers label {
+            font-weight: 550;
             color: #37052b;
             background-color: #e6e7e8;
             display: block;
             margin-bottom: 5px;
             line-height: normal;
         }
-        
+
         button {
             font-family: "Montserrat", sans-serif;
             font-size: 18px;
@@ -109,12 +114,12 @@
             margin-bottom: 20px;
             z-index: 1;
         }
-        
+
         button:hover {
             background-color: rgb(124, 13, 117);
             border: 1px solid rgb(124, 13, 117);
         }
-        
+
         header {
             width: 50%;
             margin-left: 25%;
@@ -122,7 +127,7 @@
             background-color: #90188a;
             color: #fff3e1;
         }
-        
+
         .slide {
             background-color: #fff;
             position: absolute;
@@ -132,12 +137,12 @@
             opacity: 0;
             transition: opacity 0.5s;
         }
-        
+
         .active-slide {
             opacity: 1;
             z-index: 1;
         }
-        
+
         .quiz-container {
             background-color: #fff;
             color: #ddd;
@@ -147,27 +152,28 @@
             height: 200px;
             width: 100%;
         }
-        
+
         label {
             background-color: #b852ec;
             color: white;
         }
-        
+
         div {
             background-color: #fff;
         }
-        
+
         #cont {
             position: relative;
             height: 750px;
             margin-top: 0;
             background-color: #fff;
         }
-        
+
         #results {
             padding: 25px 25px;
             height: 100%;
         }
+
         /* @media only screen and (max-width: 600px) {
             #previous,
             #next,
@@ -179,7 +185,7 @@
                 margin-top: 50%;
             }
         } */
-        
+
         span.cls_002 {
             font-family: Arial, serif;
             font-size: 10.1px;
@@ -188,7 +194,7 @@
             font-style: normal;
             text-decoration: none;
         }
-        
+
         div.cls_002 {
             font-family: Arial, serif;
             font-size: 10.1px;
@@ -197,7 +203,7 @@
             font-style: normal;
             text-decoration: none;
         }
-        
+
         span.cls_003 {
             font-family: Arial, serif;
             font-size: 10.1px;
@@ -206,7 +212,7 @@
             font-style: normal;
             text-decoration: none;
         }
-        
+
         div.cls_003 {
             font-family: Arial, serif;
             font-size: 10.1px;
@@ -215,7 +221,7 @@
             font-style: normal;
             text-decoration: none;
         }
-        
+
         span.cls_004 {
             font-family: Arial, serif;
             font-size: 11.1px;
@@ -224,7 +230,7 @@
             font-style: normal;
             text-decoration: none;
         }
-        
+
         div.cls_004 {
             font-family: Arial, serif;
             font-size: 11.1px;
@@ -233,7 +239,7 @@
             font-style: normal;
             text-decoration: none;
         }
-        
+
         span.cls_005 {
             font-family: Arial, serif;
             font-size: 9.1px;
@@ -242,7 +248,7 @@
             font-style: normal;
             text-decoration: none;
         }
-        
+
         div.cls_005 {
             font-family: Arial, serif;
             font-size: 9.1px;
@@ -251,7 +257,7 @@
             font-style: normal;
             text-decoration: none;
         }
-        
+
         span.cls_006 {
             font-family: Arial, serif;
             font-size: 9.1px;
@@ -260,7 +266,7 @@
             font-style: normal;
             text-decoration: none;
         }
-        
+
         div.cls_006 {
             font-family: Arial, serif;
             font-size: 9.1px;
@@ -269,7 +275,7 @@
             font-style: normal;
             text-decoration: none;
         }
-        
+
         span.cls_007 {
             font-family: Arial, serif;
             font-size: 9.1px;
@@ -278,7 +284,7 @@
             font-style: normal;
             text-decoration: none;
         }
-        
+
         div.cls_007 {
             font-family: Arial, serif;
             font-size: 9.1px;
@@ -287,7 +293,7 @@
             font-style: normal;
             text-decoration: none;
         }
-        
+
         span.cls_012 {
             font-family: Arial, serif;
             font-size: 9.1px;
@@ -296,7 +302,7 @@
             font-style: normal;
             text-decoration: none;
         }
-        
+
         div.cls_012 {
             font-family: Arial, serif;
             font-size: 9.1px;
@@ -305,7 +311,7 @@
             font-style: normal;
             text-decoration: none;
         }
-        
+
         span.cls_011 {
             font-family: Arial, serif;
             font-size: 13.6px;
@@ -314,7 +320,7 @@
             font-style: normal;
             text-decoration: none;
         }
-        
+
         div.cls_011 {
             font-family: Arial, serif;
             font-size: 13.6px;
@@ -323,7 +329,7 @@
             font-style: normal;
             text-decoration: none;
         }
-        
+
         span.cls_014 {
             font-family: Arial, serif;
             font-size: 9.1px;
@@ -332,7 +338,7 @@
             font-style: normal;
             text-decoration: none;
         }
-        
+
         div.cls_014 {
             font-family: Arial, serif;
             font-size: 9.1px;
@@ -341,13 +347,13 @@
             font-style: normal;
             text-decoration: none;
         }
-        
+
         #descri {
             font-family: "Montserrat", sans-serif;
             color: #90178a;
             margin-bottom: 3%;
         }
-        
+
         #Btn {
             margin-bottom: 2%;
             z-index: 2;
@@ -356,7 +362,7 @@
             margin-bottom: 20px;
             bottom: 0;
         }
-        
+
         .footer {
             font-size: 70%;
             z-index: 9999;
@@ -377,7 +383,8 @@
         <div class="quiz-container">
             <span><a href="https://paripurnalife.com/"><img src="/discoveryour360degreepersona/mainlogo.jpg"
                         alt="paripurnalogo" /></a></span>
-            <div id="descri">Check each statement that describes how you feel<br><br><span id="step">Step 1 of 4</span></div>
+            <div id="descri">Check each statement that describes how you feel<br><br><span id="step">Step 1 of 4</span>
+            </div>
             <div id="5op" style="display: none; color: red">
                 Please select 5 options.
             </div>
@@ -385,12 +392,14 @@
             <div id="email" style="display: none">
                 <form action="https://aspwebdevs.herokuapp.com/submit" method="post">
                     <div class="form-group">
-                        <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
+                        <input name="email" type="email" class="form-control" id="exampleInputEmail1"
+                            aria-describedby="emailHelp" placeholder="Enter email" />
                         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
                             else.</small>
                     </div>
                     <div class="form-group">
-                        <input name="name" type="text" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" placeholder="Enter your name" />
+                        <input name="name" type="text" class="form-control" id="exampleInputEmail2"
+                            aria-describedby="emailHelp" placeholder="Enter your name" />
                         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
                             else.</small>
                     </div>
@@ -420,7 +429,7 @@
         © Paripurna Life | Crafted with Love by Mandar Kurlekar Design
     </div>
     <script>
-        (function() {
+        (function () {
             // Functions
             function buildQuiz() {
                 // variable to store the HTML output
@@ -642,9 +651,11 @@
                         document.getElementById("5op").innerHTML =
                             "Please select 5 options.";
                         document.getElementById("5op").style.display = "block";
-                        setTimeout(function() {
+                        setTimeout(function () {
                             document.getElementById("5op").style.display = "none";
                         }, 3000);
+                        document.body.scrollTop = 0; // For Safari
+                        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
                     }
                 } else {
                     if (myQuestions[currentSlide].type == "multi40") {
@@ -654,9 +665,11 @@
                             document.getElementById("5op").innerHTML =
                                 "Please select 7 options.";
                             document.getElementById("5op").style.display = "block";
-                            setTimeout(function() {
+                            setTimeout(function () {
                                 document.getElementById("5op").style.display = "none";
                             }, 3000);
+                            document.body.scrollTop = 0; // For Safari
+                            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
                         }
                     } else {
                         if (userAnswers.length != 0) {
@@ -665,9 +678,11 @@
                             document.getElementById("5op").innerHTML =
                                 "Please select aleast one option.";
                             document.getElementById("5op").style.display = "block";
-                            setTimeout(function() {
+                            setTimeout(function () {
                                 document.getElementById("5op").style.display = "none";
                             }, 3000);
+                            document.body.scrollTop = 0; // For Safari
+                            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
                         }
                     }
                 }
@@ -996,7 +1011,7 @@
                     9: "My ability to create a business around anything, my resourcefulness",
                 },
                 Col: 23,
-            }, ];
+            },];
 
             // Kick things off
             buildQuiz();
