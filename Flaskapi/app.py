@@ -75,7 +75,7 @@ def submit():
         ]
     }
     result = mailjet.send.create(data=data)
-    return 'Thank you for taking quiz... Please check your mail'
+    return render_template("result.html",xt=xt,re40=re40,re5=re5)
 
 if __name__ == '__main__':
     app.run()
