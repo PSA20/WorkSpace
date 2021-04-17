@@ -1,197 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Discover Your 360 Degree Persona</title>
-    <link
-      rel="shortcut icon"
-      href="/discoveryour360degreepersona/favicon.png"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="/discoveryour360degreepersona/favicon.png" type="image/x-icon" />
     <!-- JQuery -->
-    <script
-      type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-    ></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Bootstrap tooltips -->
-    <script
-      type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"
-    ></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
     <!-- Bootstrap core JavaScript -->
-    <script
-      type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"
-    ></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
-    <script
-      type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"
-    ></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
     <!-- Bootstrap core CSS -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" />
     <!-- Material Design Bootstrap -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet" />
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-size: 20px;
-        font-family: "Work Sans", sans-serif;
-        color: #333;
-        font-weight: 300;
-        text-align: center;
-        height: 100vh;
-      }
-
-      input.largerCheckbox {
-        width: 15px;
-        height: 15px;
-      }
-
-      h1 {
-        font-weight: 300;
-        margin: 0px;
-        padding: 10px;
-        font-size: 20px;
-        background-color: #444;
-        color: #fff;
-      }
-
-      label {
-        /* border: 1px solid #90178a; */
-        width: 60%;
-        margin: auto;
-        border-radius: 5px;
-        padding: 13px 15px;
-        font-size: 17px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        align-items: center;
-        justify-content: space-between;
-        display: block;
-        margin-bottom: 15px;
-        font-size: 14px;
-        cursor: pointer;
-      }
-
-      .question {
-        background-color: #fff;
-        font-weight: bold;
-        margin: auto;
-        width: 50%;
-        color: #90178a;
-        margin-top: 0px;
-        font-size: 30px;
-        margin-bottom: 10px;
-        font-family: "Montserrat", sans-serif;
-      }
-
-      .answers {
-        background-color: #fff;
-        padding-bottom: 30px;
-        width: 100%;
-        margin: auto;
-        text-align: left;
-        display: inline-block;
-      }
-
-      .answers label {
-        font-weight: 550;
-        color: #37052b;
-        background-color: #e6e7e8;
-        display: block;
-        margin-bottom: 5px;
-        line-height: normal;
-      }
-
-      button {
-        font-family: "Montserrat", sans-serif;
-        font-size: 18px;
-        background-color: #90178a;
-        color: #fff;
-        border: 0px;
-        border-radius: 30px;
-        padding-left: 16px;
-        padding-right: 16px;
-        padding-top: 3px;
-        padding-bottom: 3px;
-        cursor: pointer;
-        margin-bottom: 20px;
-        z-index: 1;
-      }
-
-      button:hover {
-        background-color: rgb(124, 13, 117);
-        border: 1px solid rgb(124, 13, 117);
-      }
-
-      header {
-        width: 50%;
-        margin-left: 25%;
-        font-weight: bold;
-        background-color: #90188a;
-        color: #fff3e1;
-      }
-
-      .slide {
-        background-color: #fff;
-        position: absolute;
-        left: 0px;
-        width: 100%;
-        height: 100%;
-        opacity: 0;
-        transition: opacity 0.5s;
-      }
-
-      .active-slide {
-        opacity: 1;
-        z-index: 1;
-      }
-
-      .quiz-container {
-        background-color: #fff;
-        color: #ddd;
-        border-radius: 10px;
-        padding: 20px;
-        position: relative;
-        height: 200px;
-        width: 100%;
-      }
-
-      label {
-        background-color: #b852ec;
-        color: white;
-      }
-
-      div {
-        background-color: #fff;
-      }
-
-      #cont {
-        position: relative;
-        height: 750px;
-        margin-top: 0;
-        background-color: #fff;
-      }
-
-      #results {
-        padding: 25px 25px;
-        height: 100%;
-      }
-
-      /* @media only screen and (max-width: 600px) {
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-size: 20px;
+            font-family: "Work Sans", sans-serif;
+            color: #333;
+            font-weight: 300;
+            text-align: center;
+            height: 100vh;
+        }
+        
+        input.largerCheckbox {
+            width: 15px;
+            height: 15px;
+        }
+        
+        h1 {
+            font-weight: 300;
+            margin: 0px;
+            padding: 10px;
+            font-size: 20px;
+            background-color: #444;
+            color: #fff;
+        }
+        
+        label {
+            /* border: 1px solid #90178a; */
+            width: 60%;
+            margin: auto;
+            border-radius: 5px;
+            padding: 13px 15px;
+            font-size: 17px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            align-items: center;
+            justify-content: space-between;
+            display: block;
+            margin-bottom: 15px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        
+        .question {
+            background-color: #fff;
+            font-weight: bold;
+            margin: auto;
+            width: 50%;
+            color: #90178a;
+            margin-top: 0px;
+            font-size: 30px;
+            margin-bottom: 10px;
+            font-family: "Montserrat", sans-serif;
+        }
+        
+        .answers {
+            background-color: #fff;
+            padding-bottom: 30px;
+            width: 100%;
+            margin: auto;
+            text-align: left;
+            display: inline-block;
+        }
+        
+        .answers label {
+            font-weight: 550;
+            color: #37052b;
+            background-color: #e6e7e8;
+            display: block;
+            margin-bottom: 5px;
+            line-height: normal;
+        }
+        
+        button {
+            font-family: "Montserrat", sans-serif;
+            font-size: 18px;
+            background-color: #90178a;
+            color: #fff;
+            border: 0px;
+            border-radius: 30px;
+            padding-left: 16px;
+            padding-right: 16px;
+            padding-top: 3px;
+            padding-bottom: 3px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            z-index: 1;
+        }
+        
+        button:hover {
+            background-color: rgb(124, 13, 117);
+            border: 1px solid rgb(124, 13, 117);
+        }
+        
+        header {
+            width: 50%;
+            margin-left: 25%;
+            font-weight: bold;
+            background-color: #90188a;
+            color: #fff3e1;
+        }
+        
+        .slide {
+            background-color: #fff;
+            position: absolute;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+        
+        .active-slide {
+            opacity: 1;
+            z-index: 1;
+        }
+        
+        .quiz-container {
+            background-color: #fff;
+            color: #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            position: relative;
+            height: 200px;
+            width: 100%;
+        }
+        
+        label {
+            background-color: #b852ec;
+            color: white;
+        }
+        
+        div {
+            background-color: #fff;
+        }
+        
+        #cont {
+            position: relative;
+            height: 750px;
+            margin-top: 0;
+            background-color: #fff;
+        }
+        
+        #results {
+            padding: 25px 25px;
+            height: 100%;
+        }
+        /* @media only screen and (max-width: 600px) {
             #previous,
             #next,
             #submit {
@@ -202,212 +180,209 @@
                 margin-top: 50%;
             }
         } */
-
-      span.cls_002 {
-        font-family: Arial, serif;
-        font-size: 10.1px;
-        color: rgb(0, 0, 0);
-        font-weight: bold;
-        font-style: normal;
-        text-decoration: none;
-      }
-
-      div.cls_002 {
-        font-family: Arial, serif;
-        font-size: 10.1px;
-        color: rgb(0, 0, 0);
-        font-weight: bold;
-        font-style: normal;
-        text-decoration: none;
-      }
-
-      span.cls_003 {
-        font-family: Arial, serif;
-        font-size: 10.1px;
-        color: rgb(0, 0, 0);
-        font-weight: normal;
-        font-style: normal;
-        text-decoration: none;
-      }
-
-      div.cls_003 {
-        font-family: Arial, serif;
-        font-size: 10.1px;
-        color: rgb(0, 0, 0);
-        font-weight: normal;
-        font-style: normal;
-        text-decoration: none;
-      }
-
-      span.cls_004 {
-        font-family: Arial, serif;
-        font-size: 11.1px;
-        color: rgb(0, 0, 0);
-        font-weight: normal;
-        font-style: normal;
-        text-decoration: none;
-      }
-
-      div.cls_004 {
-        font-family: Arial, serif;
-        font-size: 11.1px;
-        color: rgb(0, 0, 0);
-        font-weight: normal;
-        font-style: normal;
-        text-decoration: none;
-      }
-
-      span.cls_005 {
-        font-family: Arial, serif;
-        font-size: 9.1px;
-        color: rgb(0, 0, 0);
-        font-weight: normal;
-        font-style: normal;
-        text-decoration: none;
-      }
-
-      div.cls_005 {
-        font-family: Arial, serif;
-        font-size: 9.1px;
-        color: rgb(0, 0, 0);
-        font-weight: normal;
-        font-style: normal;
-        text-decoration: none;
-      }
-
-      span.cls_006 {
-        font-family: Arial, serif;
-        font-size: 9.1px;
-        color: rgb(64, 63, 64);
-        font-weight: normal;
-        font-style: normal;
-        text-decoration: none;
-      }
-
-      div.cls_006 {
-        font-family: Arial, serif;
-        font-size: 9.1px;
-        color: rgb(64, 63, 64);
-        font-weight: normal;
-        font-style: normal;
-        text-decoration: none;
-      }
-
-      span.cls_007 {
-        font-family: Arial, serif;
-        font-size: 9.1px;
-        color: rgb(157, 32, 106);
-        font-weight: normal;
-        font-style: normal;
-        text-decoration: none;
-      }
-
-      div.cls_007 {
-        font-family: Arial, serif;
-        font-size: 9.1px;
-        color: rgb(157, 32, 106);
-        font-weight: normal;
-        font-style: normal;
-        text-decoration: none;
-      }
-
-      span.cls_012 {
-        font-family: Arial, serif;
-        font-size: 9.1px;
-        color: rgb(28, 68, 133);
-        font-weight: normal;
-        font-style: normal;
-        text-decoration: none;
-      }
-
-      div.cls_012 {
-        font-family: Arial, serif;
-        font-size: 9.1px;
-        color: rgb(28, 68, 133);
-        font-weight: normal;
-        font-style: normal;
-        text-decoration: none;
-      }
-
-      span.cls_011 {
-        font-family: Arial, serif;
-        font-size: 13.6px;
-        color: rgb(64, 63, 64);
-        font-weight: normal;
-        font-style: normal;
-        text-decoration: none;
-      }
-
-      div.cls_011 {
-        font-family: Arial, serif;
-        font-size: 13.6px;
-        color: rgb(64, 63, 64);
-        font-weight: normal;
-        font-style: normal;
-        text-decoration: none;
-      }
-
-      span.cls_014 {
-        font-family: Arial, serif;
-        font-size: 9.1px;
-        color: rgb(51, 12, 78);
-        font-weight: normal;
-        font-style: normal;
-        text-decoration: none;
-      }
-
-      div.cls_014 {
-        font-family: Arial, serif;
-        font-size: 9.1px;
-        color: rgb(51, 12, 78);
-        font-weight: normal;
-        font-style: normal;
-        text-decoration: none;
-      }
-
-      #descri {
-        font-family: "Montserrat", sans-serif;
-        color: #90178a;
-        margin-bottom: 3%;
-      }
-
-      #Btn {
-        margin-bottom: 2%;
-        z-index: 2;
-        width: 100%;
-        position: fixed;
-        margin-bottom: 20px;
-        bottom: 0;
-      }
-
-      .footer {
-        font-size: 70%;
-        z-index: 9999;
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        text-align: center;
-        color: #90178a;
-        background-color: #fff;
-        font-family: "Montserrat", sans-serif;
-      }
+        
+        span.cls_002 {
+            font-family: Arial, serif;
+            font-size: 10.1px;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            font-style: normal;
+            text-decoration: none;
+        }
+        
+        div.cls_002 {
+            font-family: Arial, serif;
+            font-size: 10.1px;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            font-style: normal;
+            text-decoration: none;
+        }
+        
+        span.cls_003 {
+            font-family: Arial, serif;
+            font-size: 10.1px;
+            color: rgb(0, 0, 0);
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+        }
+        
+        div.cls_003 {
+            font-family: Arial, serif;
+            font-size: 10.1px;
+            color: rgb(0, 0, 0);
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+        }
+        
+        span.cls_004 {
+            font-family: Arial, serif;
+            font-size: 11.1px;
+            color: rgb(0, 0, 0);
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+        }
+        
+        div.cls_004 {
+            font-family: Arial, serif;
+            font-size: 11.1px;
+            color: rgb(0, 0, 0);
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+        }
+        
+        span.cls_005 {
+            font-family: Arial, serif;
+            font-size: 9.1px;
+            color: rgb(0, 0, 0);
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+        }
+        
+        div.cls_005 {
+            font-family: Arial, serif;
+            font-size: 9.1px;
+            color: rgb(0, 0, 0);
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+        }
+        
+        span.cls_006 {
+            font-family: Arial, serif;
+            font-size: 9.1px;
+            color: rgb(64, 63, 64);
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+        }
+        
+        div.cls_006 {
+            font-family: Arial, serif;
+            font-size: 9.1px;
+            color: rgb(64, 63, 64);
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+        }
+        
+        span.cls_007 {
+            font-family: Arial, serif;
+            font-size: 9.1px;
+            color: rgb(157, 32, 106);
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+        }
+        
+        div.cls_007 {
+            font-family: Arial, serif;
+            font-size: 9.1px;
+            color: rgb(157, 32, 106);
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+        }
+        
+        span.cls_012 {
+            font-family: Arial, serif;
+            font-size: 9.1px;
+            color: rgb(28, 68, 133);
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+        }
+        
+        div.cls_012 {
+            font-family: Arial, serif;
+            font-size: 9.1px;
+            color: rgb(28, 68, 133);
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+        }
+        
+        span.cls_011 {
+            font-family: Arial, serif;
+            font-size: 13.6px;
+            color: rgb(64, 63, 64);
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+        }
+        
+        div.cls_011 {
+            font-family: Arial, serif;
+            font-size: 13.6px;
+            color: rgb(64, 63, 64);
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+        }
+        
+        span.cls_014 {
+            font-family: Arial, serif;
+            font-size: 9.1px;
+            color: rgb(51, 12, 78);
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+        }
+        
+        div.cls_014 {
+            font-family: Arial, serif;
+            font-size: 9.1px;
+            color: rgb(51, 12, 78);
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+        }
+        
+        #descri {
+            font-family: "Montserrat", sans-serif;
+            color: #90178a;
+            margin-bottom: 3%;
+        }
+        
+        #Btn {
+            margin-bottom: 2%;
+            z-index: 2;
+            width: 100%;
+            position: fixed;
+            margin-bottom: 20px;
+            bottom: 0;
+        }
+        
+        .footer {
+            font-size: 70%;
+            z-index: 9999;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            color: #90178a;
+            background-color: #fff;
+            font-family: "Montserrat", sans-serif;
+        }
     </style>
-  </head>
+</head>
 
-  <body>
+<body>
     <div id="cont">
-      <div class="quiz-container">
-        <span
-          ><a href="https://paripurnalife.com/"
+        <div class="quiz-container">
+            <span><a href="https://paripurnalife.com/"
             ><img
               src="/discoveryour360degreepersona/mainlogo.jpg"
               alt="paripurnalogo" /></a
         ></span>
-        <div id="descri">
-          Check each statement that describes how you feel<br /><br /><span
-            id="step"
-            >Step 1 of 4</span
+            <div id="descri">
+                Check each statement that describes how you feel<br /><br /><span id="step">Step 1 of 4</span
           >
         </div>
         <div id="5op" style="display: none; color: red">
@@ -424,6 +399,7 @@
                 id="exampleInputEmail1"
                 aria-describedby="emailHelp"
                 placeholder="Enter email"
+                required
               />
               <small id="emailHelp" class="form-text text-muted"
                 >We'll never share your email with anyone else.</small
@@ -437,6 +413,7 @@
                 id="exampleInputEmail2"
                 aria-describedby="emailHelp"
                 placeholder="Enter your name"
+                required
               />
               <small id="emailHelp" class="form-text text-muted"
                 >We'll never share your email with anyone else.</small
