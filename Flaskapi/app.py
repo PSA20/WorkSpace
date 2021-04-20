@@ -1,8 +1,8 @@
 from flask import Flask,request,render_template,redirect,url_for
 from mailjet_rest import Client
 import os
-api_key = 'faa02a5210ac08f24e8ea480b1091d44'
-api_secret = 'd4c9538421a4425894a9a9c9f5c3394b'
+api_key = '0029ac0e3471d863cff5b6b80a9a7479'
+api_secret = 'd695a1e1fc42e38ee77a1e3e70b87a1d'
 mailjet = Client(auth=(api_key, api_secret), version='v3.1')
 app = Flask(__name__)
 
@@ -96,7 +96,7 @@ def submit():
             'Messages': [
             {
                 "From": {
-                "Email": "fulfil@paripurnalife.com",
+                "Email": "paripurnalifefulfil@gmail.com",
                 "Name": "Fulfil"
                 },
                 "To": [

@@ -2,177 +2,186 @@
 <html lang="en">
 
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Discover Your 360 Degree Persona</title>
-  <link rel="shortcut icon" href="/discoveryour360degreepersona/favicon.png" type="image/x-icon" />
-  <!-- JQuery -->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <!-- Bootstrap tooltips -->
-  <script type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
-  <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
-  <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
-  <!-- Bootstrap core CSS -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" />
-  <!-- Material Design Bootstrap -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet" />
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discover Your 360 Degree Persona</title>
+    <link rel="shortcut icon" href="/discoveryour360degreepersona/favicon.png" type="image/x-icon" />
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0LLZLZB3K3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-    body {
-      font-size: 20px;
-      font-family: "Work Sans", sans-serif;
-      color: #333;
-      font-weight: 300;
-      text-align: center;
-      height: 100vh;
-    }
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
 
-    input.largerCheckbox {
-      width: 15px;
-      height: 15px;
-    }
-
-    h1 {
-      font-weight: 300;
-      margin: 0px;
-      padding: 10px;
-      font-size: 20px;
-      background-color: #444;
-      color: #fff;
-    }
-
-    label {
-      /* border: 1px solid #90178a; */
-      width: 60%;
-      margin: auto;
-      border-radius: 5px;
-      padding: 13px 15px;
-      font-size: 17px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      align-items: center;
-      justify-content: space-between;
-      display: block;
-      margin-bottom: 15px;
-      font-size: 14px;
-      cursor: pointer;
-    }
-
-    .question {
-      background-color: #fff;
-      font-weight: bold;
-      margin: auto;
-      width: 50%;
-      color: #90178a;
-      margin-top: 0px;
-      font-size: 30px;
-      margin-bottom: 10px;
-      font-family: "Montserrat", sans-serif;
-    }
-
-    .answers {
-      background-color: #fff;
-      padding-bottom: 30px;
-      width: 100%;
-      margin: auto;
-      text-align: left;
-      display: inline-block;
-    }
-
-    .answers label {
-      font-weight: 550;
-      color: #37052b;
-      background-color: #e6e7e8;
-      display: block;
-      margin-bottom: 5px;
-      line-height: normal;
-    }
-
-    button {
-      font-family: "Montserrat", sans-serif;
-      font-size: 18px;
-      background-color: #90178a;
-      color: #fff;
-      border: 0px;
-      border-radius: 30px;
-      padding-left: 16px;
-      padding-right: 16px;
-      padding-top: 3px;
-      padding-bottom: 3px;
-      cursor: pointer;
-      margin-bottom: 20px;
-      z-index: 1;
-    }
-
-    button:hover {
-      background-color: rgb(124, 13, 117);
-      border: 1px solid rgb(124, 13, 117);
-    }
-
-    header {
-      width: 50%;
-      margin-left: 25%;
-      font-weight: bold;
-      background-color: #90188a;
-      color: #fff3e1;
-    }
-
-    .slide {
-      background-color: #fff;
-      position: absolute;
-      left: 0px;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      transition: opacity 0.5s;
-    }
-
-    .active-slide {
-      opacity: 1;
-      z-index: 1;
-    }
-
-    .quiz-container {
-      background-color: #fff;
-      color: #ddd;
-      border-radius: 10px;
-      padding: 20px;
-      position: relative;
-      height: 200px;
-      width: 100%;
-    }
-
-    label {
-      background-color: #b852ec;
-      color: white;
-    }
-
-    div {
-      background-color: #fff;
-    }
-
-    #cont {
-      position: relative;
-      height: 750px;
-      margin-top: 0;
-      background-color: #fff;
-    }
-
-    #results {
-      padding: 25px 25px;
-      height: 100%;
-    }
-
-    /* @media only screen and (max-width: 600px) {
+        gtag('config', 'G-0LLZLZB3K3');
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-size: 20px;
+            font-family: "Work Sans", sans-serif;
+            color: #333;
+            font-weight: 300;
+            text-align: center;
+            height: 100vh;
+        }
+        
+        input.largerCheckbox {
+            width: 15px;
+            height: 15px;
+        }
+        
+        h1 {
+            font-weight: 300;
+            margin: 0px;
+            padding: 10px;
+            font-size: 20px;
+            background-color: #444;
+            color: #fff;
+        }
+        
+        label {
+            /* border: 1px solid #90178a; */
+            width: 60%;
+            margin: auto;
+            border-radius: 5px;
+            padding: 13px 15px;
+            font-size: 17px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            align-items: center;
+            justify-content: space-between;
+            display: block;
+            margin-bottom: 15px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        
+        .question {
+            background-color: #fff;
+            font-weight: bold;
+            margin: auto;
+            width: 50%;
+            color: #90178a;
+            margin-top: 0px;
+            font-size: 30px;
+            margin-bottom: 10px;
+            font-family: "Montserrat", sans-serif;
+        }
+        
+        .answers {
+            background-color: #fff;
+            padding-bottom: 30px;
+            width: 100%;
+            margin: auto;
+            text-align: left;
+            display: inline-block;
+        }
+        
+        .answers label {
+            font-weight: 550;
+            color: #37052b;
+            background-color: #e6e7e8;
+            display: block;
+            margin-bottom: 5px;
+            line-height: normal;
+        }
+        
+        button {
+            font-family: "Montserrat", sans-serif;
+            font-size: 18px;
+            background-color: #90178a;
+            color: #fff;
+            border: 0px;
+            border-radius: 30px;
+            padding-left: 16px;
+            padding-right: 16px;
+            padding-top: 3px;
+            padding-bottom: 3px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            z-index: 1;
+        }
+        
+        button:hover {
+            background-color: rgb(124, 13, 117);
+            border: 1px solid rgb(124, 13, 117);
+        }
+        
+        header {
+            width: 50%;
+            margin-left: 25%;
+            font-weight: bold;
+            background-color: #90188a;
+            color: #fff3e1;
+        }
+        
+        .slide {
+            background-color: #fff;
+            position: absolute;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+        
+        .active-slide {
+            opacity: 1;
+            z-index: 1;
+        }
+        
+        .quiz-container {
+            background-color: #fff;
+            color: #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            position: relative;
+            height: 200px;
+            width: 100%;
+        }
+        
+        label {
+            background-color: #b852ec;
+            color: white;
+        }
+        
+        div {
+            background-color: #fff;
+        }
+        
+        #cont {
+            position: relative;
+            height: 750px;
+            margin-top: 0;
+            background-color: #fff;
+        }
+        
+        #results {
+            padding: 25px 25px;
+            height: 100%;
+        }
+        /* @media only screen and (max-width: 600px) {
             #previous,
             #next,
             #submit {
@@ -183,892 +192,863 @@
                 margin-top: 50%;
             }
         } */
-
-    span.cls_002 {
-      font-family: Arial, serif;
-      font-size: 10.1px;
-      color: rgb(0, 0, 0);
-      font-weight: bold;
-      font-style: normal;
-      text-decoration: none;
-    }
-
-    div.cls_002 {
-      font-family: Arial, serif;
-      font-size: 10.1px;
-      color: rgb(0, 0, 0);
-      font-weight: bold;
-      font-style: normal;
-      text-decoration: none;
-    }
-
-    span.cls_003 {
-      font-family: Arial, serif;
-      font-size: 10.1px;
-      color: rgb(0, 0, 0);
-      font-weight: normal;
-      font-style: normal;
-      text-decoration: none;
-    }
-
-    div.cls_003 {
-      font-family: Arial, serif;
-      font-size: 10.1px;
-      color: rgb(0, 0, 0);
-      font-weight: normal;
-      font-style: normal;
-      text-decoration: none;
-    }
-
-    span.cls_004 {
-      font-family: Arial, serif;
-      font-size: 11.1px;
-      color: rgb(0, 0, 0);
-      font-weight: normal;
-      font-style: normal;
-      text-decoration: none;
-    }
-
-    div.cls_004 {
-      font-family: Arial, serif;
-      font-size: 11.1px;
-      color: rgb(0, 0, 0);
-      font-weight: normal;
-      font-style: normal;
-      text-decoration: none;
-    }
-
-    span.cls_005 {
-      font-family: Arial, serif;
-      font-size: 9.1px;
-      color: rgb(0, 0, 0);
-      font-weight: normal;
-      font-style: normal;
-      text-decoration: none;
-    }
-
-    div.cls_005 {
-      font-family: Arial, serif;
-      font-size: 9.1px;
-      color: rgb(0, 0, 0);
-      font-weight: normal;
-      font-style: normal;
-      text-decoration: none;
-    }
-
-    span.cls_006 {
-      font-family: Arial, serif;
-      font-size: 9.1px;
-      color: rgb(64, 63, 64);
-      font-weight: normal;
-      font-style: normal;
-      text-decoration: none;
-    }
-
-    div.cls_006 {
-      font-family: Arial, serif;
-      font-size: 9.1px;
-      color: rgb(64, 63, 64);
-      font-weight: normal;
-      font-style: normal;
-      text-decoration: none;
-    }
-
-    span.cls_007 {
-      font-family: Arial, serif;
-      font-size: 9.1px;
-      color: rgb(157, 32, 106);
-      font-weight: normal;
-      font-style: normal;
-      text-decoration: none;
-    }
-
-    div.cls_007 {
-      font-family: Arial, serif;
-      font-size: 9.1px;
-      color: rgb(157, 32, 106);
-      font-weight: normal;
-      font-style: normal;
-      text-decoration: none;
-    }
-
-    span.cls_012 {
-      font-family: Arial, serif;
-      font-size: 9.1px;
-      color: rgb(28, 68, 133);
-      font-weight: normal;
-      font-style: normal;
-      text-decoration: none;
-    }
-
-    div.cls_012 {
-      font-family: Arial, serif;
-      font-size: 9.1px;
-      color: rgb(28, 68, 133);
-      font-weight: normal;
-      font-style: normal;
-      text-decoration: none;
-    }
-
-    span.cls_011 {
-      font-family: Arial, serif;
-      font-size: 13.6px;
-      color: rgb(64, 63, 64);
-      font-weight: normal;
-      font-style: normal;
-      text-decoration: none;
-    }
-
-    div.cls_011 {
-      font-family: Arial, serif;
-      font-size: 13.6px;
-      color: rgb(64, 63, 64);
-      font-weight: normal;
-      font-style: normal;
-      text-decoration: none;
-    }
-
-    span.cls_014 {
-      font-family: Arial, serif;
-      font-size: 9.1px;
-      color: rgb(51, 12, 78);
-      font-weight: normal;
-      font-style: normal;
-      text-decoration: none;
-    }
-
-    div.cls_014 {
-      font-family: Arial, serif;
-      font-size: 9.1px;
-      color: rgb(51, 12, 78);
-      font-weight: normal;
-      font-style: normal;
-      text-decoration: none;
-    }
-
-    #descri {
-      font-family: "Montserrat", sans-serif;
-      color: #90178a;
-      margin-bottom: 3%;
-    }
-
-    #Btn {
-      margin-bottom: 2%;
-      z-index: 2;
-      width: 100%;
-      position: fixed;
-      margin-bottom: 20px;
-      bottom: 0;
-    }
-
-    .footer {
-      font-size: 70%;
-      z-index: 9999;
-      position: fixed;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      text-align: center;
-      color: #90178a;
-      background-color: #fff;
-      font-family: "Montserrat", sans-serif;
-    }
-  </style>
+        
+        span.cls_002 {
+            font-family: Arial, serif;
+            font-size: 10.1px;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            font-style: normal;
+            text-decoration: none;
+        }
+        
+        div.cls_002 {
+            font-family: Arial, serif;
+            font-size: 10.1px;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            font-style: normal;
+            text-decoration: none;
+        }
+        
+        span.cls_003 {
+            font-family: Arial, serif;
+            font-size: 10.1px;
+            color: rgb(0, 0, 0);
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+        }
+        
+        div.cls_003 {
+            font-family: Arial, serif;
+            font-size: 10.1px;
+            color: rgb(0, 0, 0);
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+        }
+        
+        span.cls_004 {
+            font-family: Arial, serif;
+            font-size: 11.1px;
+            color: rgb(0, 0, 0);
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+        }
+        
+        div.cls_004 {
+            font-family: Arial, serif;
+            font-size: 11.1px;
+            color: rgb(0, 0, 0);
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+        }
+        
+        span.cls_005 {
+            font-family: Arial, serif;
+            font-size: 9.1px;
+            color: rgb(0, 0, 0);
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+        }
+        
+        div.cls_005 {
+            font-family: Arial, serif;
+            font-size: 9.1px;
+            color: rgb(0, 0, 0);
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+        }
+        
+        span.cls_006 {
+            font-family: Arial, serif;
+            font-size: 9.1px;
+            color: rgb(64, 63, 64);
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+        }
+        
+        div.cls_006 {
+            font-family: Arial, serif;
+            font-size: 9.1px;
+            color: rgb(64, 63, 64);
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+        }
+        
+        span.cls_007 {
+            font-family: Arial, serif;
+            font-size: 9.1px;
+            color: rgb(157, 32, 106);
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+        }
+        
+        div.cls_007 {
+            font-family: Arial, serif;
+            font-size: 9.1px;
+            color: rgb(157, 32, 106);
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+        }
+        
+        span.cls_012 {
+            font-family: Arial, serif;
+            font-size: 9.1px;
+            color: rgb(28, 68, 133);
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+        }
+        
+        div.cls_012 {
+            font-family: Arial, serif;
+            font-size: 9.1px;
+            color: rgb(28, 68, 133);
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+        }
+        
+        span.cls_011 {
+            font-family: Arial, serif;
+            font-size: 13.6px;
+            color: rgb(64, 63, 64);
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+        }
+        
+        div.cls_011 {
+            font-family: Arial, serif;
+            font-size: 13.6px;
+            color: rgb(64, 63, 64);
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+        }
+        
+        span.cls_014 {
+            font-family: Arial, serif;
+            font-size: 9.1px;
+            color: rgb(51, 12, 78);
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+        }
+        
+        div.cls_014 {
+            font-family: Arial, serif;
+            font-size: 9.1px;
+            color: rgb(51, 12, 78);
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+        }
+        
+        #descri {
+            font-family: "Montserrat", sans-serif;
+            color: #90178a;
+            margin-bottom: 3%;
+        }
+        
+        #Btn {
+            margin-bottom: 2%;
+            z-index: 2;
+            width: 100%;
+            position: fixed;
+            margin-bottom: 20px;
+            bottom: 0;
+        }
+        
+        .footer {
+            font-size: 70%;
+            z-index: 9999;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            color: #90178a;
+            background-color: #fff;
+            font-family: "Montserrat", sans-serif;
+        }
+    </style>
 </head>
 
 <body>
-  <div id="cont">
-    <div class="quiz-container">
-      <span><a href="https://paripurnalife.com/"><img src="/discoveryour360degreepersona/mainlogo.jpg"
+    <div id="cont">
+        <div class="quiz-container">
+            <span><a href="https://paripurnalife.com/"><img src="/discoveryour360degreepersona/mainlogo.jpg"
             alt="paripurnalogo" /></a></span>
-      <div id="descri">
-        Check each statement that describes how you feel<br /><br /><span id="step">Step 1 of 4</span>
-      </div>
-      <div id="5op" style="display: none; color: red">
-        Please select 5 options.
-      </div>
-      <div id="quiz"></div>
-      <div id="email" style="display: none">
-        <form action="https://aspwebdevs.herokuapp.com/submit" method="post">
-          <div class="form-group">
-            <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-              placeholder="Enter email" required />
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-          </div>
-          <div class="form-group">
-            <input name="name" type="text" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp"
-              placeholder="Enter your name" required />
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-          </div>
-          <div class="form-group" style="display: none">
-            <input name="answer" type="text" id="answer" />
-          </div>
-          <div class="form-group" style="display: none">
-            <input name="multanswer" type="text" id="multanswer" />
-          </div>
-          <div class="form-group" style="display: none">
-            <input name="multanswer40" type="text" id="multanswer40" />
-          </div>
-          <div class="form-group" style="display: none">
-            <input name="Lanswer" type="text" id="Lanswer" />
-          </div>
-          <button type="submit" class="btn btn-primary button">Submit</button>
-        </form>
-      </div>
+            <div id="descri">
+                Check each statement that describes how you feel<br /><br /><span id="step">Step 1 of 4</span>
+            </div>
+            <div id="5op" style="display: none; color: red">
+                Please select 5 options.
+            </div>
+            <div id="quiz"></div>
+            <div id="email" style="display: none">
+                <form action="https://aspwebdevs.herokuapp.com/submit" method="post">
+                    <div class="form-group">
+                        <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required />
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-group">
+                        <input name="name" type="text" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" placeholder="Enter your name" required />
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-group" style="display: none">
+                        <input name="answer" type="text" id="answer" />
+                    </div>
+                    <div class="form-group" style="display: none">
+                        <input name="multanswer" type="text" id="multanswer" />
+                    </div>
+                    <div class="form-group" style="display: none">
+                        <input name="multanswer40" type="text" id="multanswer40" />
+                    </div>
+                    <div class="form-group" style="display: none">
+                        <input name="Lanswer" type="text" id="Lanswer" />
+                    </div>
+                    <button type="submit" class="btn btn-primary button">Submit</button>
+                </form>
+            </div>
+        </div>
     </div>
-  </div>
-  <div id="Btn">
-    <button id="previous">Previous Question</button>
-    <button id="next">Next Question</button>
-    <button id="submit">Submit Quiz</button>
-  </div>
-  <div class="footer">
-    © Paripurna Life | Crafted with Love by Mandar Kurlekar Design
-  </div>
-  <script>
-    (function () {
-      // Functions
-      function buildQuiz() {
-        // variable to store the HTML output
+    <div id="Btn">
+        <button id="previous">Previous Question</button>
+        <button id="next">Next Question</button>
+        <button id="submit">Submit Quiz</button>
+    </div>
+    <div class="footer">
+        © Paripurna Life | Crafted with Love by Mandar Kurlekar Design
+    </div>
+    <script>
+        (function() {
+            // Functions
+            function buildQuiz() {
+                // variable to store the HTML output
 
-        const output = [];
+                const output = [];
 
-        // for each question...
-        myQuestions.forEach((currentQuestion, questionNumber) => {
-          // variable to store the list of possible answers
-          const answers = [];
-          if (
-            currentQuestion.type == "multi" ||
-            currentQuestion.type == "multi40"
-          ) {
-            // and for each available answer...
-            for (letter in currentQuestion.answers) {
-              // ...add an HTML radio button
-              answers.push(
-                `<label style=" margin-top:20px;">
+                // for each question...
+                myQuestions.forEach((currentQuestion, questionNumber) => {
+                    // variable to store the list of possible answers
+                    const answers = [];
+                    if (
+                        currentQuestion.type == "multi" ||
+                        currentQuestion.type == "multi40"
+                    ) {
+                        // and for each available answer...
+                        for (letter in currentQuestion.answers) {
+                            // ...add an HTML radio button
+                            answers.push(
+                                `<label style=" margin-top:20px;">
                                 <input class="option form-check-input largerCheckbox" type="checkbox" name="question${questionNumber}" value="${letter}">
                                 ${currentQuestion.answers[letter]}
                                 </label>`
-              );
-            }
-          } else {
-            for (letter in currentQuestion.answers) {
-              // ...add an HTML radio button
-              answers.push(
-                `<label style="height: 100%; margin-top:20px;">
+                            );
+                        }
+                    } else {
+                        for (letter in currentQuestion.answers) {
+                            // ...add an HTML radio button
+                            answers.push(
+                                `<label style="height: 100%; margin-top:20px;">
               <input type="radio" name="question${questionNumber}" value="${letter}">
               ${letter} :
               ${currentQuestion.answers[letter]}
             </label>`
-              );
-            }
-          }
+                            );
+                        }
+                    }
 
-          // add this question and its answers to the output
-          output.push(
-            `<div class="slide">
+                    // add this question and its answers to the output
+                    output.push(
+                        `<div class="slide">
             <div class="question"> ${currentQuestion.question} </div>
             <div class="answers"> ${answers.join("")} </div>
           </div>`
-          );
-        });
+                    );
+                });
 
-        // finally combine our output list into one string of HTML and put it on the page
-        quizContainer.innerHTML = output.join("");
-      }
-
-      function showResults() {
-        // gather answer containers from our quiz
-        const answerContainers = quizContainer.querySelectorAll(".answers");
-        const col = [];
-        // keep track of user's answers
-        // for each question...
-        myQuestions.forEach((currentQuestion, questionNumber) => {
-          // find selected answer
-          const answerContainer = answerContainers[questionNumber];
-          const selector = `input[name=question${questionNumber}]:checked`;
-          // const userAnswer = (answerContainer.querySelector(selector) || {}).value;
-          // console.log(answerContainer.querySelectorAll(selector));
-          // col[currentQuestion.Col] = parseInt(userAnswer);
-          const userAnswers = answerContainer.querySelectorAll(selector);
-          let temp = [];
-          userAnswers.forEach((answer, num) => {
-            temp[num] = answer.value;
-          });
-          col[currentQuestion.Col - 1] = temp;
-        });
-
-        document.getElementById("quiz").style.display = "none";
-        document.getElementById("Btn").style.display = "none";
-
-        document.getElementById("cont").height = 0;
-
-        var res = {
-          1: 0,
-          2: 0,
-          3: 0,
-        };
-        for (var i in col.slice(0, 12)) {
-          res[col[i]]++;
-        }
-        var max = res[1];
-        var ans = 1;
-        for (var i in res) {
-          if (max < res[i]) {
-            max = res[i];
-            ans = i;
-          }
-        }
-        var answer = {
-          1: "The Modification Expert ",
-          2: "The Accomplisher ",
-          3: "The Intuitive",
-        };
-        const mult = col.slice(12, 16);
-        console.log(mult);
-        const multans = {
-          0: [6, "E", "I"],
-          1: [7, "S", "I"],
-          2: [6, "T", "F"],
-          3: [6, "J", "t"],
-        };
-        let multAns = "";
-        for (var i in mult) {
-          let a = 0;
-          let b = 0;
-          for (var j in mult[i]) {
-            if (multans[i][0] < mult[i][j]) {
-              b++;
-            } else {
-              a++;
+                // finally combine our output list into one string of HTML and put it on the page
+                quizContainer.innerHTML = output.join("");
             }
-            console.log(mult[i][j]);
-          }
-          if (a < b) {
-            multAns = multAns + multans[i][2];
-          } else {
-            multAns = multAns + multans[i][1];
-          }
-          console.log(mult[i], multans[i]);
-        }
-        let ans40 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-        for (var j in col[16]) {
-          if (col[16][j] < 6 && col[16][j] > 0) {
-            ans40[0]++;
-          } else if (col[16][j] < 6 && col[16][j] > 0) {
-            ans40[1]++;
-          } else if (col[16][j] < 10 && col[16][j] > 5) {
-            ans40[2]++;
-          } else if (col[16][j] < 14 && col[16][j] > 9) {
-            ans40[3]++;
-          } else if (col[16][j] < 21 && col[16][j] > 13) {
-            ans40[4]++;
-          } else if (col[16][j] < 27 && col[16][j] > 20) {
-            ans40[5]++;
-          } else if (col[16][j] < 32 && col[16][j] > 26) {
-            ans40[6]++;
-          } else if (col[16][j] < 34 && col[16][j] > 31) {
-            ans40[7]++;
-          } else if (col[16][j] < 36 && col[16][j] > 33) {
-            ans40[8]++;
-          } else if (col[16][j] < 41 && col[16][j] > 35) {
-            ans40[9]++;
-          }
-        }
-        const lastSettion = col.slice(17);
-        var Lres = {
-          1: 0,
-          2: 0,
-          3: 0,
-          4: 0,
-          5: 0,
-          6: 0,
-          7: 0,
-          8: 0,
-          9: 0,
-        };
-        for (var i in lastSettion) {
-          Lres[col[i]]++;
-        }
-        var Lmax = Lres[1];
-        var Lans = 1;
-        for (var i in Lres) {
-          if (Lmax < Lres[i]) {
-            Lmax = Lres[i];
-            Lans = i;
-          }
-        }
-        var Lanswer = {
-          1: "RESEARCHER",
-          2: "ACTIVIST",
-          3: "EDUCATOR / TEACHER",
-          4: "IDEALISTIC / ACTIVIST",
-          5: "ARTIST",
-          6: "PERFORMER / ENTERTAINER",
-          7: "WARRIOR",
-          8: "NURTURER",
-          9: "BUSINESSPERSON / ENTREPRENUER",
-        };
-        console.log(ans40.indexOf(Math.max(...ans40)));
-        console.log(multAns);
-        console.log(col);
-        console.log(res);
-        console.log([answer[ans], multAns]);
-        document.getElementById("answer").value = answer[ans];
-        document.getElementById("Lanswer").value = Lanswer[Lans];
-        document.getElementById("multanswer").value = multAns;
-        document.getElementById("multanswer40").value =
-          ans40.indexOf(Math.max(...ans40)) + 1;
-        document.getElementById("email").style.display = "inline-block";
-      }
 
-      function showSlide(n) {
-        slides[currentSlide].classList.remove("active-slide");
-        slides[n].classList.add("active-slide");
-        currentSlide = n;
-        if (currentSlide === 0) {
-          previousButton.style.display = "none";
-        } else {
-          previousButton.style.display = "inline-block";
-        }
-        if (currentSlide === slides.length - 1) {
-          submitButton.style.display = "inline-block";
-          nextButton.style.display = "none";
-        } else {
-          submitButton.style.display = "none";
-          nextButton.style.display = "inline-block";
-        }
-      }
+            function showResults() {
+                // gather answer containers from our quiz
+                const answerContainers = quizContainer.querySelectorAll(".answers");
+                const col = [];
+                // keep track of user's answers
+                // for each question...
+                myQuestions.forEach((currentQuestion, questionNumber) => {
+                    // find selected answer
+                    const answerContainer = answerContainers[questionNumber];
+                    const selector = `input[name=question${questionNumber}]:checked`;
+                    // const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+                    // console.log(answerContainer.querySelectorAll(selector));
+                    // col[currentQuestion.Col] = parseInt(userAnswer);
+                    const userAnswers = answerContainer.querySelectorAll(selector);
+                    let temp = [];
+                    userAnswers.forEach((answer, num) => {
+                        temp[num] = answer.value;
+                    });
+                    col[currentQuestion.Col - 1] = temp;
+                });
 
-      function showNextSlide() {
-        const answerContainers = quizContainer.querySelectorAll(".answers");
-        const answerContainer = answerContainers[currentSlide];
-        const selector = `input[name=question${currentSlide}]:checked`;
-        const userAnswers = answerContainer.querySelectorAll(selector);
-        if (myQuestions[currentSlide].type == "multi") {
-          if (userAnswers.length == 5) {
-            showSlide(currentSlide + 1);
-          } else {
-            document.getElementById("5op").innerHTML =
-              "Please select 5 options.";
-            document.getElementById("5op").style.display = "block";
-            setTimeout(function () {
-              document.getElementById("5op").style.display = "none";
-            }, 3000);
-            document.body.scrollTop = 0; // For Safari
-            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-          }
-        } else {
-          if (myQuestions[currentSlide].type == "multi40") {
-            if (userAnswers.length == 7) {
-              showSlide(currentSlide + 1);
-            } else {
-              document.getElementById("5op").innerHTML =
-                "Please select 7 options.";
-              document.getElementById("5op").style.display = "block";
-              setTimeout(function () {
-                document.getElementById("5op").style.display = "none";
-              }, 3000);
-              document.body.scrollTop = 0; // For Safari
-              document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+                document.getElementById("quiz").style.display = "none";
+                document.getElementById("Btn").style.display = "none";
+
+                document.getElementById("cont").height = 0;
+
+                var res = {
+                    1: 0,
+                    2: 0,
+                    3: 0,
+                };
+                for (var i in col.slice(0, 12)) {
+                    res[col[i]]++;
+                }
+                var max = res[1];
+                var ans = 1;
+                for (var i in res) {
+                    if (max < res[i]) {
+                        max = res[i];
+                        ans = i;
+                    }
+                }
+                var answer = {
+                    1: "The Modification Expert ",
+                    2: "The Accomplisher ",
+                    3: "The Intuitive",
+                };
+                const mult = col.slice(12, 16);
+                console.log(mult);
+                const multans = {
+                    0: [6, "E", "I"],
+                    1: [7, "S", "I"],
+                    2: [6, "T", "F"],
+                    3: [6, "J", "t"],
+                };
+                let multAns = "";
+                for (var i in mult) {
+                    let a = 0;
+                    let b = 0;
+                    for (var j in mult[i]) {
+                        if (multans[i][0] < mult[i][j]) {
+                            b++;
+                        } else {
+                            a++;
+                        }
+                        console.log(mult[i][j]);
+                    }
+                    if (a < b) {
+                        multAns = multAns + multans[i][2];
+                    } else {
+                        multAns = multAns + multans[i][1];
+                    }
+                    console.log(mult[i], multans[i]);
+                }
+                let ans40 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+                for (var j in col[16]) {
+                    if (col[16][j] < 6 && col[16][j] > 0) {
+                        ans40[0]++;
+                    } else if (col[16][j] < 6 && col[16][j] > 0) {
+                        ans40[1]++;
+                    } else if (col[16][j] < 10 && col[16][j] > 5) {
+                        ans40[2]++;
+                    } else if (col[16][j] < 14 && col[16][j] > 9) {
+                        ans40[3]++;
+                    } else if (col[16][j] < 21 && col[16][j] > 13) {
+                        ans40[4]++;
+                    } else if (col[16][j] < 27 && col[16][j] > 20) {
+                        ans40[5]++;
+                    } else if (col[16][j] < 32 && col[16][j] > 26) {
+                        ans40[6]++;
+                    } else if (col[16][j] < 34 && col[16][j] > 31) {
+                        ans40[7]++;
+                    } else if (col[16][j] < 36 && col[16][j] > 33) {
+                        ans40[8]++;
+                    } else if (col[16][j] < 41 && col[16][j] > 35) {
+                        ans40[9]++;
+                    }
+                }
+                const lastSettion = col.slice(17);
+                var Lres = {
+                    1: 0,
+                    2: 0,
+                    3: 0,
+                    4: 0,
+                    5: 0,
+                    6: 0,
+                    7: 0,
+                    8: 0,
+                    9: 0,
+                };
+                for (var i in lastSettion) {
+                    Lres[col[i]]++;
+                }
+                var Lmax = Lres[1];
+                var Lans = 1;
+                for (var i in Lres) {
+                    if (Lmax < Lres[i]) {
+                        Lmax = Lres[i];
+                        Lans = i;
+                    }
+                }
+                var Lanswer = {
+                    1: "RESEARCHER",
+                    2: "ACTIVIST",
+                    3: "EDUCATOR / TEACHER",
+                    4: "IDEALISTIC / ACTIVIST",
+                    5: "ARTIST",
+                    6: "PERFORMER / ENTERTAINER",
+                    7: "WARRIOR",
+                    8: "NURTURER",
+                    9: "BUSINESSPERSON / ENTREPRENUER",
+                };
+                console.log(ans40.indexOf(Math.max(...ans40)));
+                console.log(multAns);
+                console.log(col);
+                console.log(res);
+                console.log([answer[ans], multAns]);
+                document.getElementById("answer").value = answer[ans];
+                document.getElementById("Lanswer").value = Lanswer[Lans];
+                document.getElementById("multanswer").value = multAns;
+                document.getElementById("multanswer40").value =
+                    ans40.indexOf(Math.max(...ans40)) + 1;
+                document.getElementById("email").style.display = "inline-block";
             }
-          } else {
-            if (userAnswers.length != 0) {
-              showSlide(currentSlide + 1);
-            } else {
-              document.getElementById("5op").innerHTML =
-                "Please select aleast one option.";
-              document.getElementById("5op").style.display = "block";
-              setTimeout(function () {
-                document.getElementById("5op").style.display = "none";
-              }, 3000);
-              document.body.scrollTop = 0; // For Safari
-              document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+
+            function showSlide(n) {
+                slides[currentSlide].classList.remove("active-slide");
+                slides[n].classList.add("active-slide");
+                currentSlide = n;
+                if (currentSlide === 0) {
+                    previousButton.style.display = "none";
+                } else {
+                    previousButton.style.display = "inline-block";
+                }
+                if (currentSlide === slides.length - 1) {
+                    submitButton.style.display = "inline-block";
+                    nextButton.style.display = "none";
+                } else {
+                    submitButton.style.display = "none";
+                    nextButton.style.display = "inline-block";
+                }
             }
-          }
-        }
-        if (currentSlide == 12) {
-          document.getElementById("step").innerHTML = "Step 2 of 4";
-        } else if (currentSlide == 16) {
-          document.getElementById("step").innerHTML = "Step 3 of 4";
-        } else if (currentSlide == 17) {
-          document.getElementById("step").innerHTML = "Step 4 of 4";
-        }
-      }
 
-      function showPreviousSlide() {
-        showSlide(currentSlide - 1);
-        if (currentSlide == 12) {
-          document.getElementById("step").innerHTML = "Step 2 of 4";
-        } else if (currentSlide == 16) {
-          document.getElementById("step").innerHTML = "Step 3 of 4";
-        } else if (currentSlide == 17) {
-          document.getElementById("step").innerHTML = "Step 4 of 4";
-        } else if (currentSlide == 11) {
-          document.getElementById("step").innerHTML = "Step 1 of 4";
-        }
-      }
+            function showNextSlide() {
+                const answerContainers = quizContainer.querySelectorAll(".answers");
+                const answerContainer = answerContainers[currentSlide];
+                const selector = `input[name=question${currentSlide}]:checked`;
+                const userAnswers = answerContainer.querySelectorAll(selector);
+                if (myQuestions[currentSlide].type == "multi") {
+                    if (userAnswers.length == 5) {
+                        showSlide(currentSlide + 1);
+                    } else {
+                        document.getElementById("5op").innerHTML =
+                            "Please select 5 options.";
+                        document.getElementById("5op").style.display = "block";
+                        setTimeout(function() {
+                            document.getElementById("5op").style.display = "none";
+                        }, 3000);
+                        document.body.scrollTop = 0; // For Safari
+                        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+                    }
+                } else {
+                    if (myQuestions[currentSlide].type == "multi40") {
+                        if (userAnswers.length == 7) {
+                            showSlide(currentSlide + 1);
+                        } else {
+                            document.getElementById("5op").innerHTML =
+                                "Please select 7 options.";
+                            document.getElementById("5op").style.display = "block";
+                            setTimeout(function() {
+                                document.getElementById("5op").style.display = "none";
+                            }, 3000);
+                            document.body.scrollTop = 0; // For Safari
+                            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+                        }
+                    } else {
+                        if (userAnswers.length != 0) {
+                            showSlide(currentSlide + 1);
+                        } else {
+                            document.getElementById("5op").innerHTML =
+                                "Please select aleast one option.";
+                            document.getElementById("5op").style.display = "block";
+                            setTimeout(function() {
+                                document.getElementById("5op").style.display = "none";
+                            }, 3000);
+                            document.body.scrollTop = 0; // For Safari
+                            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+                        }
+                    }
+                }
+                if (currentSlide == 12) {
+                    document.getElementById("step").innerHTML = "Step 2 of 4";
+                } else if (currentSlide == 16) {
+                    document.getElementById("step").innerHTML = "Step 3 of 4";
+                } else if (currentSlide == 17) {
+                    document.getElementById("step").innerHTML = "Step 4 of 4";
+                }
+            }
 
-      // Variables
-      const quizContainer = document.getElementById("quiz");
-      const submitButton = document.getElementById("submit");
-      const myQuestions = [
-        {
-          question: "Which Most accurately describe your body?",
-          answers: {
-            1: "Curvy, bigger built",
-            2: "Medium built, good muscular built",
-            3: "Naturally thin, lanky, slender",
-          },
-          Col: 1,
-        },
-        {
-          question: "How easily do you gain weight?",
-          answers: {
-            1: "Too easily",
-            2: "Moderately",
-            3: "Next to impossible",
-          },
-          Col: 2,
-        },
-        {
-          question: "What is your hair like?",
-          answers: {
-            1: "Thick, abundant, more on the oily side",
-            2: "Fine, oily. Tendency towards thinning or greying",
-            3: "Dry frizzy",
-          },
-          Col: 3,
-        },
-        {
-          question: "What is your digestion like?",
-          answers: {
-            1: "Slow, weak",
-            2: "Strong powerful",
-            3: "Variable, sometimes good or my be even bad",
-          },
-          Col: 4,
-        },
-        {
-          question: "What is your body detoxification like?",
-          answers: {
-            1: "Thick long Sluggish",
-            2: "Regular towards loose",
-            3: "Tends towards constipation",
-          },
-          Col: 5,
-        },
-        {
-          question: "How you feel normally?",
-          answers: {
-            1: "Heaviness after eating and water retention",
-            2: "Heartburn, acidity",
-            3: "Bloating, gases",
-          },
-          Col: 6,
-        },
-        {
-          question: "What is body temperature?",
-          answers: {
-            1: "Adaptable, don’t like cold, wet weather",
-            2: "Usually warm, prefer cool",
-            3: "Always cold prefer hot",
-          },
-          Col: 7,
-        },
-        {
-          question: "What are your negative traits?",
-          answers: {
-            1: "Lonely, depressed and jealous",
-            2: "Competitive and impatient",
-            3: "Anxious, fearful and nervous",
-          },
-          Col: 8,
-        },
-        {
-          question: "What is your temperament like?",
-          answers: {
-            1: "Easy going, giving, and creative",
-            2: "Driven, passionate and ambitious",
-            3: "Enthusiastic, creative",
-          },
-          Col: 9,
-        },
-        {
-          question: "How you sleep?",
-          answers: {
-            1: "Deep Long",
-            2: "Moderate sound",
-            3: "Difficult falling asleep, wake up often",
-          },
-          Col: 10,
-        },
-        {
-          question: "How are your money and material possessions are?",
-          answers: {
-            1: "Hoarder, have a hard time letting things go",
-            2: "Calculative shopping, spend on luxurious that are worth buying",
-            3: "Impulsive shopper, buy things and forgets",
-          },
-          Col: 11,
-        },
-        {
-          question: "What subjects you are most drawn towards?",
-          answers: {
-            1: "Counseling, teaching, human resource, care-giving, hand on stuff",
-            2: "Business science, law, engineering, calculated stuff",
-            3: "Arts, spirituality, philosophy, literature, big-picture stuff",
-          },
-          Col: 12,
-        },
-        {
-          question: "Which is your most natural energy orientation?",
-          answers: {
-            1: "Act first, think/reflect later",
-            2: "Talk more than they listen",
-            3: "Seek being the center of attention",
-            4: "Feel deprived when cut off from interaction with the outside world",
-            5: "Enjoy wide variety and change in people and Relationships",
-            6: "Tend to think out loud",
-            7: "Think/reflect first, then Act",
-            8: "listen more than they talk",
-            9: "Avoid being the center of attention",
-            10: "Regularly require an amount of 'private time' to recharge batteries",
-            11: "Prefer one-to-one communication and relationships",
-            12: "I tend to think things through inside their head",
-          },
-          type: "multi",
-          Col: 13,
-        },
-        {
-          question:
-            "Which way of perceiving or understanding is most 'automatic' or natural? ",
-          answers: {
-            1: "Trust what is certain/concrete",
-            2: "Like new ideas if they are practical",
-            3: "Value common sense and realism",
-            4: "Like to hone established skills",
-            5: "Tend to be specific and literal and give detailed descriptions",
-            6: "Present information in a step-by-step manner",
-            7: "Are oriented to the present",
-            8: "Trust inspiration",
-            9: "Like new ideas for their own sake",
-            10: "Value imagination and innovation",
-            11: "Like to learn new skills and get bored after mastering skills",
-            12: "tend to be general and figurative; use metaphors a lot",
-            13: "Present information in a round-about manner",
-            14: "Are oriented toward the future",
-          },
-          type: "multi",
-          Col: 14,
-        },
-        {
-          question:
-            "Which way of forming judgments and making choices is most natural?",
-          answers: {
-            1: "Instinctively search for facts and logic in a decision situation",
-            2: "Naturally notices tasks and work to be accomplished",
-            3: "Easily able to provide an objective and critical analysis",
-            4: "Accept conflict as a natural, normal part of relationships with people",
-            5: "Value logic, justice, and fairness: one standard for all",
-            6: "Are motivated by accomplishment",
-            7: "Instinctively employ personal feelings and impact on people in decision situations",
-            8: "Naturally sensitive to people’s needs and reactions",
-            9: "Naturally seek consensus and popular opinions.",
-            10: "Unsettled by conflict; have almost a toxic reaction to disharmony",
-            11: "Value empathy and harmony: see the exception to the rule",
-            12: "Are motivated by appreciation",
-          },
-          type: "multi",
-          Col: 15,
-        },
-        {
-          question:
-            "What is your 'action orientation' towards the outside world and how do you structure your life?",
-          answers: {
-            1: "Like knowing what they are getting into",
-            2: "Focus on task-related action; complete meaningful segments before moving on",
-            3: "Work best and avoid stress when able to keep ahead of deadlines",
-            4: "Naturally use targets, dates, and standard routines to manage life",
-            5: "Are happiest after a decision has been made",
-            6: "Are satisfied most from finishing a project",
-            7: "Comfortable moving into action without a plan; plan on-the-go",
-            8: "Like to multitask, have variety, mix work/play",
-            9: "Naturally tolerant of time pressure; work best close to the deadlines",
-            10: "Instinctively avoid commitments that interfere with flexibility, freedom, and variety",
-            11: "Are happiest leaving options open",
-            12: "Are satisfied most from starting a project",
-          },
-          type: "multi",
-          Col: 16,
-        },
-        {
-          question: "Select Any 7 options",
-          answers: {
-            1: "Do you have some unknown fears/ Imaginary fears?",
-            2: "Are you over concerned for your loved ones?",
-            3: "Do you have undergone any panic or traumatic situation in your lifetime?",
-            4: "Do you feel you could be aggressive?",
-            5: "Do you have known fears like animals, darkness, parking, life which you can identify?",
-            6: "In any situation/people rather than good do you find bitterness first?",
-            7: "Do you want to take everything on your head and command as per your wish/way?",
-            8: "Do you find yourself jealous or hateful for some people or situations of others most of the time?",
-            9: "Are you highly possessive of anything and everything?",
-            10: "Do you find yourself intolerant nowadays?",
-            11: "Do you often smile and hide your feelings under your smiling face?",
-            12: "Do you often catch in the repeating thoughts/ constant thinking?",
-            13: "In the end, you start blaming yourself, in public or in your mind?",
-            14: "Do you find the old days are good and sometime homesickness?",
-            15: "Even though you are tired or office timing is over doing you often land up doing overwork?",
-            16: "Do you like to be at home most of the time and not to socialize even in small groups or big groups? Introvert kinds person?",
-            17: "Do get impatient and irritated on small things/situations?",
-            18: "You mostly don’t listen to others and compulsive for doing things in your own way for yourself and for others too?",
-            19: "Are you highly disciplined which sometimes bothers other people?",
-            20: "Do you feel that you lack in decision making?",
-            21: "You are not able to judge people most of the time?",
-            22: "Do you feel directionless in your life?",
-            23: "are you often nervous nowadays?",
-            24: "Do you have an inferiority complex? lack of confidence?",
-            25: "Do you feel that happiness has gone from your life nowadays? ",
-            26: "Do you find yourself hopeless, a situation or for your own?",
-            27: "Do you find that now there is no way and you cannot do anything for this?",
-            28: "Do you feel hopeless and de-stress always in worry/despair/anguish?",
-            29: "Have you given up and stopped chasing for few things?",
-            30: "Have you recently gone through some shock/trauma?",
-            31: "Do you land up doing the same mistakes again and again?",
-            32: "Do you daydream or absent-minded nowadays?",
-            33: "Do you feel homesick?",
-            34: "Do you feel a lack of energy/physical exhaustion?",
-            35: "Do you have any prolong stress?",
-            36: "Due to anger do you act highly possessively?",
-            37: "Are you a self-obsessed?",
-            38: "Do you please others at any cost? knowingly/ unknowingly?",
-            39: "Do you often not able to accept things/situation/ new place/new role?",
-            40: "Do you get repeating any skin related disorders? pimples/dryness/itching etc?",
-          },
-          type: "multi40",
-          Col: 17,
-        },
-        {
-          question: "What matters to you most?",
-          answers: {
-            1: "Understanding why the world is the way it is ",
-            2: "Standing up for a just cause",
-            3: "Improving the lives of others through valuable education",
-            4: "Raising the vibration of the planet",
-            5: "Making the world a more beautiful place",
-            6: "Making people laugh, cry, and think",
-            7: "Protecting my friends, family, and the vulnerable",
-            8: "My partner, family, and friends",
-            9: "Developing creative solutions to people’s problems",
-          },
-          Col: 18,
-        },
-        {
-          question: "I am happiest:",
-          answers: {
-            1: "Deep in research",
-            2: "Raising awareness on important causes",
-            3: "Teaching what I love",
-            4: "Inspiring people to see a higher perspective",
-            5: "Creating art",
-            6: "On stage, on set, or at rehearsal",
-            7: "Using my physical body",
-            8: "Connecting deeply with someone",
-            9: "Coming up with business ideas",
-          },
-          Col: 19,
-        },
-        {
-          question: "I like to spend my time",
-          answers: {
-            1: "Understanding things people never even think about",
-            2: "Making a massive difference on the planet",
-            3: "Giving people “aha” moments",
-            4: "Channeling higher visions to uplift humanity",
-            5: "A creative genius",
-            6: "Uplifting everyone around me",
-            7: "Empowered, ignited, and ready to charge",
-            8: "Deeply connected to other",
-            9: "Creating solutions for people’s problems",
-          },
-          Col: 20,
-        },
-        {
-          question: "At my worst I’m:",
-          answers: {
-            1: "Upset with how uneducated people are and how little regard they have",
-            2: "Pissed that no one cares about the world like I do",
-            3: "Frustrated, trying to get people to understand something they cannot",
-            4: "Anxious about the way the world is going",
-            5: "Mad at myself for not doing better",
-            6: "Depressed, falling into addictive behaviors",
-            7: "Angry, feeling like I’ve been fighting my entire life",
-            8: "Resentful of people taking advantage of my kindness",
-            9: "Overworked and burned-out from my work",
-          },
-          Col: 21,
-        },
-        {
-          question: "At my best, I’m:",
-          answers: {
-            1: "Understanding things people never even think ",
-            2: "Making a massive difference on the planet",
-            3: "Giving people “aha” moments",
-            4: "Channeling higher visions to uplift humanity",
-            5: "A creative genius",
-            6: "Uplifting everyone around me",
-            7: "Empowered, ignited, and ready to charge",
-            8: "Deeply connected to others",
-            9: "Creating solutions for people’s problems",
-          },
-          Col: 22,
-        },
-        {
-          question: "People compliment me most on:",
-          answers: {
-            1: "My deep knowledge and curiosity about the world",
-            2: "My passion to help the world",
-            3: "My ability to make complicated topics easy to understand",
-            4: "My intuition and ability to channel wisdom from",
-            5: "My creativity and ability to think outside the box",
-            6: "My theatrical nature and ability to read a crowd",
-            7: "My strength and loyalty",
-            8: "My compassion, patience, and kindness",
-            9: "My ability to create a business around anything, my resourcefulness",
-          },
-          Col: 23,
-        },
-      ];
+            function showPreviousSlide() {
+                showSlide(currentSlide - 1);
+                if (currentSlide == 12) {
+                    document.getElementById("step").innerHTML = "Step 2 of 4";
+                } else if (currentSlide == 16) {
+                    document.getElementById("step").innerHTML = "Step 3 of 4";
+                } else if (currentSlide == 17) {
+                    document.getElementById("step").innerHTML = "Step 4 of 4";
+                } else if (currentSlide == 11) {
+                    document.getElementById("step").innerHTML = "Step 1 of 4";
+                }
+            }
 
-      // Kick things off
-      buildQuiz();
+            // Variables
+            const quizContainer = document.getElementById("quiz");
+            const submitButton = document.getElementById("submit");
+            const myQuestions = [{
+                question: "Which Most accurately describe your body?",
+                answers: {
+                    1: "Curvy, bigger built",
+                    2: "Medium built, good muscular built",
+                    3: "Naturally thin, lanky, slender",
+                },
+                Col: 1,
+            }, {
+                question: "How easily do you gain weight?",
+                answers: {
+                    1: "Too easily",
+                    2: "Moderately",
+                    3: "Next to impossible",
+                },
+                Col: 2,
+            }, {
+                question: "What is your hair like?",
+                answers: {
+                    1: "Thick, abundant, more on the oily side",
+                    2: "Fine, oily. Tendency towards thinning or greying",
+                    3: "Dry frizzy",
+                },
+                Col: 3,
+            }, {
+                question: "What is your digestion like?",
+                answers: {
+                    1: "Slow, weak",
+                    2: "Strong powerful",
+                    3: "Variable, sometimes good or my be even bad",
+                },
+                Col: 4,
+            }, {
+                question: "What is your body detoxification like?",
+                answers: {
+                    1: "Thick long Sluggish",
+                    2: "Regular towards loose",
+                    3: "Tends towards constipation",
+                },
+                Col: 5,
+            }, {
+                question: "How you feel normally?",
+                answers: {
+                    1: "Heaviness after eating and water retention",
+                    2: "Heartburn, acidity",
+                    3: "Bloating, gases",
+                },
+                Col: 6,
+            }, {
+                question: "What is body temperature?",
+                answers: {
+                    1: "Adaptable, don’t like cold, wet weather",
+                    2: "Usually warm, prefer cool",
+                    3: "Always cold prefer hot",
+                },
+                Col: 7,
+            }, {
+                question: "What are your negative traits?",
+                answers: {
+                    1: "Lonely, depressed and jealous",
+                    2: "Competitive and impatient",
+                    3: "Anxious, fearful and nervous",
+                },
+                Col: 8,
+            }, {
+                question: "What is your temperament like?",
+                answers: {
+                    1: "Easy going, giving, and creative",
+                    2: "Driven, passionate and ambitious",
+                    3: "Enthusiastic, creative",
+                },
+                Col: 9,
+            }, {
+                question: "How you sleep?",
+                answers: {
+                    1: "Deep Long",
+                    2: "Moderate sound",
+                    3: "Difficult falling asleep, wake up often",
+                },
+                Col: 10,
+            }, {
+                question: "How are your money and material possessions are?",
+                answers: {
+                    1: "Hoarder, have a hard time letting things go",
+                    2: "Calculative shopping, spend on luxurious that are worth buying",
+                    3: "Impulsive shopper, buy things and forgets",
+                },
+                Col: 11,
+            }, {
+                question: "What subjects you are most drawn towards?",
+                answers: {
+                    1: "Counseling, teaching, human resource, care-giving, hand on stuff",
+                    2: "Business science, law, engineering, calculated stuff",
+                    3: "Arts, spirituality, philosophy, literature, big-picture stuff",
+                },
+                Col: 12,
+            }, {
+                question: "Which is your most natural energy orientation?",
+                answers: {
+                    1: "Act first, think/reflect later",
+                    2: "Talk more than they listen",
+                    3: "Seek being the center of attention",
+                    4: "Feel deprived when cut off from interaction with the outside world",
+                    5: "Enjoy wide variety and change in people and Relationships",
+                    6: "Tend to think out loud",
+                    7: "Think/reflect first, then Act",
+                    8: "listen more than they talk",
+                    9: "Avoid being the center of attention",
+                    10: "Regularly require an amount of 'private time' to recharge batteries",
+                    11: "Prefer one-to-one communication and relationships",
+                    12: "I tend to think things through inside their head",
+                },
+                type: "multi",
+                Col: 13,
+            }, {
+                question: "Which way of perceiving or understanding is most 'automatic' or natural? ",
+                answers: {
+                    1: "Trust what is certain/concrete",
+                    2: "Like new ideas if they are practical",
+                    3: "Value common sense and realism",
+                    4: "Like to hone established skills",
+                    5: "Tend to be specific and literal and give detailed descriptions",
+                    6: "Present information in a step-by-step manner",
+                    7: "Are oriented to the present",
+                    8: "Trust inspiration",
+                    9: "Like new ideas for their own sake",
+                    10: "Value imagination and innovation",
+                    11: "Like to learn new skills and get bored after mastering skills",
+                    12: "tend to be general and figurative; use metaphors a lot",
+                    13: "Present information in a round-about manner",
+                    14: "Are oriented toward the future",
+                },
+                type: "multi",
+                Col: 14,
+            }, {
+                question: "Which way of forming judgments and making choices is most natural?",
+                answers: {
+                    1: "Instinctively search for facts and logic in a decision situation",
+                    2: "Naturally notices tasks and work to be accomplished",
+                    3: "Easily able to provide an objective and critical analysis",
+                    4: "Accept conflict as a natural, normal part of relationships with people",
+                    5: "Value logic, justice, and fairness: one standard for all",
+                    6: "Are motivated by accomplishment",
+                    7: "Instinctively employ personal feelings and impact on people in decision situations",
+                    8: "Naturally sensitive to people’s needs and reactions",
+                    9: "Naturally seek consensus and popular opinions.",
+                    10: "Unsettled by conflict; have almost a toxic reaction to disharmony",
+                    11: "Value empathy and harmony: see the exception to the rule",
+                    12: "Are motivated by appreciation",
+                },
+                type: "multi",
+                Col: 15,
+            }, {
+                question: "What is your 'action orientation' towards the outside world and how do you structure your life?",
+                answers: {
+                    1: "Like knowing what they are getting into",
+                    2: "Focus on task-related action; complete meaningful segments before moving on",
+                    3: "Work best and avoid stress when able to keep ahead of deadlines",
+                    4: "Naturally use targets, dates, and standard routines to manage life",
+                    5: "Are happiest after a decision has been made",
+                    6: "Are satisfied most from finishing a project",
+                    7: "Comfortable moving into action without a plan; plan on-the-go",
+                    8: "Like to multitask, have variety, mix work/play",
+                    9: "Naturally tolerant of time pressure; work best close to the deadlines",
+                    10: "Instinctively avoid commitments that interfere with flexibility, freedom, and variety",
+                    11: "Are happiest leaving options open",
+                    12: "Are satisfied most from starting a project",
+                },
+                type: "multi",
+                Col: 16,
+            }, {
+                question: "Select Any 7 options",
+                answers: {
+                    1: "Do you have some unknown fears/ Imaginary fears?",
+                    2: "Are you over concerned for your loved ones?",
+                    3: "Do you have undergone any panic or traumatic situation in your lifetime?",
+                    4: "Do you feel you could be aggressive?",
+                    5: "Do you have known fears like animals, darkness, parking, life which you can identify?",
+                    6: "In any situation/people rather than good do you find bitterness first?",
+                    7: "Do you want to take everything on your head and command as per your wish/way?",
+                    8: "Do you find yourself jealous or hateful for some people or situations of others most of the time?",
+                    9: "Are you highly possessive of anything and everything?",
+                    10: "Do you find yourself intolerant nowadays?",
+                    11: "Do you often smile and hide your feelings under your smiling face?",
+                    12: "Do you often catch in the repeating thoughts/ constant thinking?",
+                    13: "In the end, you start blaming yourself, in public or in your mind?",
+                    14: "Do you find the old days are good and sometime homesickness?",
+                    15: "Even though you are tired or office timing is over doing you often land up doing overwork?",
+                    16: "Do you like to be at home most of the time and not to socialize even in small groups or big groups? Introvert kinds person?",
+                    17: "Do get impatient and irritated on small things/situations?",
+                    18: "You mostly don’t listen to others and compulsive for doing things in your own way for yourself and for others too?",
+                    19: "Are you highly disciplined which sometimes bothers other people?",
+                    20: "Do you feel that you lack in decision making?",
+                    21: "You are not able to judge people most of the time?",
+                    22: "Do you feel directionless in your life?",
+                    23: "are you often nervous nowadays?",
+                    24: "Do you have an inferiority complex? lack of confidence?",
+                    25: "Do you feel that happiness has gone from your life nowadays? ",
+                    26: "Do you find yourself hopeless, a situation or for your own?",
+                    27: "Do you find that now there is no way and you cannot do anything for this?",
+                    28: "Do you feel hopeless and de-stress always in worry/despair/anguish?",
+                    29: "Have you given up and stopped chasing for few things?",
+                    30: "Have you recently gone through some shock/trauma?",
+                    31: "Do you land up doing the same mistakes again and again?",
+                    32: "Do you daydream or absent-minded nowadays?",
+                    33: "Do you feel homesick?",
+                    34: "Do you feel a lack of energy/physical exhaustion?",
+                    35: "Do you have any prolong stress?",
+                    36: "Due to anger do you act highly possessively?",
+                    37: "Are you a self-obsessed?",
+                    38: "Do you please others at any cost? knowingly/ unknowingly?",
+                    39: "Do you often not able to accept things/situation/ new place/new role?",
+                    40: "Do you get repeating any skin related disorders? pimples/dryness/itching etc?",
+                },
+                type: "multi40",
+                Col: 17,
+            }, {
+                question: "What matters to you most?",
+                answers: {
+                    1: "Understanding why the world is the way it is ",
+                    2: "Standing up for a just cause",
+                    3: "Improving the lives of others through valuable education",
+                    4: "Raising the vibration of the planet",
+                    5: "Making the world a more beautiful place",
+                    6: "Making people laugh, cry, and think",
+                    7: "Protecting my friends, family, and the vulnerable",
+                    8: "My partner, family, and friends",
+                    9: "Developing creative solutions to people’s problems",
+                },
+                Col: 18,
+            }, {
+                question: "I am happiest:",
+                answers: {
+                    1: "Deep in research",
+                    2: "Raising awareness on important causes",
+                    3: "Teaching what I love",
+                    4: "Inspiring people to see a higher perspective",
+                    5: "Creating art",
+                    6: "On stage, on set, or at rehearsal",
+                    7: "Using my physical body",
+                    8: "Connecting deeply with someone",
+                    9: "Coming up with business ideas",
+                },
+                Col: 19,
+            }, {
+                question: "I like to spend my time",
+                answers: {
+                    1: "Understanding things people never even think about",
+                    2: "Making a massive difference on the planet",
+                    3: "Giving people “aha” moments",
+                    4: "Channeling higher visions to uplift humanity",
+                    5: "A creative genius",
+                    6: "Uplifting everyone around me",
+                    7: "Empowered, ignited, and ready to charge",
+                    8: "Deeply connected to other",
+                    9: "Creating solutions for people’s problems",
+                },
+                Col: 20,
+            }, {
+                question: "At my worst I’m:",
+                answers: {
+                    1: "Upset with how uneducated people are and how little regard they have",
+                    2: "Pissed that no one cares about the world like I do",
+                    3: "Frustrated, trying to get people to understand something they cannot",
+                    4: "Anxious about the way the world is going",
+                    5: "Mad at myself for not doing better",
+                    6: "Depressed, falling into addictive behaviors",
+                    7: "Angry, feeling like I’ve been fighting my entire life",
+                    8: "Resentful of people taking advantage of my kindness",
+                    9: "Overworked and burned-out from my work",
+                },
+                Col: 21,
+            }, {
+                question: "At my best, I’m:",
+                answers: {
+                    1: "Understanding things people never even think ",
+                    2: "Making a massive difference on the planet",
+                    3: "Giving people “aha” moments",
+                    4: "Channeling higher visions to uplift humanity",
+                    5: "A creative genius",
+                    6: "Uplifting everyone around me",
+                    7: "Empowered, ignited, and ready to charge",
+                    8: "Deeply connected to others",
+                    9: "Creating solutions for people’s problems",
+                },
+                Col: 22,
+            }, {
+                question: "People compliment me most on:",
+                answers: {
+                    1: "My deep knowledge and curiosity about the world",
+                    2: "My passion to help the world",
+                    3: "My ability to make complicated topics easy to understand",
+                    4: "My intuition and ability to channel wisdom from",
+                    5: "My creativity and ability to think outside the box",
+                    6: "My theatrical nature and ability to read a crowd",
+                    7: "My strength and loyalty",
+                    8: "My compassion, patience, and kindness",
+                    9: "My ability to create a business around anything, my resourcefulness",
+                },
+                Col: 23,
+            }, ];
 
-      // Pagination
-      const nextButton = document.getElementById("next");
-      const previousButton = document.getElementById("previous");
-      const slides = document.querySelectorAll(".slide");
-      let currentSlide = 0;
+            // Kick things off
+            buildQuiz();
 
-      // Show the first slide
-      showSlide(currentSlide);
+            // Pagination
+            const nextButton = document.getElementById("next");
+            const previousButton = document.getElementById("previous");
+            const slides = document.querySelectorAll(".slide");
+            let currentSlide = 0;
 
-      // Event listeners
-      const option = document.getElementsByClassName("option");
-      /* for (var i = 0; i < option.length; i++) {
-                  option[i].addEventListener('change', function() {
-                      if (currentSlide == myQuestions.length - 1) {
-                          showResults();
-                      } else {
-                          showNextSlide();
-                      }
-                  });
-              } */
-      nextButton.addEventListener("click", showNextSlide);
-      submitButton.addEventListener("click", showResults);
-      previousButton.addEventListener("click", showPreviousSlide);
-    })();
-  </script>
+            // Show the first slide
+            showSlide(currentSlide);
+
+            // Event listeners
+            const option = document.getElementsByClassName("option");
+            /* for (var i = 0; i < option.length; i++) {
+                        option[i].addEventListener('change', function() {
+                            if (currentSlide == myQuestions.length - 1) {
+                                showResults();
+                            } else {
+                                showNextSlide();
+                            }
+                        });
+                    } */
+            nextButton.addEventListener("click", showNextSlide);
+            submitButton.addEventListener("click", showResults);
+            previousButton.addEventListener("click", showPreviousSlide);
+        })();
+    </script>
 </body>
 
 </html>
