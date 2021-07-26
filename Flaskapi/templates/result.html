@@ -2,50 +2,94 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Result</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result Page</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Google Font -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+    </style>
+
+
 </head>
 
 <body>
-    <div style="text-align: center;">
-        <a style="text-align: center" href="https://paripurnalife.com/">
-            <!-- <h1 style="color: #90178a" ;>#पारिपूर्णLIFE</h1> -->
-            <img style="text-align: center" src="{{url_for('static', filename='mainlogo.jpg')}}" align="center" />
+
+    <style>
+        body{
+            font-family: 'Montserrat', sans-serif;        
+        }
+        body a {
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;        
+        }
+    </style>
+    <div class="container mt-5">
+        <a href="https://paripurnalife.com/">
+            <h1 style="color: #bc9c22;">Paripūrṇa Life <sup>TM</sup></h1>
         </a>
-        <div style="text-align: center; padding-bottom: 4%;">
-            <h1 style="text-align: center"> <span style="background: #fff; color: #90178a">Your unique 360-degree Persona with your current vibes and your ultimate life purpose!</span > </h1>
-      <p style="text-align: center">Your Ultimate Purpose Persona Epitome is</p>
-      <p style="text-align: center"><mark>{{ xt[5] }}</mark></p>
-      <p style="text-align: center">And your Current Vibes are</p>
-      <p style="text-align: center"><mark>{{ xt[2] }}</mark></p>
-      <p style="text-align: center"> Your Current Emotions and intellect quotient is </p>
-      <p style="text-align: center"><mark>{{ re40 }}/{{ re3 }}</mark></p>
-      <br /> 
-      <p style="text-align: center">YOU ARE HERE TO</p>
-      <p style="text-align: center"><mark>{{ re5 }}</mark></p>
-      <h2 style="text-align: center"> You are one of the unique combination and has excellent persona, but you need some alignment work done for that.Learn more on how to achieve your ultimate life purpose in detail and create your Magical Persona. </h2>
-      <p style="text-align: center">&#10070; What is your Epitome</p>
-      <p style="text-align: center"> &#10070; How to walk on your purpose Epitome </p>
-      <p style="text-align: center"> &#10070; How you can overcome the major emotional and intellectual obstacles those you are reflecting strongly </p>
-      <p style="text-align: center"> &#10070; The ultimate way to head towards Purpose </p>
-      <p style="text-align: center"> &#10070; How you can discover your Ultimate Purpose by 7 step-by-step formula </p>
-      <p style="text-align: center"> &#10070; How you can make work your chakra and Kosha for your Purpose </p>
-      <p style="text-align: center">&#10070; How to overcome- over-whelming</p>
-      <p style="text-align: center"> &#10070; How you can select or fix your purpose </p>
-      <br /><br /><br /> 
-      <div style="text-align: center"> I am ready to discover my Ultimate Life Purpose with you </div>
-      <h1 style="text-align: center"> <span style="background: #fff; color: #90178a" >Book your session now by sending email on fulfil@paripurnalife.com</span > </h1>
-      <h2 style="text-align: center">What session will Have</h2>
-      <p style="text-align: center">1.Free your limitations technique</p>
-      <p style="text-align: center">2.Verbalization</p>
-      <p style="text-align: center">3.Visualization</p>
-      <p style="text-align: center">4.Body Energizations</p>
-      <p style="text-align: center">5.Find your Purpose Epitome</p>
-      <p style="text-align: center">6.Blueprint of Your Ultimate Purpose</p>
-      <p style="text-align: center"> 7.Balance your Emotional and Intelligent quotient </p><br><br>
-      <a style="text-decoration: none; color: #90178a;" href="https://paripurnalife.com/links-paripurna-life/">Thanks for taking this quiz, we are updating more information on how to discover your ultimate persona, <br>please click here to keep in touch with us.</a>
+        <div class="container pb-4 text-center" id='cont'>
+            <h2 class="h1"> <span style="background-color: #f6eabe;" class="p-1"> <b>Welcome to Paripurna
+                        Life's</b></span></h2>
+
+            <h4>Discover Your 360 Degree
+                Luminosity of Mind and Body
+            </h4><br>
+            <h1 class="h1"> <span style="background-color: #f6eabe;" class="p-1"><b>Namaste!</b></span></h1> <br>
+            <h5>As per your answers, below are your
+                Analysis of current luminosity of Mind & Body
+            </h5>
+            <h5>Your Ultimate <span style="background-color: #f6eabe;" class="p-1"> VIHAR</span> is</h5>
+            <p><mark>{{ xt[5] }}</mark></p>
+
+            <h5>And your Current <span style="background-color: #f6eabe;" class="p-1"> Achar</span> are</h5>
+            <p><mark>{{ xt[2] }}</mark></p>
+
+            <h5> Your Current <span style="background-color: #f6eabe;" class="p-1"> Vichar</span> is</h5>
+            <p><mark>{{ re40 }}/{{re3}}</mark></p>
+
+            <h5>You are here to</h5>
+            <p><mark>{{ re5 }}</mark></p>
+            <br>
+            <h2> <span style="background-color: #f6eabe;" class="p-1"><b>WOW!</b></span></h2>
+            <br>
+            <h4> You are one of the unique combination of
+                as stated above.
+            </h4>
+            <br>
+            <h4> Do you want to know more on your results?
+            </h4>
+            <h4> Jump <a href="https://paripurnalife.com/ecosystemofparipurnalife">here</a>
+                to
+                know more on the analysis of
+                and
+                know more about it.
+            </h4>
+            <br>
+            <h4> Now it’s your time to be on this pathway and unlock the pathway of
+                Golden Door
+                of Fulfilments.
+            </h4>
+            <br>
+            <h5>Join The Free Webinar here</h5>
+            <h5><a href="https://paripurnalife.com/ecosystemofparipurnalife">Thanks for
+                    Taking the Quiz.
+                    See you in the Free Webinar!
+                </a></h5>
+            <br>
+            <h2 class="mb-5"><b>Thank you!
+                    We are waiting for you at the Webinar, See you there!
+                </b></h2>
+
+        </div>
     </div>
-    </div>
-   </body>
+</body>
+
 </html>

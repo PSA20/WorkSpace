@@ -1,6 +1,12 @@
 from flask import Flask,request,render_template,redirect,url_for
 from mailjet_rest import Client
 import os
+import pymongo
+from pymongo import MongoClient
+from datetime import datetime
+cluster= MongoClient("mongodb+srv://pardhu:Partha@ml-liver-project.w2v4d.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+db=cluster["Liver_disease_prediction"]
+collecion= db["Data"]
 api_key = '0029ac0e3471d863cff5b6b80a9a7479'
 api_secret = 'd695a1e1fc42e38ee77a1e3e70b87a1d'
 mailjet = Client(auth=(api_key, api_secret), version='v3.1')
@@ -92,28 +98,39 @@ def submit():
         re5 = 'BUSINESSPERSON / ENTREPRENUER - ADDRESS THE PROBLEMS OF SOCIETY THROUGH BUSINESS SOLUTIONS'
     if(re5 == '' or re40 == '' or re3 == ''):
         return "better luck next time lollll"
-    else:
-        data = {
-            'Messages': [
-            {
-                "From": {
-                "Email": "paripurnalifefulfil@gmail.com",
-                "Name": "Fulfil"
-                },
-                "To": [
-                {
-                "Email": xt[0],
-                "Name": xt[1]
-                }
-                ],
-                "Subject": "💥 PARIPURNA LIFE 💥 Quiz Result 💥Discover your 360 Degree Persona 💥",
-                "TextPart": "Your Result",
-                "HTMLPart": ' <a style="text-align: center" href="https://paripurnalife.com/" ><h1 style="color: #90178a" ;>#पारिपूर्णLIFE</h1></a > <h1 style="text-align: center"> <span style="background: #fff; color: #90178a" >Your unique 360-degree Persona with your current vibes and your ultimate life purpose!</span > </h1> <p style="text-align: center">Your Ultimate Purpose Persona Epitome is</p> <p style="text-align: center"><mark>'+xt[5]+'</mark></p> <p style="text-align: center">And your Current Vibes are</p> <p style="text-align: center"><mark>'+ xt[2] +'</mark></p> <p style="text-align: center"> Your Current Emotions and intellect quotient is </p> <p style="text-align: center"><mark>'+ re40 +'/'+ re3 +'</mark></p> <br /> <p style="text-align: center">YOU ARE HERE TO</p> <p style="text-align: center"><mark>'+ re5 +'</mark></p> <h2 style="text-align: center"> You are one of the unique combination and has excellent persona, but you need some alignment work done for that.Learn more on how to achieve your ultimate life purpose in detail and create your Magical Persona. </h2> <p style="text-align: center">&#10070; What is your Epitome</p> <p style="text-align: center"> &#10070; How to walk on your purpose Epitome </p> <p style="text-align: center"> &#10070; How you can overcome the major emotional and intellectual obstacles those you are reflecting strongly </p> <p style="text-align: center"> &#10070; The ultimate way to head towards Purpose </p> <p style="text-align: center"> &#10070; How you can discover your Ultimate Purpose by 7 step-by-step formula </p> <p style="text-align: center"> &#10070; How you can make work your chakra and Kosha for your Purpose </p> <p style="text-align: center">&#10070; How to overcome- over-whelming</p> <p style="text-align: center"> &#10070; How you can select or fix your purpose </p> <br /><br /><br /> <div style="text-align: center"> I am ready to discover my Ultimate Life Purpose with you </div> <h1 style="text-align: center"> <span style="background: #fff; color: #90178a" >Book your session now by sending email on fulfil@paripurnalife.com</span > </h1> <h2 style="text-align: center">What session will Have</h2> <p style="text-align: center">1.Free your limitations technique</p> <p style="text-align: center">2.Verbalization</p> <p style="text-align: center">3.Visualization</p> <p style="text-align: center">4.Body Energizations</p> <p style="text-align: center">5.Find your Purpose Epitome</p> <p style="text-align: center">6.Blueprint of Your Ultimate Purpose</p> <p style="text-align: center"> 7.Balance your Emotional and Intelligent quotient </p><a style="text-decoration: none; color: #90178a;" href="https://paripurnalife.com/links-paripurna-life/">Thanks for taking this quiz, we are updating more information on how to discover your ultimate persona, <br>please click here to keep in touch with us.</a>',
-                "CustomID": "AppGettingStartedTest"
-            }
-            ]
-        }
-    result = mailjet.send.create(data=data)
+    # else:
+    #     data = {
+    #         'Messages': [
+    #         {
+    #             "From": {
+    #             "Email": "paripurnalifefulfil@gmail.com",
+    #             "Name": "Fulfil"
+    #             },
+    #             "To": [
+    #             {
+    #             "Email": xt[0],
+    #             "Name": xt[1]
+    #             }
+    #             ],
+    #             "Subject": "💥 PARIPURNA LIFE 💥 Quiz Result 💥Discover your 360 Degree Persona 💥",
+    #             "TextPart": "Your Result",
+    #             "HTMLPart": '  <style> body { font-family: "Montserrat", sans-serif; } body a { text-decoration: none; font-family: "Montserrat", sans-serif; } .container { padding-right: 15px; padding-left: 15px; margin-right: auto; margin-left: auto; } @media (min-width: 768px) { .container { width: 750px; } } @media (min-width: 992px) { .container { width: 970px; } } @media (min-width: 1200px) { .container { width: 1170px; } } .p-1 { padding: 0.25rem; background-color: #f6eabe; } .text-center { text-align: center !important; } .mt-5 { margin-top: 3rem; } .mb-5 { margin-bottom: 3rem; } </style> <div class="container mt-5"> <a href="https://paripurnalife.com/"> <h1 style="color: #bc9c22;">Paripūrṇa Life <sup>TM</sup></h1> </a> <div class="pb-4 text-center"> <h2> <span class="p-1"> <b>Welcome to Paripurna Lifes</b></span></h2> <h3>Discover Your 360 Degree Luminosity of Mind and Body </h3> <h1> <span class="p-1"><b>Namaste!</b></span></h1> <h3>As per your answers, below are your Analysis of current luminosity of Mind & Body </h3> <h3>Your Ultimate <span class="p-1"> VIHAR</span> is</h3> <p><mark>'+xt[5]+'</mark></p> <h3>And your Current <span class="p-1"> Achar</span> are</h3> <p><mark>'+ xt[2] +'</mark></p> <h3> Your Current <span class="p-1"> Vichar</span> is</h3> <p><mark>'+ re40 +'/'+ re3 +'</mark></p> <h3>You are here to</h3> <p><mark>'+ re5 +'</mark></p> <br> <h2> <span class="p-1"><b>WOW!</b></span></h2> <br> <h3> You are one of the unique combination of as stated above. </h3> <br> <h3> Do you want to know more on your results? </h3> <h3> Jump <a href="https://paripurnalife.com/ecosystemofparipurnalife">here</a> to know more on the analysis of and know more about it. </h3> <br> <h3> Now it’s your time to be on this pathway and unlock the pathway of Golden Door of Fulfilments. </h3> <br> <h3>Join The Free Webinar here</h3> <h3><a href="https://paripurnalife.com/ecosystemofparipurnalife">Thanks for Taking the Quiz. See you in the Free Webinar! </a> </h3> <br> <h2 class="mb-5"><b>Thank you! We are waiting for you at the Webinar, See you there! </b></h2> </div> </div>',
+    #             "CustomID": "AppGettingStartedTest"
+    #         }
+    #         ]
+    #     }
+    # result = mailjet.send.create(data=data)
+    now = datetime.now()
+    date_time = now.strftime("%d/%m/%Y, %H:%M:%S")
+    collecion.insert_one({
+        "time": str(date_time),
+        "email": xt[0],
+        "name": xt[1],
+        "VIHAR": xt[5],
+        "Achar": xt[2],
+        "Vichar": re40 +'/'+re3,
+        "you r here": re5
+    })
     return render_template("result.html",xt=xt,re40=re40,re5=re5,re3=re3)
 
 if __name__ == '__main__':
