@@ -4,9 +4,9 @@ import os
 import pymongo
 from pymongo import MongoClient
 from datetime import datetime
-cluster= MongoClient("mongodb+srv://pardhu:Partha@ml-liver-project.w2v4d.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
-db=cluster["Liver_disease_prediction"]
-collecion= db["Data"]
+cluster= MongoClient("mongodb+srv://dbuser:HEiaTmjDrHflwyRC@cluster0.fxhey.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+db=cluster["quiz"]
+collecion= db["responses"]
 api_key = '0029ac0e3471d863cff5b6b80a9a7479'
 api_secret = 'd695a1e1fc42e38ee77a1e3e70b87a1d'
 mailjet = Client(auth=(api_key, api_secret), version='v3.1')
